@@ -1,0 +1,28 @@
+{
+ "grid": "case6470rte",
+ "n_bus": 6470,
+ "batch": 64,
+ "per_scenario_s": {
+  "build": 0.03817685577087104,
+  "norm_mask": 0.004774268378241686,
+  "collate": 0.00080032144614961,
+  "h2d": 0.0004526604461716488,
+  "fwd": 0.03047715896900627,
+  "d2h": 2.1047362679382786e-05,
+  "total": 0.08542032647528686
+ },
+ "forward_only_per_scenario_s": 0.03047715896900627,
+ "peak_gpu_gb": 15.712270259857178,
+ "loadavg": [
+  34.71,
+  37.61,
+  22.02
+ ],
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "n_params": 20069187,
+ "control_inmemory_vs_graphkit": {
+  "max_abs_dVm": 4.1604042053222656e-05,
+  "max_abs_dVa_rad": 9.945034980773926e-05
+ },
+ "n_scenarios_used": 100
+}

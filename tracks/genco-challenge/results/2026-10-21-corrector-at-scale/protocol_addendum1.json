@@ -1,0 +1,6 @@
+{
+ "written": "2026-10-21 00:00 EDT",
+ "why": "The first training run (case2869pegase, n = 100, batch 24) died with CUDA out of memory: it needed about 22 GB, i.e. about 0.9 GB per 2,869-bus graph (about 0.32 MB per bus) in training, 2.5x the per-bus figure assumed in protocol.json. No run had been scored; no test split had been read by any model.",
+ "batch_size": {"case2869pegase": 12, "case6470rte": 5, "case9241pegase": 3},
+ "rule": "about 10 GB per training step at 0.32 MB/bus, so two runs can share the 24 GB GPU 1. Optimizer steps per epoch at n = 100: 9, 20 and 34 (case1354 study: 4). Applied identically to every run on that grid. Everything else in protocol.json is unchanged."
+}

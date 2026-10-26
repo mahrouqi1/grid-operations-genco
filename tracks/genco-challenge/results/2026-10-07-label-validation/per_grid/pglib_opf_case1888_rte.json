@@ -1,0 +1,224 @@
+{
+ "name": "pglib_opf_case1888_rte",
+ "n_bus": 1888,
+ "scenarios_requested": 100,
+ "returncode": 0,
+ "seconds": 3700.7,
+ "config": "data/external/genco-ladder/configs/pglib_opf_case1888_rte.yaml",
+ "scenarios_written": 0,
+ "status": "insufficient_valid_scenarios",
+ "scenarios_generated": 6,
+ "scenarios_dropped_invalid": 6,
+ "validation": {
+  "rule": "drop if min Vm < 0.5 pu or any Vm < 0",
+  "when": "2026-10-07 07:54:38",
+  "generated": 6,
+  "checked": 6,
+  "dropped": 6,
+  "kept": 0,
+  "reasons": {
+   "negative_vm": 6
+  },
+  "dropped_scenarios": [
+   {
+    "orig_scenario": 0,
+    "reason": "negative_vm",
+    "min_vm": -0.12735099832542462,
+    "argmin_bus": 1311,
+    "n_low": 7,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 1,
+    "reason": "negative_vm",
+    "min_vm": -0.1813216915887297,
+    "argmin_bus": 947,
+    "n_low": 7,
+    "n_neg": 5
+   },
+   {
+    "orig_scenario": 2,
+    "reason": "negative_vm",
+    "min_vm": -0.19097431347450866,
+    "argmin_bus": 1189,
+    "n_low": 7,
+    "n_neg": 5
+   },
+   {
+    "orig_scenario": 3,
+    "reason": "negative_vm",
+    "min_vm": -0.2148039650129495,
+    "argmin_bus": 403,
+    "n_low": 7,
+    "n_neg": 5
+   },
+   {
+    "orig_scenario": 4,
+    "reason": "negative_vm",
+    "min_vm": -0.12655873816568178,
+    "argmin_bus": 1311,
+    "n_low": 7,
+    "n_neg": 2
+   },
+   {
+    "orig_scenario": 5,
+    "reason": "negative_vm",
+    "min_vm": -0.18696837597085933,
+    "argmin_bus": 948,
+    "n_low": 7,
+    "n_neg": 3
+   }
+  ],
+  "kept_min_vm": {},
+  "q_limit_diagnostic": {
+   "tol_mvar": 1.0,
+   "kept_scenarios_with_pv_violation": 0,
+   "kept_pv_violation_mvar": {},
+   "kept_scenarios_with_ref_violation": 0,
+   "dropped_pv_violation_mvar": {
+    "median": 1305.0800959771632,
+    "p95": 1477.7056224155738,
+    "max": 1523.3188148230197
+   },
+   "note": "diagnostic only: datakit PF mode does not enforce Q limits"
+  },
+  "oracle": {
+   "method": "core/grid_ops/reference_pf.newton_raphson_pf, flat and DC starts, tol 1e-8, max_it 30",
+   "kept_sampled": 0,
+   "kept_agree_flat": 0,
+   "kept_agree_dc": 0,
+   "dropped_sampled": 6,
+   "dropped_physical_root_flat": 0,
+   "dropped_physical_root_dc": 0,
+   "rows": [
+    {
+     "scenario": 0,
+     "label_min_vm": -0.12735099832542462,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    },
+    {
+     "scenario": 1,
+     "label_min_vm": -0.1813216915887297,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    },
+    {
+     "scenario": 2,
+     "label_min_vm": -0.19097431347450866,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    },
+    {
+     "scenario": 3,
+     "label_min_vm": -0.2148039650129495,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    },
+    {
+     "scenario": 4,
+     "label_min_vm": -0.12655873816568178,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    },
+    {
+     "scenario": 5,
+     "label_min_vm": -0.18696837597085933,
+     "hybrid_ref_kind": "none",
+     "flat": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     },
+     "dc": {
+      "converged": false,
+      "iterations": 30,
+      "max_dv_vs_label_pu": null,
+      "agree": false,
+      "root_min_vm": null,
+      "physical": false
+     }
+    }
+   ]
+  },
+  "original_raw": "raw.unvalidated-20261007-075527"
+ }
+}

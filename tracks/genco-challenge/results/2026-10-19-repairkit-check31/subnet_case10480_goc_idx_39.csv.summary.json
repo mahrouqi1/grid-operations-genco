@@ -1,0 +1,13 @@
+{
+ "n_scenarios": 1008,
+ "has_residual": false,
+ "categories": {
+  "healthy": 1008,
+  "collapsed": 0,
+  "negative_only": 0,
+  "angle_gt90": 0
+ },
+ "angle_gt90_any_category": 0,
+ "min_abs_vm_over_dataset": 0.8002605189552539,
+ "note": "y_bus_data absent: residual column is NaN and was not checked"
+}

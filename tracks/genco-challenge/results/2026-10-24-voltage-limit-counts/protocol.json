@@ -1,0 +1,39 @@
+{
+ "written": "2026-10-24, committed BEFORE any per-bus prediction was produced or any violation count was computed. No count of any kind has been seen. Option D1 of results/2026-10-24-repair-root-audit/the overnight plan, run on the owner's verbatim go line.",
+ "go_line": "Go: rerun released GENCO and the five interpolators on the 15 locked grids at 40% and 20% measured (seed 0) saving per-bus |V| predictions, and count voltage-limit violations against each bus's min_vm_pu/max_vm_pu at tolerances 0 and 0.005 pu, locally on one GPU and a few CPU minutes, $0, definitions fixed in a protocol note before reading any count.",
+ "question": "Of the unmeasured buses, how many true limit violations does each |V| estimator catch and miss, and how many false alarms does it raise?",
+ "scenario_set": {
+  "grids": "the 15 locked grids of results/2026-10-21-genco-voltage-inference/protocol.json ('grids')",
+  "scenarios": "the graphkit test split of each grid, ../2026-10-21-genco-state-inference/test_ids.json, 2,398 scenarios, identical to the published locked-15 voltage-inference run",
+  "configs": ["f40_s0", "f20_s0"],
+  "mask": "the published rule: k = max(1, round(frac*n)) buses, rng = default_rng([20261021+0, n, scenario_id]).permutation(n)[:k]; DetMask and interpolator code copied unchanged from results/2026-10-21-genco-voltage-inference except that per-bus output is saved",
+  "predictors": "released GENCO pretraining checkpoint zero-shot (G), interpolators I1..I5 exactly as in the published protocol (clipped to [0.5, 1.5] pu)"
+ },
+ "reproduction_gate": "Before any count is computed, per-scenario vm_mae_unmeas recomputed from the SAVED per-bus predictions (mean over unmeasured buses of |pred - label|) and the vm_mae_unmeas the rerun logs must match the stored values in genco_v_per_scenario.jsonl and interp_per_scenario.jsonl for (grid, config in f40_s0 and f20_s0, method, scenario). Interpolators: expected max abs diff <= 1e-9 pu. GENCO: expected <= 1e-5 pu (GPU float32, different device state allowed). If either fails, no count is reported until the cause is found; any diff and its cause are stated in the report.",
+ "scored_buses": {
+  "primary": "ALL unmeasured buses (PQ, PV and REF), i.e. exactly the set the published vm_mae_unmeas averages over. In this task Vm is masked at every unmeasured bus regardless of type, so PV and REF |V| at unmeasured buses are predicted, not given. Measured buses are excluded because |V| is an input there.",
+  "secondary_pq_only": "unmeasured PQ buses only (the earlier operational-consequence attempt scored PQ only because in the PF task PV/REF |V| are inputs). Reported next to the primary, same definitions otherwise.",
+  "collapsed_scenarios": "A scenario is 'collapsed-label' if any label |V| < 0.5 pu (the post's definition). PRIMARY counts drop collapsed-label scenarios (their limits are meaningless against a non-physical label). The all-scenarios count, collapsed included, is reported as a sensitivity row. The set of scored scenarios is the same for every method."
+ },
+ "limits": "each bus's own min_vm_pu / max_vm_pu from the scenario's bus_data row (constant across scenarios; asserted). The Vm_min/Vm_max columns of other files are not used. No band such as 0.95-1.05 is used.",
+ "violation_definition": "for tolerance tau in {0, 0.005} pu: a value x (label or prediction) at bus i is a violation iff x < min_vm_pu_i - tau or x > max_vm_pu_i + tau. Strict inequalities. The same tau is applied to label and prediction (so tau=0.005 asks about violations beyond the limit by more than 0.005 pu). Tau is not tuned and no other tau is reported as headline.",
+ "counts_per_method": {
+  "true_violations": "unmeasured scored buses whose LABEL is a violation (same for all methods)",
+  "caught": "label violation and prediction violation (true positive)",
+  "missed": "label violation and prediction not a violation (false negative)",
+  "false_alarms": "label not a violation and prediction a violation (false positive)",
+  "also_reported": "predicted_violations = caught + false_alarms; catch_rate = caught/true_violations; false_alarm_rate = false_alarms / (scored buses with label not a violation); precision = caught/predicted_violations; false_alarms_per_catch. Undefined ratios (zero denominators) are reported as NaN, never imputed."
+ },
+ "pooling": "Headline = micro-pooled over the 15 grids (sums of the counts above over all scored unmeasured buses of all scenarios). Also reported: per-grid counts and rates, and the per-grid median of catch_rate and of false_alarm_rate over the grids that have at least one label violation (for catch_rate) or at least one scored bus (for false_alarm_rate). Micro-pooling is dominated by large grids and by grids with many near-limit labels; the per-grid table is there to show this.",
+ "comparators": {
+  "G": "released GENCO",
+  "I1..I5": "each interpolator separately",
+  "best_interp": "per grid and per config, the interpolator among I1..I5 with the smallest median vm_mae_unmeas over that grid's test scenarios at that config (the post's best-of-five rule, selection by the published MAE only, never by any violation count), counted in place of the five",
+  "no_other_comparator": "DC / flat start, WLS and fd2 are out of scope (WLS per-bus output is a separate question; DC |V| is flat 1.0 pu by construction)"
+ },
+ "headline_table_to_report": "GENCO vs best_interp at f40_s0 and f20_s0, tau 0 and 0.005, primary scored set, micro-pooled: true violations, caught, missed, false alarms, catch_rate, false_alarm_rate. Tolerance sensitivity (tau 0 vs 0.005) reported for every method.",
+ "sentence_this_would_replace": "We did not save per-bus predictions, so we cannot say how many violations they miss or falsely flag.",
+ "what_the_counts_do_not_mean": "The labels are load-perturbed solved cases of PGLib grids (not operating states, not contingency states). PGLib vmin/vmax are OPF limits and many label values sit at or near them, so small |V| errors flip a bus across a limit. This is a classification diagnostic of |V| estimates against those limits, not a demonstration of operating-state screening, and says nothing about angles or flows. One checkpoint, seed-0 masks only, unaudited.",
+ "hardware": "GENCO on one local GPU once free; interpolators CPU single thread nice 15; $0; no OSC.",
+ "status": "UNAUDITED"
+}

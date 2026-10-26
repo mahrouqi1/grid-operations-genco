@@ -1,0 +1,22 @@
+{
+ "collapsed|newton": {
+  "n": 51,
+  "not_converged": 35,
+  "physical_root": 15,
+  "collapsed": 1
+ },
+ "collapsed|trust_region_default": {
+  "n": 51,
+  "equals_label": 51,
+  "collapsed": 51
+ },
+ "healthy|newton": {
+  "n": 9,
+  "not_converged": 5,
+  "equals_label": 4
+ },
+ "healthy|trust_region_default": {
+  "n": 9,
+  "equals_label": 9
+ }
+}

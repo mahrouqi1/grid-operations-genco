@@ -1,0 +1,26 @@
+[
+ {
+  "name": "carved_case3012wp_k_c30",
+  "parent": "case3012wp_k",
+  "n_bus": 154,
+  "n_branch": 169,
+  "n_gen": 16,
+  "n_cut_branches": 80,
+  "root_bus_id": 2806,
+  "target": 154,
+  "net_load_mw": 1447.2229236094533,
+  "gen_pmax_mw": 1760.1799999999998,
+  "neg_pd_buses": 11,
+  "min_pd_mw": -506.9029673093603,
+  "tie_mw": 3675.9,
+  "internal_scale_mw": 1513.1,
+  "max_jaccard_vs_hosted_train": 0.011,
+  "closest_hosted": "subnet_case4837_goc_idx_37",
+  "tries": 195,
+  "parent_load_scale": 1.0,
+  "parent_damped_newton": false,
+  "parent_shipped_dispatch": false,
+  "tie_max_rule": 4.0,
+  "tier": "d"
+ }
+]

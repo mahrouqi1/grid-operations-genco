@@ -1,0 +1,57 @@
+{
+ "status": "FROZEN 2026-10-21 (written before any corrector or classical comparator was scored on a test split; the only things looked at before this were the conversion/split/prior-table plumbing, with no model output). UNAUDITED.",
+ "question": "On LARGE grids, does a GENCO learned corrector applied on top of fd2 (DC + two fast-decoupled iterations) beat fd_k, for the cheapest k whose wall time is >= the corrector's, on branch-angle error? Motivation: on case1354 the corrector was 42-45% better than fd2 on dVa but never beat fd3/fd4 (results/2026-10-10-corrector-above-162). Hypothesis: fd iterations get more expensive with grid size while batched GPU inference stays nearly flat, so a crossover may exist at a few thousand buses. Prior from the existing timing table (results/2026-10-10-timing-table): one fd iteration costs only ~0.4 ms at 1,354 buses and ~2.5 ms at 10,000 buses against 28 ms per scenario for batched GENCO end-to-end at 10,000, so the expected outcome is NO crossover (the pipeline costs as much as ~12 extra fd iterations, and fd converges geometrically). Reported either way.",
+ "reuse": "scripts/scale.py is results/2026-10-10-corrector-above-162/scripts/corr3.py with ONLY the settings/paths/split-source/batch-size lines changed (diff in report); plugins genco_challenge.corr3_plugins unchanged; scoring = results/2026-10-09-genco-on-fd2/scripts/common.py (score, boot_ratio); timing = results/2026-10-10-timing-table/scripts (tcommon, t_classical, t_genco) reused for assembly/DC/fd/convert/forward.",
+ "corrector": {
+  "definition": "as protocol_v3.json 'unchanged_from_v2': input = fd2 |V| and angle written into the masked entries (FEWSHOT_PRIOR_DIR), correction mode (bus head ADDED to fd2), zeroed last bus-head Linear, frozen trunk (trainable: model.mlp_bus, model.mlp_gen, model.input_proj), slack |V| known, FEWSHOT_INPUT_NORM=1, FEWSHOT_FIX_SANITY=1, pretrained init (released GENCO pretraining checkpoint), true AC labels, early stopping unreachable (patience = epochs + 10), checkpoint and monitor = labeled validation branch dVa (FEWSHOT_VAL_DVA), ReduceLROnPlateau as in the recipe (patience 5, decay 0.7), physics (LayeredWeightedPhysics) + masked label MSE with weights [wp, 1-wp], corrector state = raw model output.",
+  "variant": "p0.1_lr0.0005 (wp = 0.1, lr = 5e-4): the variant chosen on case1354 validation in corrector-above-162 (selection.json). NOT re-selected here (no tuning on these grids).",
+  "warmup": "none beyond the recipe: no separate 100-step warm-up arm; the zeroed head makes the start exactly fd2",
+  "n_train": "100 (PRIMARY, all three grids, 250 epochs, as the earlier n = 100 runs); 1000 (SECONDARY, 120 epochs as the earlier 'all' setting) only if time remains, labelled as such, on case2869pegase first",
+  "draws": "ONE draw (draw 0) per grid and n (the earlier study had 3 draws at n = 100); the bootstrap CI is over test scenarios only, so draw-to-draw variability is NOT in the interval. Reported as a limitation.",
+  "freezing": "as above",
+  "batch_size": {"case2869pegase": 24, "case6470rte": 12, "case9241pegase": 8, "rule": "the case1354 runs used 32 (about 5 GB on the GPU); batch 32 of these larger graphs does not fit one 24 GB RTX 3090, so the batch is scaled down to keep memory under about 10 GB (about 43,000 / n_bus rounded, bounded for memory). Optimizer steps per epoch therefore rise (13 at 9,241 buses vs 4 at 1,354). Applied identically to every run on that grid. May be lowered on a CUDA OOM before any test scoring; any change goes to an addendum."},
+  "eval_batch_size": {"case2869pegase": 8, "case6470rte": 4, "case9241pegase": 2, "note": "predictions do not depend on the eval batch size"}
+ },
+ "data": {
+  "source": "experiments/2026-10-18-genladder/<case>.npz verified ladder labels (two-start oracle; load-only perturbations), converted by genco_challenge.ladder_to_datakit (n = 1,320 per grid, seed 0; all kept, max residual < 1e-9 pu) into data/external/genco-corrector-scale/conv/<case>, then split by build_trees.py with a fixed permutation (numpy default_rng(0)): 1,000 train-pool, 100 validation, 220 test (held out, never used for training or checkpoint selection). Ladder points are independent random load draws (load_scenario_idx unique per scenario), so a scenario-level split does not leak a load profile.",
+  "grids": ["case2869pegase (PEGASE, 2,869 buses)", "case9241pegase (PEGASE, 9,241 buses)", "case6470rte (RTE, 6,470 buses)"],
+  "optional": "case2848rte only if time remains, as a fourth, labelled grid; it does not enter the 2-of-3 test",
+  "family_note": "the pretrained GENCO has seen none of these grids' families (PEGASE, RTE), but the corrector is TRAINED on 100 labelled points of the target grid, so this is a per-grid few-shot corrector (as in corrector-above-162), not zero-shot.",
+  "scored_scenarios": "the scenarios graphkit evaluate scores (eval config case118_eval.yaml: test_ratio 0.99 over unique load_scenario_idx, so about 99% of the 220); classical comparators are scored on exactly the same scenario set. Require >= 200 scored per grid."
+ },
+ "comparators": {
+  "list": "dc, fd2, fd3, fd4, fd5, and fd_k for every k up to 30 (all from the same DC start, XB fast-decoupled steps sc.fdxb_step, a step that returns a non-finite state is skipped as in corr3.classical)",
+  "why_up_to_30": "the success test needs the CHEAPEST fd_k whose wall time is >= the corrector's; on the existing timing table that k is around 12 or more, so fd2..fd5 alone would not contain it",
+  "states": "fd_k state = |v|, unwrapped angle of the k-th XB iterate; same scoring code (common.score) as the corrector"
+ },
+ "metrics": {
+  "primary": "branch dVa MAE (degrees, wrapped branch angle-difference error against the verified label, ratio of sums over scored scenarios)",
+  "also_reported": "|V| MAE (pu), slack-referenced Va MAE, active and reactive AC residual from our own Ybus/Sbus (MW / MVAr per bus), per method per grid, mean over scored scenarios",
+  "ratio_and_ci": "corrector/comparator dVa ratio with a paired scenario-level bootstrap, 2,000 resamples, seed 1, 95% percentile interval (common.boot_ratio)"
+ },
+ "timing": {
+  "scenarios": "the first 64 distinct scored test scenarios",
+  "unit": "per-scenario wall time, in ms",
+  "fd_k": "CPU path of the timing table (t_classical): assembly (lp2.input_problem: Ybus, Sbus, B', B'') + own DC solve + k fast-decoupled iterations with LU factorisations included (LU rebuilt for every scenario, cached across iterations); cumulative time recorded after every iteration so one pass gives all k. Mean over the 64 scenarios per repeat.",
+  "corrector": "(assembly + DC + two fd iterations, CPU, as above) + (GENCO end to end at BATCH 64 on the GPU: tables -> graph build -> normalise+mask -> collate -> H2D -> forward -> D2H, divided by 64, as t_genco kind e2e) + the add (fd2 state + correction). Forward cost does not depend on the weights, so the released pretrained checkpoint is timed. Also reported as a LOWER BOUND on corrector time: forward only on resident data, batch 64 (excluding graph conversion), and the success test is ALSO evaluated against that generous time, labelled as such.",
+  "batch": "64; if 64 graphs of the grid do not fit the GPU, the largest power of two that does, stated in the report and applied to the corrector only",
+  "repeats": "5 full repeats after one untimed warm-up pass; the reported time is the median over repeats (min..max shown); the test requires >= 3",
+  "hardware": "CUDA_VISIBLE_DEVICES=1 (RTX 3090), CPU work pinned with taskset -c 16-19 and 1 BLAS thread, torch 4 threads; nvidia-smi and uptime recorded before and after every timing block (GPUs and CPU are shared, so the load average and GPU utilisation at timing are part of the result)",
+  "caveat": "the corrector is timed with its graph conversion on the CPU in Python (about 10-16 ms per scenario in the table), the dominant cost; a fused or GPU-resident conversion would be cheaper, which is why the forward-only lower bound is also tested."
+ },
+ "success_test": {
+  "primary": "On >= 2 of the 3 grids (n = 100 corrector), the corrector's branch dVa is lower than the dVa of the cheapest fd_k (k <= 30) whose measured wall time is >= the corrector's wall time (time = full corrector pipeline above), with the upper end of the 95% scenario-bootstrap CI of the corrector/fd_k dVa ratio below 1. If no fd_k up to 30 is as expensive as the corrector, the comparator is fd30 (conservative for the corrector).",
+  "stricter_secondary": "the corrector beats EVERY fd_k (k <= 30) with time >= its own, each with CI upper < 1; reported alongside, since fd_k need not be monotone in k.",
+  "time_variants_reported": ["full corrector pipeline (primary)", "forward-only lower bound on corrector time (labelled generous)"],
+  "also_reported": "corrector vs fd2, fd3, fd4, fd5 ratios with CIs; the k whose time matches the corrector's; wall-time ratio corrector / fd2",
+  "n_1000": "if n = 1000 runs complete, the same test is reported for them as a separate, labelled result; it does not rescue or replace the n = 100 verdict.",
+  "report_either_way": true
+ },
+ "known_limitations_declared_before_results": [
+  "one draw per grid/n; scenario-level CI only",
+  "batch size per optimisation step differs from the case1354 study (memory)",
+  "timing is on a shared box; fd runs on CPU single-process, corrector conversion in unfused Python",
+  "labels come from the ladder oracle (load perturbations only, base-case dispatch), not datakit's generator; the corrector sees the same input/labels interface as the earlier study",
+  "ladder PGLib-style trees keep pandapower branch modelling (converter 239d914); the RTE and PEGASE ladder cases are not PGLib files (sgens folded into load for non-PGLib cases)"
+ ]
+}

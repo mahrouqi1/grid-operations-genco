@@ -1,0 +1,1008 @@
+{
+ "corrected-pretraining": {
+  "bytes": 2149548023,
+  "files": 248,
+  "inputs": "the authors' released GENCO pf pretraining subnets (data/external/genco-pf-pretraining)",
+  "per_file": {
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=0/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 23215837,
+    "sha256": "f6cd8e57c85e4913babcb5f396644f89b297af8b80e15f3009d77684e6a29711"
+   },
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=10/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 23238030,
+    "sha256": "267a324b9f7dd6850135841e898ee3096d825f4b6236980d1e3c5584255e3f58"
+   },
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=19/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 23224112,
+    "sha256": "4d7112bd52ff04a5b1edd879a9784224149ba8505b6aee32062c2ebdb636db8a"
+   },
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=29/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 23264015,
+    "sha256": "2bd5fc3be7f3524db239a3638ad08e1d7280959b3a7dd4c1683dfba650236fc1"
+   },
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=38/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 23224244,
+    "sha256": "d974f7d58f3006398637c7a1cbc1c8bad329292b098b4a2879719123ea609846"
+   },
+   "subnet_case10480_goc_idx_26/raw/branch_data.parquet/scenario_partition=48/af388c0b1ba14651aa6fcd2fb3242156-0.parquet": {
+    "bytes": 18830935,
+    "sha256": "7ef9f429851994badd67f6607762caf2762e0459776e44b21bda49f0342b842d"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=0/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 5820268,
+    "sha256": "c717239c086068da44a5363b4b0171ae75a48259dc28320cac19c56a88e45cf7"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=10/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 5819980,
+    "sha256": "76fc0cf9e932fed20c371f2bbff24642d0d4c675638a1482b9e4956b88de2df7"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=19/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 5818335,
+    "sha256": "504c96de9bc7b48f77026ed0c3c4eb825b6abc9b7ee80bd52c743b15e2fbe87a"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=29/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 5805899,
+    "sha256": "f3c55675783b46912db6850bcb6ca772cab7494bbab9ff6cba804c01a85fe1be"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=38/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 5818278,
+    "sha256": "2688c8871202e60ca29e0bdee2d23dc5bc51f5935cbc2632360537e05f0ed9e1"
+   },
+   "subnet_case10480_goc_idx_26/raw/bus_data.parquet/scenario_partition=48/06a5d79f77044492a679525b0e24eafa-0.parquet": {
+    "bytes": 4698992,
+    "sha256": "366175677a84b1f24f5e2dca79a653c6f1ed2244cb5844669744673c1710f8a1"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=0/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 979096,
+    "sha256": "ed41b1746bda6bd5408cf8eda2d55d33c18c75a32676a8991c1b9e90f62b7e32"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=10/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 999032,
+    "sha256": "419eac9ef85608cd9610c5cda272c732c0945f1ea8b0cf6af04987910dd7bde3"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=19/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 1001717,
+    "sha256": "b3ae84c92941d3208dd933ee5b1d7305e0ec1b133d460444e0cb28c5f2badc3f"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=29/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 991939,
+    "sha256": "15e0985c1626242f04a7a939dc6b3f524ced0b31ed861d3235ba209050af7a6a"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=38/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 991970,
+    "sha256": "d954cdaf83de9b18f480d302aa44b44ba120fff703ba9bcfd3b5e6c9c919e913"
+   },
+   "subnet_case10480_goc_idx_26/raw/gen_data.parquet/scenario_partition=48/55f494f364234ff08be87f1878cbc58f-0.parquet": {
+    "bytes": 794257,
+    "sha256": "8314da0b19f9dbbc99c6b33cac99c516238c7ebefb18d5b67e1df52bbaec6faa"
+   },
+   "subnet_case10480_goc_idx_26/raw/relabeled.csv": {
+    "bytes": 1079,
+    "sha256": "80f66f27d6c4cff29333da644d3e2aee4d6b5f6a200f666588406077628680ba"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=0/5bb5fc56f7fc4660bc306e15dffd2d70-0.parquet": {
+    "bytes": 5436749,
+    "sha256": "4dfc597d878126a6d394ea0530d517c7d1585b5826386efd14e22ebd1a1b6aad"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=10/40ceefe5303442e39f59c658acfe4c80-0.parquet": {
+    "bytes": 5445265,
+    "sha256": "047a72ae6571701f16f32e07a2799ccf41e2cd893ca01f798f4d327a6b6ee482"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=19/12651be341694243a31c36820272e1d1-0.parquet": {
+    "bytes": 1295083,
+    "sha256": "723c3ac03fcb759360432571b66aba80dcc8a9691a45e8c05b3561ed862720db"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=19/40ceefe5303442e39f59c658acfe4c80-0.parquet": {
+    "bytes": 4143904,
+    "sha256": "66a42e0b1eb39cbcd63b4bb5d17859b0f141db8983ffc0cbbaddb9851bdabd8e"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=29/12651be341694243a31c36820272e1d1-0.parquet": {
+    "bytes": 901498,
+    "sha256": "d1038c6aebfe7195347b59377b1b9e3197d966966681d05896d6efb0a31a3b92"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=29/5674b1a15254468c9164ec05a9cc8d46-0.parquet": {
+    "bytes": 4594965,
+    "sha256": "67fb7a1fcd3c01c137c74ecd83bd44e48b1d765526b8ea73ca1bc4f754ac4870"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=38/5674b1a15254468c9164ec05a9cc8d46-0.parquet": {
+    "bytes": 5220111,
+    "sha256": "a3ccbc286dd0cb6270ac588ba0ebbba06ebbc1b73ae1974366cf190ff7a66ac9"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=38/ff31978989214b2aa132bea2e9189a41-0.parquet": {
+    "bytes": 284635,
+    "sha256": "7c57fe3434ba10a2cdfb87e06f5c4ebccf82560b1bea10ad2306cc826dc84e2a"
+   },
+   "subnet_case10480_goc_idx_26/raw/y_bus_data.parquet/scenario_partition=48/ff31978989214b2aa132bea2e9189a41-0.parquet": {
+    "bytes": 4415140,
+    "sha256": "76228b61549a606e0ea49799bd2b0dc955a28b98f23318256c5c3ff43e0c2ffa"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=0/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 16622329,
+    "sha256": "9b14752f7006e63b0fec28700d88ac3ca3fff9a23aa2f2f55785ee145beefbe8"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=10/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 16621373,
+    "sha256": "f61955c7b16ea574397783cb4d6b8aa6c25a0a3eee65b4786a08634ac7a72a3e"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=19/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 16642328,
+    "sha256": "21d5dcaeedcd3b032b2d7b22f61d5d3d30aeb46807b4826e110c6f65620658eb"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=29/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 16616755,
+    "sha256": "1ff202a0982c278aeb87e710ee95c7b8d31142a4fa7f5645652b2c80aefcdbe6"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=38/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 16629573,
+    "sha256": "f8724c70369aae447e9767add348aec583dae65fb9c38af8e55aee2fa39abb40"
+   },
+   "subnet_case10480_goc_idx_40/raw/branch_data.parquet/scenario_partition=48/c0d6f570a9fc41bb8ec32f595934170b-0.parquet": {
+    "bytes": 5004311,
+    "sha256": "1c9964e85bf44d7cbe9372f31de5245ee5bef3ae4a1bdb5916a3388e539a1a67"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=0/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 3706770,
+    "sha256": "5335b8e87db79b7ef71deb6a7fb0333d940cf69878b952382814575de44a7ce0"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=10/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 3710114,
+    "sha256": "07175db1a24b3d02cd73f0bd88d4ec115e01dc122c0d4fbd303cb45c2aa495cd"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=19/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 3709725,
+    "sha256": "ef733e80fe6d4f7277bb5edd772ff1c76c4075e079b95dfe695fca207d3a20e0"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=29/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 3700176,
+    "sha256": "f23cdd4feb9089353828f21aac2c55cf53f11ce5366ce9e27cc637ba10da4798"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=38/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 3711862,
+    "sha256": "e39a9d495aad2bce7c7b6c6ca23cb7cd1eb7bb2a79a7f86c7a527ebc33d00600"
+   },
+   "subnet_case10480_goc_idx_40/raw/bus_data.parquet/scenario_partition=48/5374e890364942fcad48c771283b5542-0.parquet": {
+    "bytes": 1111791,
+    "sha256": "845063fc16a1d629a2f54f5f8ec7e1b406f3f5ddef82fa533ccdfd1758186af3"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=0/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 497784,
+    "sha256": "156c15dbd7191286bcfb0e712cefe24167770dd41ac66000eaaac9a1b825548a"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=10/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 501779,
+    "sha256": "e52d92f43eba50b7cbce452f1f5b13235c43e2da1ba5a98fadb8ca56f386034e"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=19/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 501510,
+    "sha256": "cf89b3be67cdb2716950787f2d8f3b05b0ef58153e2169be2feac17bee585b84"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=29/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 498539,
+    "sha256": "436fa284bd1de1da9ec29287ec8fc1bbfbb8ceb75f1db8a74c24b5b8d9c096df"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=38/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 502450,
+    "sha256": "fdee8d8fb86338abb3ab184be60ac129ef63dd2e615ea12aca48ac5fcf3d8db2"
+   },
+   "subnet_case10480_goc_idx_40/raw/gen_data.parquet/scenario_partition=48/f7300857f0134a25ba4de7a9104601aa-0.parquet": {
+    "bytes": 158997,
+    "sha256": "6b52ece2c0eb768258453311888a1f313831c0e13f35d00809b97aaec5a4f292"
+   },
+   "subnet_case10480_goc_idx_40/raw/relabeled.csv": {
+    "bytes": 2675,
+    "sha256": "435faefc5fd0ee7976a22001c7fe454e3e85d3eb97beecffc6499863bf0c9bb2"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=0/1a58ad405b694d6ca65dd89532536d15-0.parquet": {
+    "bytes": 3936365,
+    "sha256": "10c8d4b0d21db9e66217f5b2aeff9372c5121635194da97b8e64a5a4008b6d4b"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=10/d9e812cc2c424df086190ac0ef6b15c8-0.parquet": {
+    "bytes": 3895377,
+    "sha256": "559048d6c5ecd31790bbdaa7838770320a3bac70ce3d2e5775114796d8180675"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=19/4f470bdc1f9a4b298d953e8d1b802090-0.parquet": {
+    "bytes": 819451,
+    "sha256": "f9eed75933402cab3cbd5c878960cd7602dedbb96a18641a0ab40d61f871a30b"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=19/d9e812cc2c424df086190ac0ef6b15c8-0.parquet": {
+    "bytes": 3112131,
+    "sha256": "64757d69aa67579fb97e80d34536e046ff5f589162ee67a194c0398fed04adde"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=29/6e5c3effaf2b4f0e8a43918015b19f32-0.parquet": {
+    "bytes": 3918863,
+    "sha256": "1893a7e7218875224c3148b14865a532da0de87cb7a8e8841b8fcc9596d7504f"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=38/6e5c3effaf2b4f0e8a43918015b19f32-0.parquet": {
+    "bytes": 1703704,
+    "sha256": "b7df56b2fa769ae3f1879581c4da7bbc6fd421352bd1e2179e99eaec58fc2d87"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=38/760bfca9c6034522ad68d05c1f9a31c9-0.parquet": {
+    "bytes": 2208785,
+    "sha256": "42caabd714ece9cc6dd03ae04732cf5c14160b319479509781e383354f3381de"
+   },
+   "subnet_case10480_goc_idx_40/raw/y_bus_data.parquet/scenario_partition=48/760bfca9c6034522ad68d05c1f9a31c9-0.parquet": {
+    "bytes": 1188894,
+    "sha256": "359dfbf11beaae7e5a5f5157c27b6646b56f0f7656a611978a23a17d859862bc"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=0/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 24714166,
+    "sha256": "765e33fd6c2017a63664fd6494323b33adafd0f1be08a7ed4462274f9eeb46c8"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=17/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 24680447,
+    "sha256": "0d17536c125a8c1e4b1adcfa0d4c9ed289d797931523a196d07156880479a4cf"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=26/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 24701361,
+    "sha256": "24d24d390da42cbee3af9a7aabf96c4c711a84d891048377aca9f580cdcc80ab"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=34/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 24713378,
+    "sha256": "6fbcdc96925253f60dec3d73ac8e77454961721f5f516e778270958850f3c5a0"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=43/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 8295142,
+    "sha256": "05a90de76c59d111918a4288801e285b347230aa1c6e052ef6c530c07e24ee03"
+   },
+   "subnet_case19402_goc_idx_47/raw/branch_data.parquet/scenario_partition=9/6070b4897b3c497fad7d80441594bf5a-0.parquet": {
+    "bytes": 24680613,
+    "sha256": "1b368a8b0d0ed57c16a50ebd78963a87541e84c40ed6dfd0f3f9da579b9ef86d"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=0/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 6035298,
+    "sha256": "c8234f86bb8f7f0861ec431aae3b9d848d0a8eb03c319f2dab4abcb6b22fa7b8"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=17/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 6046816,
+    "sha256": "71dcd9e2f6af915a93b114a8556d7ed8fc7b8b8d066e0e2f5e5b614778094a87"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=26/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 6042242,
+    "sha256": "f13da4239170fc22c041f3eec282a40fdf1527c2d7ca39afb0869ded3f4ffb87"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=34/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 6041561,
+    "sha256": "3714b19efd9d6a65fc178bc3cef8fe1c44553cdec3bbb03e9575a417a68c483f"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=43/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 2023416,
+    "sha256": "3d3ec8f6f4c5412d8aa103c28e16cff6d962a50e11ec733d46a3d22790b14890"
+   },
+   "subnet_case19402_goc_idx_47/raw/bus_data.parquet/scenario_partition=9/6ea7468d7734468c97a99a3ddb1ac59d-0.parquet": {
+    "bytes": 6052720,
+    "sha256": "854388a1118843a542b9cc2efa78ef75756aa55780dc45307a9f6f71e41be99b"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=0/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 770984,
+    "sha256": "d66eb74f47ecb83d62c31cce5cc0b5e1221b7677e3d15011a975e39de01ebd55"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=17/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 780467,
+    "sha256": "9497f37936d720419d52167892ea272e7fe492c57c236ac58014604ac38f269e"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=26/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 770222,
+    "sha256": "150a2f02cff7e8b00d6bd3e7653ebaa41e58ab85893468622ca03f899459ea16"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=34/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 787759,
+    "sha256": "20ebb3bded0583ce718b0ca9ec16a182586702806b1acd4be72fc3b611482403"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=43/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 260147,
+    "sha256": "c252d978eef1df8f297d316530510d8b78ecfbca5905e32e851c23f7299a6816"
+   },
+   "subnet_case19402_goc_idx_47/raw/gen_data.parquet/scenario_partition=9/b79052c866814139827249bce0f71b65-0.parquet": {
+    "bytes": 776296,
+    "sha256": "7eba00d80520742a57a01428d257f1ddf745dca6db852658ac35043d328f6206"
+   },
+   "subnet_case19402_goc_idx_47/raw/relabeled.csv": {
+    "bytes": 2904,
+    "sha256": "f263a1d3d1af88fd0272a092872834bb76669161c42f9ff6bdee9583c453b944"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=0/9f3195be221c4791b95742fad9457524-0.parquet": {
+    "bytes": 5960857,
+    "sha256": "6a1f13033a9de3b5948b41b8e172fe84443f3976bb2375efcd8665459f528a03"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=17/8571e27e180a4cd5a7e26f317041f57d-0.parquet": {
+    "bytes": 5969338,
+    "sha256": "a23fc6308b90e44aa8b85f6d893b73ccb770c758db98e95ecd82413929cb0c1d"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=26/c6528859890049eda61867658cefb365-0.parquet": {
+    "bytes": 6011958,
+    "sha256": "e5818c55f18b01ee6114a4f303e3d5b7e960645be88753600ccbfc0b2a484e7a"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=34/c6528859890049eda61867658cefb365-0.parquet": {
+    "bytes": 1567359,
+    "sha256": "01cac38db98e71fe7147f3b8681f7fa543913fefb7714755a743e930a7f4a1d0"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=34/de6b79e7996048fbaf647ba361d9cac0-0.parquet": {
+    "bytes": 4365988,
+    "sha256": "a0a5d4fdd9e2e2f4de8a4110d9fadf2a2ceabd5e09cdfc2ad39c2c36731d8a97"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=43/de6b79e7996048fbaf647ba361d9cac0-0.parquet": {
+    "bytes": 1989010,
+    "sha256": "04e953ba8103f67be6fa6688c7a2be0561cc240bfde361311666b601837f9414"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=9/8571e27e180a4cd5a7e26f317041f57d-0.parquet": {
+    "bytes": 5648813,
+    "sha256": "596a5b16b13799955eb2ca0f27afece5930692e0018370bf312f2864823004a1"
+   },
+   "subnet_case19402_goc_idx_47/raw/y_bus_data.parquet/scenario_partition=9/9f3195be221c4791b95742fad9457524-0.parquet": {
+    "bytes": 301775,
+    "sha256": "46fbb07907f02720b6176d94f39adcaaeb72dccdde63fe589a5560097538424c"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=0/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 38943023,
+    "sha256": "b3d10c36ed9656fdb4f1a30af31b99efedd7d46406b1fed4f9cfe47f39003ffc"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=10/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 39002021,
+    "sha256": "a39dc32945aacfa48879e8cae015f5c046bc00469e5c99120c5046139aa6647a"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=16/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 38995830,
+    "sha256": "c32ea3552f5bdc48874383108cd5d503e35edbdd269ccd0107aa2d365e3e921b"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=21/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 38943724,
+    "sha256": "6d84315b4ee38f68cba4391f8b4ffadae69911ae98e449545067e53caa75a72d"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=26/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 16163020,
+    "sha256": "b9cbad5e7df73d263675e81062e88240dcc01f28067ba90ca79a61d7c1e6bbeb"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/branch_data.parquet/scenario_partition=5/24d8db80d00648c499f24081800911c4-0.parquet": {
+    "bytes": 39014704,
+    "sha256": "fe5eef93bfbd384d62d15e81767676a3e2dbf7ffbdb1ed7c23a6550550309992"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=0/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 8394646,
+    "sha256": "9a8e66f2f064adfaa6123e4aed407c78810e55fe8447a0887fb79619bd77e7fb"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=10/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 8398142,
+    "sha256": "8a8e4e19c56cc95e8390ce4070d342c414d17971a230ef375d1ce2e46cfef8bd"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=16/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 8398027,
+    "sha256": "ddf66895060679e99579169febd5dd57e7b175120e6f7d2efd477c25b49c5d9e"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=21/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 8398387,
+    "sha256": "5514893dd3b5f905be9021df0ed91efe931845698ffd4b459467766ededecf2a"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=26/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 3487566,
+    "sha256": "62b8976206b82bb3eb2b0b9fa35789578020bbaa3155e6e2ddcc1d2dbfb617d0"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/bus_data.parquet/scenario_partition=5/f808a81569d64d2199b634cc598d63c6-0.parquet": {
+    "bytes": 8397295,
+    "sha256": "1da648175874c0c8fa13b1e225de499d79a3835cba88278c7dc7a3a596d95edc"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=0/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 1509738,
+    "sha256": "8b87927b307d1a36faa66fa948f384411b58b6af0718b10b4386438c73b3190b"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=10/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 1484569,
+    "sha256": "1bcc4493e222a60d9081e399b926658b89293baea3710fce7eb8738b0c6f8d98"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=16/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 1526315,
+    "sha256": "c670015bc89a629bf4f29a8692de9a3b6284c8942cf486dd1d2fe3bb90319052"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=21/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 1491316,
+    "sha256": "80549fd2015fe65ec5c3bdd16793ce76733b63b0688618994d1024c46959071b"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=26/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 654147,
+    "sha256": "476bc09800efa1bd27f1fe695dcc765fb52bcb6c944263d2ecf73165fe87b46b"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/gen_data.parquet/scenario_partition=5/11cc0f4ef12b4c5bbad2372a3b160132-0.parquet": {
+    "bytes": 1487894,
+    "sha256": "9c2ced1e04f075cf7203f45b4f706a572dc479af34d07d9acb05e0eda91be732"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/relabeled.csv": {
+    "bytes": 77530,
+    "sha256": "96958a85086da5f1150e9feec59bff47e13ae7dcfe9aae6e531e7f231ec88eae"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=0/63be6a00c52d435a92eddeb725d7826d-0.parquet": {
+    "bytes": 8788804,
+    "sha256": "01d85acf831361b6ba5fc0fd3ab79ede8e8c05deec949f3e335ee59366e7776c"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=10/bb2521c5ff924cf7bf980f777707fc84-0.parquet": {
+    "bytes": 8877596,
+    "sha256": "88f87ccd373c84887cdcd7e503b9d802eed977fd74e9c936cb6c88f968e87467"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=16/0c91cbbfd93b46f6a1f134ab25c2754c-0.parquet": {
+    "bytes": 8839263,
+    "sha256": "ab03bad5a281fc17fee8d22a95887f67d3719f63daca8c916b24fcc56a1a8a27"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=21/be1f08bff354479fac42909357437ccb-0.parquet": {
+    "bytes": 8822656,
+    "sha256": "bcd33d480507aea9f17dfa5d5d77c4a1e542d6e79bd650a1fdee640d63f606b8"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=26/be1f08bff354479fac42909357437ccb-0.parquet": {
+    "bytes": 3682966,
+    "sha256": "43f1f9c2ccab16dda3736182e95b631196f1b295ac27eab76e7577664bcd2ed1"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=5/63be6a00c52d435a92eddeb725d7826d-0.parquet": {
+    "bytes": 7340418,
+    "sha256": "0c9fa320b194b7a024d5382cdb6c559dc4131d6a072e90f79b91b88a827432c2"
+   },
+   "subnet_case20758_epigrids_idx_49/raw/y_bus_data.parquet/scenario_partition=5/bb2521c5ff924cf7bf980f777707fc84-0.parquet": {
+    "bytes": 1482578,
+    "sha256": "db437a09f8806e8a60e5a47953f172518f0f637039a2a17cbb9812346649ef6b"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=0/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 38434153,
+    "sha256": "57148c9e504b279e6ca0d42cf0b92bea9caf042085a9e820059b53a0c177eee4"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=19/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 38463933,
+    "sha256": "6d2df1ecff359c4e87fd608a9aab267a9c858dc4dfc49bb3ce14308f78b05c2f"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=28/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 38451565,
+    "sha256": "340fc1f3e2d9ab3871be89b3721090649c33a429cb4efccbf4ab1e313bdcd347"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=38/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 38429759,
+    "sha256": "c272d02465c034f671c81b17b77d9452168ac4a695be8d297152a199b4fdd7c4"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=47/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 26137273,
+    "sha256": "470835f262aedbf3eebc33b09f227ce9808ef88b6665175260725f3bbf893734"
+   },
+   "subnet_case4837_goc_idx_28/raw/branch_data.parquet/scenario_partition=9/37ba50330369485299e62d81f2fae6a0-0.parquet": {
+    "bytes": 38454044,
+    "sha256": "caad7d23c29cdf2b13432853283e23c7647fd160d7c75fd27772f676ffeecc6d"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=0/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 7939204,
+    "sha256": "eb72c91e23e583faccf7c55f23d2d6efc12cbe7b4524a83c26aed604194e150b"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=19/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 7963582,
+    "sha256": "bbd9a0a55c73d4b4b81a353edb5703a8d574b7ef20b01d412e4f2a1c185293df"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=28/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 7957390,
+    "sha256": "ff778839cab2b3366d2e6e88e265c53078f6e7f7a91af63c9530d9f0dd7c2db6"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=38/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 7952555,
+    "sha256": "74ae6692ac950712638d852427ed8d4604029eb8a6324c799e65c4bda6d1df89"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=47/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 5409020,
+    "sha256": "89812ad557fa41c8adba77478afe310829920fa792cf7282fe53d59bfc59e802"
+   },
+   "subnet_case4837_goc_idx_28/raw/bus_data.parquet/scenario_partition=9/e686d78b148d4a168663b2867174e0fe-0.parquet": {
+    "bytes": 7952150,
+    "sha256": "82a966b61c5b0f99b418021378e786c3bca58b4cbef2c90f79db1de15fc800c7"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=0/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 892177,
+    "sha256": "1369f3b23c02c887e7ec299b7834a9b13b2f1a9c2c0e5a02bb967b687dcbf8ab"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=19/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 902643,
+    "sha256": "11b88ace30116ef53816d2ac4aa7fc7d22b2edae218db91767a5dc46adfd40c8"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=28/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 896724,
+    "sha256": "57f45d92c4b69e14ac2fbdca113be3533f5e6adfe5d2880a9fdb004b308b8ff3"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=38/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 903478,
+    "sha256": "a1e45be0de650910c4024233199c31226649913aacdf8acd15be4b1d09843ba8"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=47/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 602156,
+    "sha256": "4de455a38df73e7e9232668938699f9e9d65f00a781a20f90d3b013d33f9ed94"
+   },
+   "subnet_case4837_goc_idx_28/raw/gen_data.parquet/scenario_partition=9/1c29222ce3ab44a88cfcc03b1bce4bb8-0.parquet": {
+    "bytes": 910363,
+    "sha256": "fd0f791f966e13d9437633a20d4cbe74362b9807648a9504abc594af170bb0f0"
+   },
+   "subnet_case4837_goc_idx_28/raw/relabeled.csv": {
+    "bytes": 4429,
+    "sha256": "7be19a3597f3067e4e59ab0d7925e2041c22b39fc00c9e44ecdce186d17462a3"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=0/61da7145861c42a48cab433522cb1d81-0.parquet": {
+    "bytes": 8749951,
+    "sha256": "08a3ceb91276c39b6169d2f909f8e619d9f3bd7623fe0c8e9491fcf870bf1d84"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=19/0d06fa1941374d5d8fef9902b7ff989b-0.parquet": {
+    "bytes": 1964542,
+    "sha256": "a1e280e794e6914c2c8ffbfc261321d484d49af3970cb29b036afc527d2d0ba4"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=19/b579615cba81487087ab586f2919df37-0.parquet": {
+    "bytes": 6835462,
+    "sha256": "b79755b070f9606e6bb8ab354b23bf8777266f3249826b67b6484c756d16f982"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=28/0d06fa1941374d5d8fef9902b7ff989b-0.parquet": {
+    "bytes": 3737500,
+    "sha256": "2dfba6c403b47d914f8055d432a57037cfe6cdb1dbc8253cd36b72de7dd3dc5c"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=28/b89307c0a50d45439dee19e5ae9d3229-0.parquet": {
+    "bytes": 5061160,
+    "sha256": "d0e85d78b62d6ee30bd373000ffd317daae353fa6ea1c8e55433d0b1eea20cb9"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=38/69ac2dba7adb43bc84aab6ab000f64dd-0.parquet": {
+    "bytes": 8661331,
+    "sha256": "35677e34b71f8792a62769dd4a673e00d2bee4339bf7a41de1c2008e49795a4c"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=47/69ac2dba7adb43bc84aab6ab000f64dd-0.parquet": {
+    "bytes": 5881407,
+    "sha256": "0f34389b9cf93b772f703715db9d11634c32f2b9a6c2eb630d52177ef25bdb2f"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=9/61da7145861c42a48cab433522cb1d81-0.parquet": {
+    "bytes": 7547607,
+    "sha256": "c2d1a5c963b4238d8771452ff73fea1f4ab03f809dd030eb3c9505a42a299475"
+   },
+   "subnet_case4837_goc_idx_28/raw/y_bus_data.parquet/scenario_partition=9/b579615cba81487087ab586f2919df37-0.parquet": {
+    "bytes": 1128212,
+    "sha256": "a3265300e7f1974cbf19f2613f641006775ea566e1326040e038f63503b2cacc"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=0/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 38219499,
+    "sha256": "2b00c80402bd4f1d7339bec9a191564213f1146bf5591b1b4e5780250af7f332"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=18/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 38235727,
+    "sha256": "34a5a7e3d2c6546b359419179e2c452d2d3a92f6466eee31d482246c104f18b2"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=26/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 38212394,
+    "sha256": "a364f4b9c322025d9d701f26d05777aad66df987cf100ee57c32b47aa8444be1"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=35/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 38223473,
+    "sha256": "485a4dd3092ff5b414dfef11ff2653aca920658378b033f6bf9b77a29aa90998"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=44/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 37831671,
+    "sha256": "4888c8d92b9dd5da14010f4808d35de255ce3077f61313aadba2e0dfd73cf810"
+   },
+   "subnet_case4837_goc_idx_35/raw/branch_data.parquet/scenario_partition=9/c9d543377c5d4b7885588da495867ce6-0.parquet": {
+    "bytes": 38237572,
+    "sha256": "1e5312e5294c3606c9674c917dde9eedb5d137e86880d63a3fc69fef5c34d5c4"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=0/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7843620,
+    "sha256": "4a3c53878f68cc4866296ac0c7d8ddd5c94ee70aa1c6bbc2de602a8efce5b7e6"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=18/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7870285,
+    "sha256": "db4149cd680a9e0c3db9a11292ed3d54a073d9e4e0ceb5be9faa55b8449507c4"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=26/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7850237,
+    "sha256": "fd082fcff82a7a24b11dfefad8f7c12d44fc458ceb120a3dbb3e18ffe6fe8c7b"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=35/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7867252,
+    "sha256": "0fa7f5d74aef515b562506df51e7b4094fd3fdaabbb90ef72bf44418533f2867"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=44/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7761507,
+    "sha256": "09b9388ed3ba090d2a6748ff279446ffac933328b819f5be22e13c23b3b02e3b"
+   },
+   "subnet_case4837_goc_idx_35/raw/bus_data.parquet/scenario_partition=9/acf6b7c1a7ca4a1d8a16bc6381d4f5fc-0.parquet": {
+    "bytes": 7868176,
+    "sha256": "55f4f9b2ed0123108d4c80b1ceb3a54780eccd45d33a2c0d36c30cc0e778fe95"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=0/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 861947,
+    "sha256": "49b338ec75f3fde4c3212b163cb5dccc4bb2d09f659aaf13caff4a5339dac76b"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=18/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 881157,
+    "sha256": "4d58febf928c1e8cf84d74e22a6fd52c8bfef33e8614316fa2e4764ac3b8539a"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=26/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 871680,
+    "sha256": "b223c46a7015262e2437c03fb6cd8e89cfd98b8db77d619cfe84f2eb7575ff1c"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=35/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 882330,
+    "sha256": "d4de5ca5ecbc09d8b710d661307519790a8830d7e6179a07e92b05c1cb4f4970"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=44/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 855243,
+    "sha256": "1a2b46aa124e0985666fefd643a8aa298310643775b216b9ad73c344c1524739"
+   },
+   "subnet_case4837_goc_idx_35/raw/gen_data.parquet/scenario_partition=9/5862b09830624e40a0a130b93531b170-0.parquet": {
+    "bytes": 870396,
+    "sha256": "778dca231d3c365ccc8aba14120a49c0d804189121c8c4901e7dbfb9bc365b15"
+   },
+   "subnet_case4837_goc_idx_35/raw/relabeled.csv": {
+    "bytes": 186456,
+    "sha256": "0fea7d05693d791c62e2ce8facb1051606527ae164018119f9512dd94dd3ae72"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=0/c4b66b8e2aab41eb931277f3606e6fe9-0.parquet": {
+    "bytes": 8847172,
+    "sha256": "eddc35a8523cf8e0f4afaeda2fc8f37d7d76e177945e338b7aa9bb86d8a75f0a"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=18/1ac163cd616d41bebc1d7ebceada030a-0.parquet": {
+    "bytes": 2852911,
+    "sha256": "932cd4529fc4d545cf3561bcf11245653374c1873ca69af8f3fd68d860cc1add"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=18/e412b75ffc624aa2a4fd409e5c02be2f-0.parquet": {
+    "bytes": 6035515,
+    "sha256": "2e49a72163237a998246887d061be2b38f706625606ac1e58db98f323d83a995"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=26/1ac163cd616d41bebc1d7ebceada030a-0.parquet": {
+    "bytes": 7745862,
+    "sha256": "0764f7d30916563426da2e6a907929810c8b4e22248e4d2715d1a9cba3d4dcb4"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=26/d77a8c440f154a23b30e7eb77af3f002-0.parquet": {
+    "bytes": 1173614,
+    "sha256": "8fca0431f8e4c14fefbf1e67b33f9d3374cfacfadbb2085b84fb16d8e6296e74"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=35/9884eb35d8b04a06a7152aaefcfd0c7d-0.parquet": {
+    "bytes": 1205047,
+    "sha256": "51dcedc3adabe038e85bde7d2c9aaf1e17a4dc8ac5fced647a5dec766cba3a0b"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=35/d77a8c440f154a23b30e7eb77af3f002-0.parquet": {
+    "bytes": 7688484,
+    "sha256": "96dd2fc26465a48c8ba142ba3139a107b83de4c659237f4d3cc2b65e5575fa0b"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=44/9884eb35d8b04a06a7152aaefcfd0c7d-0.parquet": {
+    "bytes": 8726379,
+    "sha256": "e4d921d3dcf070290d42738386350d9e28f35939d2b7686c92e6b3bc36b8b492"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=9/c4b66b8e2aab41eb931277f3606e6fe9-0.parquet": {
+    "bytes": 2578593,
+    "sha256": "0767132183e9a613f8ce893f3cad78c03caa1fdeba77f794d6aba2c725f0d684"
+   },
+   "subnet_case4837_goc_idx_35/raw/y_bus_data.parquet/scenario_partition=9/e412b75ffc624aa2a4fd409e5c02be2f-0.parquet": {
+    "bytes": 6293600,
+    "sha256": "f4a57924220bb5e73dda316d7883319adb52bbdab1a820676cbb1337f39dca07"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=0/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 12118717,
+    "sha256": "b31808b75008145a5571b9975c30edc771b1643fbf49ea208841c1f2f16f3300"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=10/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 12144913,
+    "sha256": "c50090fbefc224cae0338de1286f04402026f0d94a2ee814c0eb72fa8ba5e840"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=20/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 12117712,
+    "sha256": "0189e5c0f5dd84e0ff0a1178c98413f088b99db14d0e846ed6ad970ea452f950"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=29/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 12126776,
+    "sha256": "e2f6c949f952f787dab646494a5d44b89c7872286b6aab5cbd335a188c7a711c"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=39/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 12146221,
+    "sha256": "0f5f277aaab9f35c24b4399899da138a95d29b0bdda2bb6ee1e27e5122855340"
+   },
+   "subnet_case4837_goc_idx_37/raw/branch_data.parquet/scenario_partition=49/fd082b7b33e34ef39068ef3c02faa581-0.parquet": {
+    "bytes": 7922055,
+    "sha256": "710d124416699442798cd0afad0fbf6be43c683ca427374ada619d5b7633bcd5"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=0/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 2549684,
+    "sha256": "524ffb772ba2d96511862f06f7434d96838a86dc5b48aba7c0105942c088ceba"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=10/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 2542819,
+    "sha256": "b22dbf8dfe541c218483ac46e7f57cf3ebd2682ddce181213c7ae847b9f26a17"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=20/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 2557144,
+    "sha256": "d32857e73fe155bde9de49ed69dcd321f85202bc54e63d83a35cdc81a4e14f73"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=29/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 2549501,
+    "sha256": "aada7d4133b90edd7f8f255dd5bad8b5697ed8bb6ba1081e3264aa10f4bfcb98"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=39/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 2546187,
+    "sha256": "0b01391929e4833464d7b24b603a2ea3bc36af0aa50739d56339a1fb951d76af"
+   },
+   "subnet_case4837_goc_idx_37/raw/bus_data.parquet/scenario_partition=49/b82e2c48f6b7409b9aa885765446c89e-0.parquet": {
+    "bytes": 1666672,
+    "sha256": "0466620600d9643c2f43eeb81485f0f19f023501f160daafc2303543c476848a"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=0/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 261224,
+    "sha256": "18fb68c73a154d7c8589f1652d3b69c5a66c2ed75f79660546aa2715cc4b0183"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=10/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 263448,
+    "sha256": "ac66dd049b92f2ff37836ae3acd5457bf4f28602011771d53cd549860747bd61"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=20/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 264028,
+    "sha256": "a79c6fec9892c69200caed93395b8cdb02169fbc9719c800628d370223ad56e1"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=29/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 263681,
+    "sha256": "77cc5346b2494a0720a520055905547bb4fefd8f7a623eff5b9b6a1da1c52b6f"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=39/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 264854,
+    "sha256": "b441a6933df9d908cfd51bb0fb66f61244f1d7f262a17513d34f168f8e8bc2e2"
+   },
+   "subnet_case4837_goc_idx_37/raw/gen_data.parquet/scenario_partition=49/ed5e0caf4ed44aa19fef34fc6caa3900-0.parquet": {
+    "bytes": 172499,
+    "sha256": "4acbcccec86893dcc09ed3be1a79bcbb4e2bfc2726085ed652eb3722574a1819"
+   },
+   "subnet_case4837_goc_idx_37/raw/relabeled.csv": {
+    "bytes": 1814,
+    "sha256": "c9313f74c5f43aa3931d8b00fbe2574a3e1e018ff5c56de0941919944795bf34"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=0/7aa806bf0b344f35b3147bf7a73efc94-0.parquet": {
+    "bytes": 2792720,
+    "sha256": "853d458aab7653bf4b3259e6db3c4ea8da72f2edfefdeb05e5f9cbfe9b1096b9"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=10/b10b582ecc3f41cca2545151a4074f1e-0.parquet": {
+    "bytes": 2805849,
+    "sha256": "f97f5ddff4a4fafddea7df526d2c20cd432c210637fe45144ac2aee70a77fefd"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=20/e0fc6da978134d2b92ce5ba2ea0d9381-0.parquet": {
+    "bytes": 2804843,
+    "sha256": "1fbcc7efb70b4532bf560ec549a90e9af895223a279ab6e2a3044e6837fd803f"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=29/7de7e447a24a49998fa7c8a2c81a867c-0.parquet": {
+    "bytes": 629886,
+    "sha256": "f95e7f775b12c62e2160cc7bd9335110c1e271c9dc231148c4ee4cf64a811fad"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=29/e0fc6da978134d2b92ce5ba2ea0d9381-0.parquet": {
+    "bytes": 2203344,
+    "sha256": "852e43cecb1ce8eca851920c0576cdabc8b2e0d3031d19bda982763bd3be9075"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=39/0784f0b6aeb54c179eba7581fa201fb1-0.parquet": {
+    "bytes": 825086,
+    "sha256": "74b11ea7957c77cb79e8a8afe8d80675274584d1497ab95259bae2774088a529"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=39/7de7e447a24a49998fa7c8a2c81a867c-0.parquet": {
+    "bytes": 1986001,
+    "sha256": "59ea7d512acf51d388f90ca8fbfea9afd245d0179aba3165ee50b39098cf929c"
+   },
+   "subnet_case4837_goc_idx_37/raw/y_bus_data.parquet/scenario_partition=49/0784f0b6aeb54c179eba7581fa201fb1-0.parquet": {
+    "bytes": 1827987,
+    "sha256": "50f703efe30bf2fedee5b578dc58e3bec67c630f0a1d6d524bedb7c6e3a3565b"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=0/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 38337583,
+    "sha256": "f32aae638d1f4280bc48ea87c864007f221df87ad3534853bfda8f054c349624"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=10/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 38369522,
+    "sha256": "0c8ef97952aeeb1f305acbe75ce6e1db3e080486de3971a844768ca954521772"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=19/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 38363889,
+    "sha256": "19d909ac1ae640591afea87fbf1fab125c38ae2c3f11d54c40616b425e514f06"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=29/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 38385854,
+    "sha256": "d1cc2b69469c44003daaa5fc5ab93a577fe7cfd81760b861dda0b43320b41d18"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=38/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 38360025,
+    "sha256": "8ac82d177ec54082715c36b410d547e79425095be8a785d412e754eafde3ba27"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/branch_data.parquet/scenario_partition=48/e6999f4386d2414fb0e124aebb709d77-0.parquet": {
+    "bytes": 30461946,
+    "sha256": "5d6b8e6018cb9f1014986df2024182160c1802ac5bfdc3830c094b3221e9e6e1"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=0/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 8575407,
+    "sha256": "c2c98623bab33aaa7b1c8d399d45fcb4f298ba500cd70c6bf587dfaf90197654"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=10/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 8602484,
+    "sha256": "075930b6224e1e8903334fbfbcd72025f0256e95ac40738226fd37e2192b0587"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=19/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 8603806,
+    "sha256": "924b65f7aa3b0dc7a93d76b59ef9ead164065e5ec11780acb8e0afbbbaafedfa"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=29/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 8577229,
+    "sha256": "69df89774bf9f92d7a31fac6399ea36ae02f72134d31f807f2ef86550533254b"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=38/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 8593507,
+    "sha256": "4d0676cd5b9285beedae5cd5aa1583702806b536a50870c18e5a984ca8311f06"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/bus_data.parquet/scenario_partition=48/d1165dca5710416f9ec6c9aee0967087-0.parquet": {
+    "bytes": 6798795,
+    "sha256": "7082cf009f5a1d03d00e1c89e743f71dc7ef725a3784c51c61b38dd69190eb58"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=0/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 1129361,
+    "sha256": "485171541bd424a1c13463387ce4c877801d8311eb43a16e2444858d7ed28726"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=10/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 1137791,
+    "sha256": "4db9563610b2d9df26788c5085502a5a8cd380bc772a4ed0f35f26434c27b5dd"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=19/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 1143025,
+    "sha256": "3f93cc1a69b1fc54632b1b43c7712c075eab765969b85c787274da60c0793485"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=29/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 1138880,
+    "sha256": "d27c8bdb13fe583ee3f3d6576264f0efdd067a311f13c66091436f9c52873d31"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=38/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 1140014,
+    "sha256": "7db4d21baf1362ab035ab846cfafe24e3cb012e66925619a95620050b48d6bd5"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/gen_data.parquet/scenario_partition=48/49eaa1bc1a454ef885a5b5386e06e186-0.parquet": {
+    "bytes": 893722,
+    "sha256": "59f2ece94b88f76b6859b981594da3d0b60cd14e5212d4b80da2d2ac0b7664ee"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/relabeled.csv": {
+    "bytes": 7776,
+    "sha256": "53bcccd45b2c54b65cb24a72d76f1f8f9eb908b7ecd1fb16300df40f1b8be5d8"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=0/1749d620909c4e11bd260f47c772b3a4-0.parquet": {
+    "bytes": 9049635,
+    "sha256": "44901d03ce0923536ffab46caa81acb40d21e8f0e639aad9e7b7d7ec926d17ec"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=10/cff6e2ee580c4ab88d13a393f872faa6-0.parquet": {
+    "bytes": 9003392,
+    "sha256": "d9d521fadcefb05a263784e4f7e8f99b1ae7bdfed4abf15aa1275864ad6431be"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=19/044565bac42f452696b2d14e3850785d-0.parquet": {
+    "bytes": 2475687,
+    "sha256": "9491928aa1f06bd7f2d56fbc07e22267b03be2f2ecc0ce46a076719c76973cb5"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=19/cff6e2ee580c4ab88d13a393f872faa6-0.parquet": {
+    "bytes": 6565576,
+    "sha256": "8b61391bc444cdfb20b25395caf9defe0e7c57bb3e4cb7fbdf88af3506da3ad2"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=29/044565bac42f452696b2d14e3850785d-0.parquet": {
+    "bytes": 1882641,
+    "sha256": "656b343bd47ef280e78b603900ad49beaa490c7b4c2ce7510a3599b8be511ef9"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=29/3150ac705eee44d9a2a227f7e9faf628-0.parquet": {
+    "bytes": 7170835,
+    "sha256": "75358f55a509c4101b4be825ff6dfeab7a708c774d31fe6b91843f8322b36ac8"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=38/3150ac705eee44d9a2a227f7e9faf628-0.parquet": {
+    "bytes": 8633191,
+    "sha256": "ea6dc2d0736f73195ed9fb54ce9ec565f5fba26beaf1d5c4aa4fd4864cb559b3"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=38/32943d2005124f0eae3badfeacb977be-0.parquet": {
+    "bytes": 455961,
+    "sha256": "5c6c568eaf2c28d852afed9e2a4a3b0f10b1f33002f5d869b704833e00cf6044"
+   },
+   "subnet_case5658_epigrids_idx_8/raw/y_bus_data.parquet/scenario_partition=48/32943d2005124f0eae3badfeacb977be-0.parquet": {
+    "bytes": 7182219,
+    "sha256": "a60f8e996a07932feed6cd6e8193c91a87c5ca9d4e1323e07e6f2297c5cfcbda"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=0/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 25464728,
+    "sha256": "b18f3c0226694ee6d417551ddffd0214194b99bd2ad56ced71b16de29681ccd8"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=16/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 25462469,
+    "sha256": "18210e44ec41a3f39d1ad9eca8ed706f39d884a01fb54c8294934075ccecbdf9"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=25/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 25460607,
+    "sha256": "c7319de1574ed2dee353765bb7ab425f1cb9d25065b3449a88049e806758cc56"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=33/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 25458498,
+    "sha256": "90db580426e1de3c4621463f82d73930fa3401e29066a06ce54b0875dea2e4db"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=41/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 16791279,
+    "sha256": "40d514214edc2ab02ed42e29da34969ff0bd66179e2009c456695ccb4b86d3a7"
+   },
+   "subnet_case9591_goc_idx_12/raw/branch_data.parquet/scenario_partition=8/bf50b3d7e11c42ec93c275d6aa05ef84-0.parquet": {
+    "bytes": 25452130,
+    "sha256": "d0036df96acda4ca1becfe7b0fbceec5b3bdde0f5bd384cabb3bcbab0876f4dd"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=0/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 5788740,
+    "sha256": "852486c150da005f725b4447114f5140652d7bbcf8430f749889b8925b9fe307"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=16/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 5810776,
+    "sha256": "67cb59b4a53cbc00ad99a15dabac88ca585547b39e0a9cbe21cd43bfc9e6ccf5"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=25/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 5784636,
+    "sha256": "8b4b135782e7e4bc9b16b7b3f0497caa94a1727a97effdb97e3d251cf2a82758"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=33/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 5821878,
+    "sha256": "b68a0c2ff8efc5a30d9922ae2463e2c3c9efe5a6fb80803e476671018c259074"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=41/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 3816313,
+    "sha256": "89d2213e2b8d86a984ea8f2b3f47798b0d27f08fd9692d1a2bcb1ac6151acbe7"
+   },
+   "subnet_case9591_goc_idx_12/raw/bus_data.parquet/scenario_partition=8/b2f0afd9b605424ba6f33b76bd7ed86a-0.parquet": {
+    "bytes": 5791357,
+    "sha256": "178bd25cfb389fb7c78f636dbc786d24cd23538ea6900d5393d818ba910b905c"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=0/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 819445,
+    "sha256": "2949f1e42add67e158b6a44f6209a9509257f238684195c3624a11c2cc17f331"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=16/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 845945,
+    "sha256": "463ec362f433d4a36502559595ff84cd7f906abc0d9408252ab63b3dd3ce950d"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=25/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 824806,
+    "sha256": "896dc83bdd3399b24eceaa58ac01e8ad3a888c2d552ad7f948312af927ce69fd"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=33/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 839923,
+    "sha256": "ea0b5e20fc959dfac3826f409bfc43fee998111ffac2e3634305ef5bedf95031"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=41/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 537098,
+    "sha256": "e7fec032cffa86c30dcb94cbf9f8da99c2590626f5ca27b686560be28589d06e"
+   },
+   "subnet_case9591_goc_idx_12/raw/gen_data.parquet/scenario_partition=8/765d37d69cd04c76a6cb5a2033a48d27-0.parquet": {
+    "bytes": 834753,
+    "sha256": "70e83220afc0d9eb856f941a51580b63719b5ec1127b8befcf64d26a9af8d9f3"
+   },
+   "subnet_case9591_goc_idx_12/raw/relabeled.csv": {
+    "bytes": 20475,
+    "sha256": "3eb4eb88f609bfd06e553b3e57c768482ebd78ab3c7733a80c2b2e65048c626b"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=0/832270dfb3ef4eac9b1aac13d640e398-0.parquet": {
+    "bytes": 5911643,
+    "sha256": "5f9da08d8416da2ca2814a0ece53abddac7d8fe40a463700dc32422374a527f4"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=16/ebc3b3b0e1b14c2ca98794464133b2cf-0.parquet": {
+    "bytes": 5900413,
+    "sha256": "537a4d8f2fd899dd04784a4c069d2f0a2c865b1f3370b733380f7d944475af23"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=25/15b1092acf3a402db1d7054592f00d80-0.parquet": {
+    "bytes": 337659,
+    "sha256": "6c90f653acf349fb455bce595902321c48681de93f9922012244b6badd6e2f96"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=25/2bdd83333d044c73a3b47320ded16483-0.parquet": {
+    "bytes": 5667383,
+    "sha256": "f83979731fc9cd5ec2d04285954b4493388f41e505df9dad0c58e6ceac073a89"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=33/2bdd83333d044c73a3b47320ded16483-0.parquet": {
+    "bytes": 2393777,
+    "sha256": "712d41d0d40df9a07757d7a5cdec3b0103fbb581ef7249df67269fdca3fc7f50"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=33/7d2aa9de8e8c48f58b7860360b07552c-0.parquet": {
+    "bytes": 3577563,
+    "sha256": "d26a5f306c42da62e38002566754961522dfea201c6817d82d37cb4d847e7ae8"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=41/7d2aa9de8e8c48f58b7860360b07552c-0.parquet": {
+    "bytes": 3908832,
+    "sha256": "8cd220bbc1c4e2d319ba2bd95d5942a8a034ba32709311893e834c81bee4e751"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=8/832270dfb3ef4eac9b1aac13d640e398-0.parquet": {
+    "bytes": 2833631,
+    "sha256": "df85ce0053cdee0235a6ee992bb50daa4e2622a21a29d6e28469ef327753db99"
+   },
+   "subnet_case9591_goc_idx_12/raw/y_bus_data.parquet/scenario_partition=8/ebc3b3b0e1b14c2ca98794464133b2cf-0.parquet": {
+    "bytes": 3091291,
+    "sha256": "2f1ebd1d203d6630342fc74d37ed036e31b04475616669ba7c43c18308d1fa8a"
+   }
+  },
+  "regen": [
+   "python tracks/genco-challenge/results/2026-10-10-collapsed-repair-data/repair.py",
+   "python tracks/genco-challenge/results/2026-10-10-collapsed-repair-data/verify.py   # read-back check"
+  ],
+  "root": "data/external/genco-pf-pretraining-corrected",
+  "tree_sha256": "a68878b521934a146a60a6551ef2cc1ff46e4dc8b95d60ee2dc6b335c0e9f970",
+  "what": "GENCO pretraining subgrids with the 1,085 collapsed or sign-flipped scenarios repaired, 9 subgrids"
+ }
+}

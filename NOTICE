@@ -1,0 +1,5 @@
+grid-operations-genco
+Copyright 2026 Mazin Al-Mahrouqi, The Ohio State University
+
+Code: Apache License 2.0 (LICENSE). Result files and figures: CC BY 4.0 (LICENSE-DATA.md).
+Third-party code, data and checkpoints (GridFM GENCO, gridfm-graphkit, gridfm-datakit, PGLib-OPF, PF-Delta) keep their own licences and are not redistributed here.

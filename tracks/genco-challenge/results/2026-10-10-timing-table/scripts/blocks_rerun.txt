@@ -1,0 +1,1 @@
+pm goc10000 --n-fast 12 --no-ipopt

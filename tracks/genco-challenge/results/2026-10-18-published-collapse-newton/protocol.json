@@ -1,0 +1,7 @@
+{"written": "2026-10-18 03:40, before any run",
+ "question": "On GENCO's PUBLISHED pretraining data (9 affected subgrids), does datakit's fast path (compute_ac_pf, default trust-region, flat start, inputs rebuilt from the published raw tables) reproduce the published collapsed label, and does method=:newton reach our physical root?",
+ "sample": "up to 6 collapsed scenarios per subgrid (evenly spaced among relabeled.csv recovered rows with label_reason min_vm_below_0.5 or negative_vm) + 1 healthy control per subgrid",
+ "reproduces_label": "trust_region converged and max |dV| vs published label < 1e-6 pu",
+ "newton_physical": "newton converged and max |dV| vs our corrected root < 1e-4 pu (as probe_newton.jl in 2026-10-10-datakit-collapse-cause)",
+ "report": "counts per subgrid; no scenario dropped; julia errors reported as such",
+ "limits_known_in_advance": "input rebuild assumes the published raw tables hold datakit's exact PF input (true on our ladder grids to 1e-13); the published data's generator version is not known"}

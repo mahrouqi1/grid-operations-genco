@@ -1,0 +1,11 @@
+{
+ "models": {
+  "c_s0_step0": "<REPO>/experiments/genco-transfer/c_s0/steps/state_step0.pt"
+ },
+ "grids": [
+  "pglib_opf_case14_ieee",
+  "pglib_opf_case118_ieee",
+  "pglib_opf_case300_ieee"
+ ],
+ "data_root": null
+}

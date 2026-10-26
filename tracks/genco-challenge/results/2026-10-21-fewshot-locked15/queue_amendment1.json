@@ -1,0 +1,542 @@
+[
+ {
+  "id": "wu100L_pglib_opf_case5_pjm_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case5_pjm",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case14_ieee_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case14_ieee",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case24_ieee_rts_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case24_ieee_rts",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case30_ieee_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case30_ieee",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case39_epri_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case39_epri",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case57_ieee_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case57_ieee",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case73_ieee_rts_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case73_ieee_rts",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case89_pegase_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case89_pegase",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case118_ieee_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case118_ieee",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case162_ieee_dtc_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case162_ieee_dtc",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case240_pserc_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case240_pserc",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case300_ieee_n100_s0",
+  "prio": 0,
+  "grid": "pglib_opf_case300_ieee",
+  "n": 100,
+  "seed": 0,
+  "split_seed": 0,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case5_pjm_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case5_pjm",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case14_ieee_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case14_ieee",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case24_ieee_rts_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case24_ieee_rts",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case30_ieee_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case30_ieee",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case39_epri_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case39_epri",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case57_ieee_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case57_ieee",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case73_ieee_rts_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case73_ieee_rts",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case89_pegase_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case89_pegase",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case118_ieee_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case118_ieee",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case162_ieee_dtc_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case162_ieee_dtc",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case240_pserc_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case240_pserc",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case300_ieee_n100_s1",
+  "prio": 0,
+  "grid": "pglib_opf_case300_ieee",
+  "n": 100,
+  "seed": 1,
+  "split_seed": 1,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case5_pjm_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case5_pjm",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case14_ieee_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case14_ieee",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case24_ieee_rts_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case24_ieee_rts",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case30_ieee_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case30_ieee",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case39_epri_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case39_epri",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case57_ieee_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case57_ieee",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case73_ieee_rts_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case73_ieee_rts",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case89_pegase_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case89_pegase",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case118_ieee_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case118_ieee",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case162_ieee_dtc_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case162_ieee_dtc",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case240_pserc_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case240_pserc",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ },
+ {
+  "id": "wu100L_pglib_opf_case300_ieee_n100_s2",
+  "prio": 0,
+  "grid": "pglib_opf_case300_ieee",
+  "n": 100,
+  "seed": 2,
+  "split_seed": 2,
+  "tag": "wu100L",
+  "labels": "ac",
+  "env": {
+   "FEWSHOT_WARMUP_STEPS": "100"
+  },
+  "epochs": 200,
+  "note": "labelled recipe (AC targets, published normalizer)"
+ }
+]

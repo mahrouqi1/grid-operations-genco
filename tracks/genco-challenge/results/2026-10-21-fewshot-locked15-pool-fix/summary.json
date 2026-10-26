@@ -1,0 +1,14 @@
+{
+ "old (label-free pool, collapsed labels in split)": {
+  "mean_ratio_dc": 1.206202103056763,
+  "draws_below_dc": 0,
+  "mean_ratio_guarded_fd2": 2.592327536870428,
+  "mean_ratio_raw_fd2": 0.36992356650645
+ },
+ "pool-fix (collapse-filtering pool)": {
+  "mean_ratio_dc": 1.2930599755774839,
+  "draws_below_dc": 0,
+  "mean_ratio_guarded_fd2": 2.7789994504401645,
+  "mean_ratio_raw_fd2": 0.3965615353017304
+ }
+}

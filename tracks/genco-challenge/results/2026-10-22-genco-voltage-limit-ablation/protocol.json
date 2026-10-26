@@ -1,0 +1,145 @@
+{
+ "written": "2026-10-22 00:52:57 EDT. Written BEFORE any GENCO inference, ablated or otherwise, was run for this study. Before this file only source files, protocols, verdicts and the leak check were read; nothing was executed except `date`/`uptime`/`ls`.",
+ "status": "UNAUDITED",
+ "question": "The leak check (2026-10-21-genco-voltage-inference/leak-check-2026-10-22.md, F2) found that GENCO sees generator Pmin/Pmax and cost coefficients and the five interpolators do not, and that in ladder-generated data the constant base dispatch sits at Pmax on 71-95% of generators on several grids, so the visible limits nearly state the dispatch. It ablated limits on 4 small locked-15 grids at 20% only. Does the zero-shot GENCO |V| win count at 40% measured depend on that generator-limit / cost information?",
+ "arms": {
+  "A0_released": "GENCO exactly as run in the studies. NOT re-run for the main table: the stored per-scenario results (per_grid/genco_<grid>.jsonl, configs f40_s0..2) are reused. A reproduction check re-runs A0 on CPU for up to 3 pieces in the pilot/after the main sets (3 seeds); max abs per-scenario difference vs stored must be <1e-4 pu or it is reported as a protocol deviation.",
+  "A1_nolimits": "Generator input features Pmin and Pmax (graphkit gen x columns MIN_PG, MAX_PG, after normalisation) replaced, for every in-service generator of each scenario graph, by an uninformative constant: Pmax := median of the Pmax values of that scenario's in-service generators (same value for every generator; limits are constant across scenarios of a grid, so this is a per-grid constant in practice; the normalisation is a linear division by baseMVA so the median is taken after normalisation), Pmin := 0. Costs and everything else untouched. Applied in the mask transform after normalisation and after inactive-generator removal, before ApplyMasking. Pg stays masked as in the studies.",
+  "A2_nocosts": "Generator cost features C0, C1, C2 set to 0 for every generator (log1p(0) = 0 in normalised space, identical to a raw zero). Limits untouched.",
+  "A3_both": "A1 and A2 together.",
+  "notes": "Bus features, branch features, the REF flag, the Qg limits and voltage limits, loads, flags and the baseMVA normaliser (label-fitted, as in the studies) are untouched in all arms. Nothing else about the mask, checkpoint, decoder or inference path differs from the studies."
+ },
+ "known_confounder_preregistered": "Replacing limits by a constant moves the input off the pretraining distribution, so an error increase can reflect distribution shift as well as lost information (the leak check says the same). A follow-up arm A4_shuffle (limits and costs permuted among the generators of each scenario with a seeded permutation, keeping in-distribution values but destroying the generator-specific information) is defined now but is run ONLY IF the threshold below is crossed AND time remains before the deadline; it is optional and not part of the pre-registered verdict.",
+ "sets": {
+  "pieces": {
+   "description": "all 36 carved pieces (datakit-generated), the 33-of-36 headline set; 19 seen-family from -control, 17 unseen-family from -family-vs-size",
+   "study_dirs": [
+    "2026-10-21-genco-voltage-inference-control",
+    "2026-10-21-genco-voltage-inference-family-vs-size"
+   ],
+   "grids": [
+    "carved_case20758_epigrids_c0",
+    "carved_case20758_epigrids_c2",
+    "carved_case30000_goc_c0",
+    "carved_case30000_goc_c1",
+    "carved_case4837_goc_c0",
+    "carved_case4837_goc_c1",
+    "carved_case5658_epigrids_c0",
+    "carved_case5658_epigrids_c3",
+    "carved_case7336_epigrids_c0",
+    "carved_case7336_epigrids_c1",
+    "carved_case19402_goc_c10",
+    "carved_case10480_goc_c12",
+    "carved_case10480_goc_c13",
+    "carved_case4837_goc_c2",
+    "carved_case4837_goc_c3",
+    "carved_case30000_goc_c2",
+    "carved_case30000_goc_c3",
+    "carved_case7336_epigrids_c2",
+    "carved_case7336_epigrids_c4",
+    "carved_case2848_rte_c1",
+    "carved_case2848_rte_c4",
+    "carved_case2848_rte_c20",
+    "carved_case2848_rte_c21",
+    "carved_case2848_rte_c22",
+    "carved_case2869_pegase_c1",
+    "carved_case9241_pegase_c1",
+    "carved_case2869_pegase_c2",
+    "carved_case9241_pegase_c2",
+    "carved_case8387_pegase_c2",
+    "carved_case2383wp_k_c2",
+    "carved_case3375wp_k_c53",
+    "carved_case2383wp_k_c4",
+    "carved_case2383wp_k_c40",
+    "carved_case2383wp_k_c41",
+    "carved_case2383wp_k_c42",
+    "carved_case8387_pegase_c3"
+   ],
+   "n": 36
+  },
+  "seen_whole": {
+   "description": "15 seen-family (GOC/EPIGRIDS) whole grids, ladder-generated",
+   "study_dir": "2026-10-21-genco-voltage-inference-oos",
+   "grids": [
+    "pglib_opf_case500_goc",
+    "pglib_opf_case793_goc",
+    "pglib_opf_case2000_goc",
+    "pglib_opf_case2312_goc",
+    "pglib_opf_case2742_goc",
+    "pglib_opf_case3022_goc",
+    "pglib_opf_case3970_goc",
+    "pglib_opf_case4020_goc",
+    "pglib_opf_case4601_goc",
+    "pglib_opf_case4619_goc",
+    "pglib_opf_case4837_goc",
+    "pglib_opf_case4917_goc",
+    "pglib_opf_case9591_goc",
+    "pglib_opf_case5658_epigrids",
+    "pglib_opf_case7336_epigrids"
+   ],
+   "n": 15
+  },
+  "unseen_whole": {
+   "description": "17 unseen-family whole grids (RTE, PEGASE, Polish, SimBench-HV), ladder-generated; the original study won 8/17",
+   "study_dir": "2026-10-21-genco-voltage-inference-oos",
+   "grids": [
+    "case1888rte",
+    "case2848rte",
+    "case6470rte",
+    "case6495rte",
+    "case6515rte",
+    "case2869pegase",
+    "pglib_opf_case8387_pegase",
+    "case9241pegase",
+    "pglib_opf_case2383wp_k",
+    "pglib_opf_case3012wp_k",
+    "pglib_opf_case3375wp_k",
+    "1-HV-mixed--0-no_sw",
+    "1-HV-mixed--1-no_sw",
+    "1-HV-mixed--2-no_sw",
+    "1-HV-urban--0-no_sw",
+    "1-HV-urban--1-no_sw",
+    "1-HV-urban--2-no_sw"
+   ],
+   "n": 17
+  },
+  "optional_pieces_ladder": {
+   "description": "OPTIONAL fourth set, run only after the three above finish with time to spare: the same 36 pieces regenerated through the ladder generator (-generator-control), the most direct test of the constant-dispatch concern for pieces. Not part of the pre-registered threshold; reported descriptively if run.",
+   "study_dir": "2026-10-21-genco-voltage-inference-generator-control"
+  }
+ },
+ "conditions": "40% measured buses only (config pool f40_s0, f40_s1, f40_s2: three seeded measured-bus masks), noise-free. 20%, 10% and the noisy configurations are NOT run.",
+ "same_as_original": "Same scenarios (test_ids.json of each study), the same measured-bus masks and seeds (V.measured_seeded(si), C.measured_set), the same checkpoint, the same GENCO inference code path (run_genco.run_variant via each study's run_genco_o.py / ocommon.py logic), the same metric (per-scenario unmeasured-bus |V| MAE, vm_mae_unmeas), the same statistic (median over scenarios and the 3 seeds, GENCO divided by the best of the five interpolator medians), and the same win rule (point ratio < 1 and the upper end of the 95% scenario-bootstrap CI of the ratio < 1; 2000 resamples; the best interpolator is re-chosen inside every resample). Interpolator numbers are READ from the stored per_grid/interp_<grid>.jsonl (or interp_per_scenario.jsonl); the interpolators are not recomputed.",
+ "bootstrap_detail": "Resample indices are drawn with np.random.default_rng([7, crc32(grid_name)]) so that every arm (including the recomputed A0) uses the identical resamples for a given grid. This replaces the original shared sequential rng(7), which makes borderline CIs depend on grid order; the recomputed A0 win counts are reported next to the originals (verdict.json of each study) and any difference is disclosed. All arm comparisons use the recomputed A0.",
+ "execution": {
+  "hardware": "CPU only, CUDA_VISIBLE_DEVICES=''; at most 2 concurrent worker processes, OMP_NUM_THREADS=2 MKL_NUM_THREADS=2, nice -n 15.",
+  "order": "pieces (-control then -family-vs-size, smallest first), then seen_whole (ascending bus count), then unseen_whole (ascending bus count). Within a grid the arms run A1, A2, A3 and seeds s0..s2. Per-grid output files are written when a grid finishes; a DONE marker is written per set when every grid of the set has finished.",
+  "pilot": "carved_case4837_goc_c0 (279 buses, 116 scenarios), arms A1/A2/A3 at f40_s0 only, to time it. Its results are kept (they are ordinary f40_s0 rows) and not examined before the main run.",
+  "deadline": "07:30 EDT 2026-10-22. A grid is not started if its projected finish (rate measured on completed grids, seconds per bus-scenario-pass, times buses x scenarios x 3 seeds x 3 arms) falls after the deadline. If the projection for the full required sets exceeds about 5 h of wall time at 2 workers the order above is what decides what is dropped.",
+  "skip_rule": "Whole grids above ~3,000 buses may be skipped if CPU time is prohibitive. Any grid not run is listed by name in verdict.json under 'skipped' with the reason; none is dropped silently. A skipped grid is excluded from the ablated-vs-released comparison for ALL arms (released counts are recomputed on the grids that ran, same grids for every arm)."
+ },
+ "outputs": {
+  "per_case_csvs": [
+   "per_case_pieces.csv",
+   "per_case_seen_whole.csv",
+   "per_case_unseen_whole.csv"
+  ],
+  "other": [
+   "verdict.json",
+   "report.md",
+   "per_grid/genco_<arm>_<grid>.jsonl",
+   "protocol.json",
+   "protocol.sha256",
+   "protocol_ran.json (code hashes, written after the run)"
+  ],
+  "csv_columns": "set, grid, arm, n_scen, buses, genco_median, best_interp, best_interp_median, ratio, ci_lo, ci_hi, win"
+ },
+ "preregistered_reading": {
+  "per_set_quantity": "Delta_arm,set = (wins of A0 on the grids of that set that ran) - (wins of the arm on the same grids). Win = the rule above, recomputed.",
+  "threshold": "THRESHOLD CROSSED if, for ANY of A1, A2, A3: Delta >= 3 on the pieces set (36 pieces), OR Delta >= 3 on the whole grids (seen_whole and unseen_whole pooled, up to 32 grids). Also reported, not part of the trigger: the same per set separately, per set Delta on seen_whole and unseen_whole alone.",
+  "if_crossed": "The positive result depends on generator-limit / cost information the classical comparators lack; the post must say so, giving the A0 and ablated win counts per set and stating the distribution-shift confounder. The optional A4 shuffle arm is then run if time allows to separate information from distribution shift.",
+  "if_not_crossed": "The win counts do not materially depend on the visible generator limits or costs at 40% measured; the leak-check F2 concern is not borne out on this set. This holds only for sets that ran; a set with fewer than half of its grids run is reported as INCONCLUSIVE, not as not-crossed.",
+  "other_reported": "per arm per set: win counts, number of wins lost and gained (win to loss and loss to win), median over grids of the error-ratio shift (ratio_arm / ratio_A0) and of the difference (ratio_arm - ratio_A0), and per-case rows."
+ },
+ "deviations_log": "Any deviation from this file is written into report.md under Deviations with the time it happened."
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "What GENCO does without fine-tuning: infer missing voltages, not solve power flow"
+type: software
+authors:
+  - family-names: "Al-Mahrouqi"
+    given-names: "Mazin"
+    affiliation: "The Ohio State University"
+    email: "mahrouqi.1@osu.edu"
+version: "1.0.0"
+date-released: "2026-10-25"
+license: "Apache-2.0"
+repository-code: "https://github.com/mahrouqi1/grid-operations-genco"
+abstract: "A controlled study of the released GridFM GENCO power-grid foundation model: it tolerates the collapsed power-flow labels in its own pretraining data, infers missing bus voltages without fine-tuning on most grids from its pretraining families, and did not improve under continued pretraining in a pre-registered study. Code, small result files, figure scripts and a one-command reproduction (bash reproduce.sh). Code is Apache-2.0; result files and figures are CC BY 4.0."
+keywords:
+  - power flow
+  - graph foundation model
+  - GENCO
+  - GridFM

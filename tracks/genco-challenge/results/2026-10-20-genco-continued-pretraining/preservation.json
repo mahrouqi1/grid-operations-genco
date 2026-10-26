@@ -1,0 +1,28 @@
+{
+ "final/retrain_fixed": {
+  "n": 15,
+  "median_angle_ratio_to_released": 1.161544929357216,
+  "median_V_ratio_to_released": 1.3467439731296265,
+  "angle_better_than_released": 3
+ },
+ "final/retrain_published": {
+  "n": 15,
+  "median_angle_ratio_to_released": 1.440762029782759,
+  "median_V_ratio_to_released": 2.3073846642714875,
+  "angle_better_than_released": 0
+ },
+ "step500/retrain_fixed": {
+  "n": 15,
+  "median_angle_ratio_to_released": 1.1116963884829423,
+  "median_V_ratio_to_released": 1.3939571964916395,
+  "angle_better_than_released": 6
+ },
+ "step500/retrain_published": {
+  "n": 15,
+  "median_angle_ratio_to_released": 1.1191416436830641,
+  "median_V_ratio_to_released": 1.4704815987679984,
+  "angle_better_than_released": 4
+ },
+ "normal_vm_mae_ratio_fixed_final": 1.4599084257589545,
+ "normal_vm_mae_ratio_published_final": 2.077483468229171
+}

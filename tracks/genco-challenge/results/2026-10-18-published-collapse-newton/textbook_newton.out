@@ -1,0 +1,60 @@
+subnet_case4837_goc_idx_35_s1.m maxit nf=5.80e+11
+subnet_case4837_goc_idx_35_s1833.m maxit nf=8.75e+11
+subnet_case4837_goc_idx_35_s3699.m maxit nf=1.44e+11
+subnet_case4837_goc_idx_35_s5330.m maxit nf=1.54e+11
+subnet_case4837_goc_idx_35_s7163.m maxit nf=1.78e+12
+subnet_case4837_goc_idx_35_s8996.m maxit nf=5.09e+14
+subnet_case4837_goc_idx_35_s0.m maxit nf=8.98e+10
+subnet_case20758_epigrids_idx_49_s23.m maxit nf=5.77e+13
+subnet_case20758_epigrids_idx_49_s150.m conv it=6 minvm=0.900 dVlab=9.8e-01 dVphys=4.2e-09
+subnet_case20758_epigrids_idx_49_s2030.m maxit nf=9.61e+11
+subnet_case20758_epigrids_idx_49_s3231.m conv it=7 minvm=0.944 dVlab=1.0e+00 dVphys=1.6e-12
+subnet_case20758_epigrids_idx_49_s4268.m maxit nf=1.24e+14
+subnet_case20758_epigrids_idx_49_s5282.m maxit nf=2.63e+13
+subnet_case20758_epigrids_idx_49_s0.m maxit nf=7.91e+12
+subnet_case9591_goc_idx_12_s8.m conv it=7 minvm=0.444 dVlab=7.1e-11 dVphys=1.9e+00
+subnet_case9591_goc_idx_12_s1619.m conv it=7 minvm=0.435 dVlab=6.6e-11 dVphys=2.1e+00
+subnet_case9591_goc_idx_12_s1742.m maxit nf=4.25e+09
+subnet_case9591_goc_idx_12_s3367.m maxit nf=1.18e+11
+subnet_case9591_goc_idx_12_s6613.m conv it=7 minvm=0.483 dVlab=1.1e-08 dVphys=2.2e+00
+subnet_case9591_goc_idx_12_s8305.m maxit nf=9.07e+11
+subnet_case9591_goc_idx_12_s0.m conv it=9 minvm=0.586 dVlab=2.0e+00 dVphys=nan
+subnet_case5658_epigrids_idx_8_s50.m conv it=6 minvm=1.007 dVlab=1.1e+00 dVphys=3.6e-11
+subnet_case5658_epigrids_idx_8_s150.m conv it=6 minvm=1.034 dVlab=1.1e+00 dVphys=1.4e-11
+subnet_case5658_epigrids_idx_8_s5864.m conv it=6 minvm=1.035 dVlab=1.1e+00 dVphys=2.0e-13
+subnet_case5658_epigrids_idx_8_s5936.m conv it=7 minvm=1.030 dVlab=1.1e+00 dVphys=6.8e-14
+subnet_case5658_epigrids_idx_8_s9642.m conv it=6 minvm=1.017 dVlab=1.1e+00 dVphys=1.1e-11
+subnet_case5658_epigrids_idx_8_s9752.m conv it=6 minvm=1.017 dVlab=1.1e+00 dVphys=2.1e-13
+subnet_case5658_epigrids_idx_8_s0.m conv it=6 minvm=0.900 dVlab=1.6e-13 dVphys=nan
+subnet_case4837_goc_idx_28_s5.m conv it=6 minvm=0.900 dVlab=8.8e-01 dVphys=1.8e-13
+subnet_case4837_goc_idx_28_s77.m conv it=6 minvm=0.900 dVlab=8.6e-01 dVphys=9.4e-13
+subnet_case4837_goc_idx_28_s1881.m conv it=6 minvm=0.900 dVlab=8.8e-01 dVphys=1.7e-13
+subnet_case4837_goc_idx_28_s1950.m conv it=5 minvm=0.900 dVlab=8.8e-01 dVphys=9.6e-10
+subnet_case4837_goc_idx_28_s3958.m conv it=5 minvm=0.900 dVlab=8.7e-01 dVphys=1.0e-09
+subnet_case4837_goc_idx_28_s7630.m conv it=6 minvm=0.900 dVlab=9.0e-01 dVphys=2.0e-13
+subnet_case4837_goc_idx_28_s0.m conv it=6 minvm=0.900 dVlab=2.8e-13 dVphys=nan
+subnet_case19402_goc_idx_47_s153.m conv it=6 minvm=1.002 dVlab=2.1e+00 dVphys=6.3e-13
+subnet_case19402_goc_idx_47_s184.m conv it=5 minvm=0.927 dVlab=1.1e+00 dVphys=4.7e-09
+subnet_case19402_goc_idx_47_s3475.m conv it=5 minvm=0.970 dVlab=1.1e+00 dVphys=3.9e-09
+subnet_case19402_goc_idx_47_s5268.m conv it=6 minvm=1.000 dVlab=1.1e+00 dVphys=2.5e-13
+subnet_case19402_goc_idx_47_s5386.m conv it=6 minvm=1.018 dVlab=1.1e+00 dVphys=2.3e-13
+subnet_case19402_goc_idx_47_s8660.m conv it=5 minvm=0.967 dVlab=1.1e+00 dVphys=8.9e-10
+subnet_case19402_goc_idx_47_s0.m conv it=5 minvm=0.900 dVlab=2.8e-11 dVphys=nan
+subnet_case10480_goc_idx_40_s2029.m conv it=6 minvm=0.938 dVlab=2.0e+00 dVphys=2.0e+00
+subnet_case10480_goc_idx_40_s5836.m conv it=5 minvm=0.950 dVlab=1.1e+00 dVphys=1.2e-09
+subnet_case10480_goc_idx_40_s5915.m conv it=6 minvm=0.921 dVlab=1.1e+00 dVphys=2.5e-13
+subnet_case10480_goc_idx_40_s5965.m conv it=5 minvm=0.900 dVlab=1.1e+00 dVphys=1.2e-10
+subnet_case10480_goc_idx_40_s5966.m conv it=5 minvm=0.987 dVlab=1.1e+00 dVphys=7.6e-11
+subnet_case10480_goc_idx_40_s9650.m conv it=6 minvm=0.929 dVlab=1.1e+00 dVphys=1.1e-13
+subnet_case10480_goc_idx_40_s0.m conv it=6 minvm=0.972 dVlab=1.8e-13 dVphys=nan
+subnet_case4837_goc_idx_37_s2.m conv it=6 minvm=0.957 dVlab=1.1e+00 dVphys=3.2e-13
+subnet_case4837_goc_idx_37_s29.m conv it=7 minvm=0.838 dVlab=1.1e+00 dVphys=4.2e-10
+subnet_case4837_goc_idx_37_s2187.m conv it=5 minvm=0.951 dVlab=1.1e+00 dVphys=5.7e-11
+subnet_case4837_goc_idx_37_s5839.m conv it=7 minvm=1.003 dVlab=1.1e+00 dVphys=1.3e-13
+subnet_case4837_goc_idx_37_s5893.m conv it=7 minvm=0.972 dVlab=1.1e+00 dVphys=1.7e-13
+subnet_case4837_goc_idx_37_s9891.m conv it=5 minvm=0.954 dVlab=1.1e+00 dVphys=2.5e-10
+subnet_case4837_goc_idx_37_s0.m conv it=5 minvm=0.976 dVlab=2.6e-13 dVphys=nan
+subnet_case10480_goc_idx_26_s44.m maxit nf=2.38e+21
+subnet_case10480_goc_idx_26_s66.m maxit nf=1.01e+16
+subnet_case10480_goc_idx_26_s2136.m maxit nf=7.26e+15
+subnet_case10480_goc_idx_26_s0.m maxit nf=6.88e+17

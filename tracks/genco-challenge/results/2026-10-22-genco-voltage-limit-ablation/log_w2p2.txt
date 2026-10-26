@@ -1,0 +1,38 @@
+[w2p2] seen_whole: cap=3100
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 10.66922378540039 MB
+Total memory usage of gen_data: 0.2833900451660156 MB
+[w2p2] seen_whole pglib_opf_case2742_goc buses=2742 n_scen=100 setup 7s
+[w2p2] pglib_opf_case2742_goc A1 f40_s0 100 scen 285s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A1 f40_s1 100 scen 306s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A1 f40_s2 100 scen 263s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A2 f40_s0 100 scen 277s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A2 f40_s1 100 scen 328s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A2 f40_s2 100 scen 349s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A3 f40_s0 100 scen 349s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A3 f40_s1 100 scen 377s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc A3 f40_s2 100 scen 383s  vm_visible_dev=0.00e+00
+[w2p2] pglib_opf_case2742_goc finished in 2924s
+[w2p2] unseen_whole: cap=3100
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 11.081668853759766 MB
+Total memory usage of gen_data: 0.5759925842285156 MB
+[w2p2] unseen_whole case2848rte buses=2848 n_scen=100 setup 3s
+[w2p2] case2848rte A1 f40_s0 100 scen 371s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A1 f40_s1 100 scen 382s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A1 f40_s2 100 scen 380s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A2 f40_s0 100 scen 391s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A2 f40_s1 100 scen 463s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A2 f40_s2 100 scen 407s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A3 f40_s0 100 scen 379s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A3 f40_s1 100 scen 372s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte A3 f40_s2 100 scen 400s  vm_visible_dev=0.00e+00
+[w2p2] case2848rte finished in 3546s
+[w2p2] unseen_whole pglib_opf_case3012wp_k: projected 1.13 h passes the deadline; not started (remaining larger grids are skipped too)
+[w2p2] seen_whole: cap=None
+[w2p2] seen_whole pglib_opf_case3970_goc: projected 0.77 h passes the deadline; not started (remaining larger grids are skipped too)
+[w2p2] unseen_whole: cap=None
+[w2p2] unseen_whole pglib_opf_case3012wp_k: projected 1.13 h passes the deadline; not started (remaining larger grids are skipped too)
+PASS2 w2 END Thu 22 Oct 2026 06:56:50 AM EDT

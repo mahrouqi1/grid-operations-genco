@@ -1,0 +1,10 @@
+{
+ "models": {
+  "zeroshot": "<REPO>/data/external/genco-pf-transfer/pretraining/best_model_state_dict.pt"
+ },
+ "grids": [
+  "case1888rte",
+  "case2848rte"
+ ],
+ "data_root": "data/external/genco-transfer-val"
+}

@@ -1,0 +1,7 @@
+{
+ "written": "2026-10-18 04:32, after round 1 of audit genco-published-newton (R1-F1), before this run",
+ "reason": "the :newton failures may be PowerModels' analytic-Jacobian path, not Newton itself; the auditor's textbook Newton reached the physical root on 31 of 51",
+ "arm": "compute_ac_pf(method=:newton, finite_differencing=true), same rebuilt inputs, same 60 cases (run_fd.py, probe3.jl -> out_fd.jsonl)",
+ "criteria": "as protocol.json",
+ "deviation": "the finite-difference arm took about 15 minutes per case (1 of 60 done, not converged) and was stopped at 04:49; replaced by the audit's independent textbook Newton (textbook_newton.py, unchanged), run on all 60 rebuilt inputs; its result was already known from the audit round before this run, so this arm is a reproduction of the audit's control, not a blind test"
+}

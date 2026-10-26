@@ -1,0 +1,72 @@
+{
+ "written": "2026-10-21, committed BEFORE any GENCO-vs-interpolator comparison at the new fractions/seeds and before any interpolator run beyond a mechanics smoke (case14 5 scenarios + one case3120 scenario timing; only to check the code runs; case14 interpolator errors were glanced at, GENCO case14 numbers at the new configs do not exist yet).",
+ "disclosure_prior_knowledge": "From candidate 7 (results/2026-10-21-genco-state-inference) the 20%/seed-0 numbers of GENCO are KNOWN, and the unit-weight harmonic interpolation (its 'B5') there beat GENCO on case73, 240, 300, 3120 and was within ~10% on case2736 and case14. I1 below is that same predictor, so the I1 result at 20%/seed 0 is already known; I2-I5 (and every other fraction/seed) have not been seen. The primary test was designed after seeing that, and the 15 grids are the same grids that generated the hypothesis, so it is not an independent confirmation set; the new information is the stronger interpolators, the fractions and the extra seeds.",
+ "added_before_commit": "I5 (graph-kriging GP) was requested by the coordinator before this file was committed; it is part of the pre-registered best-of set, not an amendment.",
+ "question": "Is the released GENCO pretraining checkpoint, zero-shot, a better estimator of |V| at UNMEASURED buses than proper classical interpolators, given loads and |V| measured at a seeded subset of buses and no dispatch?",
+ "grids": [
+  "pglib_opf_case5_pjm",
+  "pglib_opf_case14_ieee",
+  "pglib_opf_case24_ieee_rts",
+  "pglib_opf_case30_ieee",
+  "pglib_opf_case39_epri",
+  "pglib_opf_case57_ieee",
+  "pglib_opf_case73_ieee_rts",
+  "pglib_opf_case89_pegase",
+  "pglib_opf_case118_ieee",
+  "pglib_opf_case162_ieee_dtc",
+  "pglib_opf_case240_pserc",
+  "pglib_opf_case300_ieee",
+  "pglib_opf_case1354_pegase",
+  "pglib_opf_case2736sp_k",
+  "pglib_opf_case3120sp_k"
+ ],
+ "scenarios": "graphkit test split of each grid (../2026-10-21-genco-state-inference/test_ids.json), 2,398 scenarios",
+ "configs": {
+  "f10_s0": "10% of buses, mask seed index 0",
+  "f20_s0": "20%, seed 0 (== candidate 7's mask exactly: numpy default_rng([20261021, n, scenario]))",
+  "f20_s1": "20%, rng seed 20261022",
+  "f20_s2": "20%, rng seed 20261023",
+  "f40_s0": "40%, seed 0",
+  "rule": "k = max(1, round(frac*n)) buses, rng = default_rng([20261021+seed_index, n, scenario_id]).permutation(n)[:k]; the REF angle is visible to GENCO as in #7 (irrelevant to interpolators, which predict |V| only)"
+ },
+ "inputs_to_all_methods": "loads Pd,Qd, bus-type flags, in-service branch graph, Ybus, measured |V|. No dispatch, no labels at unmeasured buses.",
+ "methods": {
+  "G": "released GENCO pretraining checkpoint, no training, OPF decoder, #7's DetMask (Pg, Qg masked; Va masked except REF; Vm visible at the measured set), one pass (run_genco_v.py reuses ../2026-10-21-genco-state-inference/run_genco.py run_variant unchanged, only patching the measured-set function)",
+  "graph": "A1 = symmetric adjacency of in-service branches, unit weight, parallel branches merged. AY = same support, weight |Y_ij| = magnitude of the off-diagonal Ybus entry (symmetrised (|Y_ij|+|Y_ji|)/2).",
+  "I1": "harmonic interpolation on A1: unmeasured x solves L_uu x = -L_um y_m (Dirichlet at measured buses); components with no measured bus get the mean measured |V| (implemented by shifting by the measured mean and adding 1e-9 I)",
+  "I2": "same on AY",
+  "I3": "each unmeasured bus takes the |V| of the nearest measured bus by shortest path on AY with edge length 1/|Y_ij| (scipy dijkstra, multi-source); unreachable -> mean measured",
+  "I4": "load-aware: x = I2 + a*Pd/100 + b*Qd/100 at unmeasured buses (Pd MW, Qd MVAr). (a,b) are fitted PER SCENARIO by ridge(1e-6) least squares on out-of-fold I2 residuals at the MEASURED buses only (5 random folds, seed [20261021, n, scenario], each fold's measured buses predicted from the other four folds by I2 with the same graph), two coefficients, no intercept. If fewer than 10 measured buses, a=b=0 (I4 == I2). No learning across scenarios or grids.",
+  "I5": "graph kriging: GP prior f ~ N(ybar, s2 K), K = (Lw + eps I)^-1, Lw = Laplacian of AY scaled so its mean diagonal is 1, ybar = mean measured |V|; y_m = f_m + noise with variance lam*s2. (eps, lam) picked per scenario from the fixed grids eps in {1e-4,1e-3,1e-2,1e-1,1}, lam in {1e-3,1e-2,1e-1} by marginal likelihood on the measured buses, s2 profiled out in closed form (s2 = r'A^-1 r / m, A = K_mm + lam I). Prediction = posterior mean at unmeasured buses; measured buses keep their measurement (noise is only used for fitting).",
+  "all interpolators": "predictions clipped to [0.5, 1.5] pu; reference candidate 7 baseline (best of B1 AC / B2 AC+meas / B3 DC with case-file dispatch) is reported for 20% seed 0 only, taken from candidate 7's saved file, not re-run at other configs, not part of any test"
+ },
+ "metric": "per scenario: mean over buses NOT in the measured set of ||V|_pred - |V|_label| (pu); per grid: median over scenarios (for the pooled test: median over all scenario x seed values)",
+ "primary_test": {
+  "config": "20% fraction, seeds 0,1,2 pooled (3 values per scenario)",
+  "statistic": "ratio = median_G / min over I1..I5 of median_I (best interpolator re-selected inside every bootstrap resample, conservative for GENCO)",
+  "bootstrap": "2000 resamples of SCENARIOS with replacement (all three seeds of a scenario move together), rng seed 7",
+  "win": "ratio < 1 and 95% percentile-CI upper bound < 1",
+  "verdict": "PASS iff GENCO wins on >= 10 of 15 grids; else FAIL"
+ },
+ "secondary_tests": "identical rule at 10% (seed 0) and at 40% (seed 0), each PASS/FAIL at >= 10 of 15. Also reported, not in any verdict: 20% seeds individually, point-estimate-only wins, per-interpolator medians, candidate 7 reference.",
+ "threshold_grids": 10,
+ "interpolators": [
+  "I1",
+  "I2",
+  "I3",
+  "I4",
+  "I5"
+ ],
+ "bootstrap": {
+  "n": 2000,
+  "seed": 7
+ },
+ "claim_wording_if_PASS": "Zero-shot, the released GENCO pretraining checkpoint estimates unmeasured-bus voltage magnitudes from sparse |V| measurements and loads, without the dispatch, more accurately than the best of five learning-free graph interpolators (harmonic, admittance-weighted harmonic, nearest-measured, load-aware, graph-kriging GP) on >= 10 of 15 held-out pglib grids at 20% observation (pooled over three mask seeds), with the scenario-bootstrap CI of the error ratio below 1. This is evidence that pretraining encodes voltage structure beyond smoothing. It says nothing about angles or dispatch (candidate 7: GENCO is worse than classical at branch angles and Pg), is not an independent confirmation (same grids that suggested the hypothesis), and is unaudited.",
+ "claim_wording_if_FAIL": "Zero-shot, the released GENCO checkpoint does not beat the best of five learning-free graph interpolators at estimating unmeasured-bus |V| from sparse measurements: it wins on only X of 15 grids at 20% (needed 10). Candidate 7's apparent |V| advantage over the assumed-dispatch baselines reflects the baselines ignoring the measurements, not an advantage over proper interpolation. Per-grid wins/losses are reported as descriptive only; unaudited.",
+ "code_sha256_16": {
+  "vcommon.py": "ec4968f4301805fc",
+  "run_interp.py": "4d75717af26f41a3",
+  "run_genco_v.py": "681725a24341a9b7",
+  "verdict.py": "f02de4a4cf4e3d38"
+ }
+}

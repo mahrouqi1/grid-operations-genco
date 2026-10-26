@@ -1,0 +1,6 @@
+{
+ "written": "2026-10-21 01:10 EDT",
+ "why": "case9241pegase at batch 3 needs more than 11 GB in training and failed with CUDA out of memory twice while case6470rte (12.5 GB) was running on the same GPU. No case9241pegase run had been scored.",
+ "batch_size": {"case2869pegase": 8, "case6470rte": 5, "case9241pegase": 2},
+ "rule": "case9241pegase lowered to 2 (50 optimizer steps per epoch at n = 100); the other two unchanged. Everything else unchanged."
+}

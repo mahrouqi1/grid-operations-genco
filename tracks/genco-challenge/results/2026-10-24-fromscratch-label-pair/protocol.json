@@ -1,0 +1,76 @@
+{
+  "title": "GENCO from-scratch label pair: original vs corrected pretraining labels, same recipe, overnight",
+  "status": "PRE-REGISTERED 2026-10-24 (Saturday, before any real run; nothing has been submitted). UNAUDITED. Scripts and plugin are committed with this file.",
+  "question": "Does the label repair change what a GENCO-architecture model trained from scratch on GENCO's hosted pretraining data learns, at matched update counts? Compared on (1) error on the locked 15 held-out grids, (2) reproduction of the collapsed labels at hidden collapsed buses under the pretraining mask, (3) power-flow-task behaviour at the collapsed buses.",
+  "arms": {
+    "original": "released labels for all 30 usable hosted subgrids (data/external/genco-pf-pretraining)",
+    "corrected": "the same 30 subgrids; the 9 affected subgrids read from data/external/genco-pf-pretraining-corrected (repair output: 1,085 repaired scenarios, 3.2% of the 34,274 local scenarios). Same scenario ids and counts in every subgrid (checked: 9 of 9 identical sets)."
+  },
+  "data": {
+    "definition": "GENCO's pretraining data = the hosted gridfm/genco-pf-pretraining sample we hold locally and on OSC scratch. The paper's pool is 100 subgrids x ~9,000 = ~900k scenarios (training_networks: 100); only 31 subgrids are public and we hold 6 partitions each = 34,274 scenarios (3.8% of the paper's graphs, 31% of its subgrids).",
+    "training_subgrids": 28,
+    "validation_subgrids": ["subnet_case4917_goc_idx_15", "subnet_case19402_goc_idx_29"],
+    "validation_note": "the paper's 10 validation subgrids are not public. Both validation subgrids are UNAFFECTED (identical labels in both arms) so validation loss is comparable across arms; their base cases stay in training through other indices.",
+    "excluded": "subnet_case10480_goc_idx_39 (no y_bus_data table anywhere). subnet_case9591_goc_idx_12 is KEPT in both arms (46% of its repaired roots exceed 90 degrees branch angle; reported with and without it).",
+    "training_scenarios": 31061,
+    "updates_per_epoch_batch32": 971,
+    "label_difference": "only the 9 affected subgrids' repaired scenarios (1,085 scenarios, about 3.5% of training scenarios) differ; the per-subgrid baseMVA normalizer is fitted from labels (Qg, slack p_mw) and so also differs for those 9 subgrids. That is part of the label effect, not a separate change; the two baseMVA tables are logged."
+  },
+  "recipe": {
+    "source": "data/external/genco-pf-transfer/pretraining/HGNS_PreTrain_subnets_100.yaml, unchanged: GNS_heterogeneous (hidden 48, 12 layers, 8 heads; 20,069,187 parameters), task PreTraining, mask p_high 0.8 / p_low 0.1, losses LayeredWeightedPhysics + MaskedGenMSE + MaskedBusMSE weights 0.1/0.1/0.8, Adam beta 0.9/0.999, LR 5e-4, batch 32 graphs (per device; one GPU per run), no gradient clipping, no node budget, no mask_mix",
+    "changed_from_yaml": [
+      "data.training_networks / validation_networks / test_networks (public pool smaller, see data)",
+      "training.epochs -> 100000: a run is ended by a wall-clock stop or an update cap, never by an epoch count",
+      "optimizer.lr_patience and callbacks.patience -> 1e9 (schedule below)",
+      "val_check_interval 5000 -> 500 updates, patched in a COPY of the package (one epoch here is 971 updates)",
+      "1,000-update linear LR warm-up (added at the coordinator's request; the published run had none)"
+    ],
+    "seed": 200,
+    "seed_note": "the YAML's seed, same for both arms. It seeds torch/numpy/python before the model is built, so both arms get the SAME random init (verified bitwise on the 300-update smoke: 416 of 416 tensors identical at step 0) and the same shuffle and mask draws (verified: the sha1 of scenario ids and graph sizes matched on 300 of 300 updates).",
+    "optional_second_seed": 201,
+    "init": "random (from scratch), identical across arms by construction"
+  },
+  "schedule": {
+    "rule": "LR = 5e-4 after a 1,000-update linear warm-up, held constant; no LR reduction and no early stopping, in BOTH arms.",
+    "faithfulness": "GENCO's ReduceLROnPlateau (factor 0.7, patience 5) and early stopping (patience 100) count EPOCHS and validation checks of a 29,199-update epoch (300 epochs = 8,729,999 updates, from the released MLflow log); its LR first dropped at update 814,899. Any run shorter than ~800k updates is therefore inside the paper's constant-LR phase, so holding LR constant is the paper's schedule expressed in updates. Keeping the epoch-counted patience would let a 971-update epoch decay the LR about 30 times sooner in updates, which is exactly what withdrew the 10-19 retrain (LR below 1e-6 by epoch 130-147).",
+    "lr_visibility": "the LR is written to progress.jsonl every 25 updates and must be reported at every checkpoint."
+  },
+  "length": {
+    "stop": "each job stops itself at min(2026-10-25 07:30 EDT, Slurm EndTime - 25 min), saves final weights plus a full checkpoint, then runs graphkit's short validation-subgrid test pass. Hard Slurm cap 15 h.",
+    "expected_updates": "unknown until the A100 rate is observed; bracket 92k (6.5k updates per GPU-hour, measured on loaded local 3090/4090 hosts) to 300k (21.2k per GPU-hour, the released run's own rate) over ~14.2 h of training. That is 1.1% to 3.4% of the paper's 8.73M updates.",
+    "comparison_updates": "all comparisons are made at matched update counts (checkpoints common to both arms); the arms are NOT compared at their separate final steps if those differ."
+  },
+  "checkpoints": {
+    "weights_only": "steps/state_step<N>.pt every 2,000 updates plus step 0 (initial weights) and state_final.pt (the object --model_path / the scorers load)",
+    "resumable_full": "resume/full_latest.ckpt every 500 updates (atomic write) and full_final.ckpt: weights + Adam moments + LR scheduler + epoch/step counters. Resume = same recipe from the same weights/optimizer; it does NOT restore the within-epoch position or RNG, so a resumed run is not order-identical to an uninterrupted one (proved on the smoke: stopped at 300, resumed to 400, step counter and LR continued, loss continued)."
+  },
+  "logs": ["orderlog.jsonl (per-update sha1 of scenario ids + graph sizes; first 5 updates list the ids)", "progress.jsonl (every 25 updates: step, epoch, wall, loss, LR)", "train.log", "T_SEGMENTS (wall-clock segments)"],
+  "gates": {
+    "underfit_gate_12k": "at the 12,000-update checkpoint, hidden-|V| error on NORMAL (uncollapsed) scenarios of the training subgrids must be clearly below the flat-1.0-pu guess (0.02 to 0.07 pu in the 10-19 schedule test; the withdrawn retrain sat at 0.03 to 0.11 pu, the flat-guess level). If it fails in either arm, the report says 'underfit' and the collapse metrics are NOT scored.",
+    "pairing_gate": "orderlog sha1 must match between arms on every update they share; otherwise the pair is invalid."
+  },
+  "metrics": {
+    "evaluate_at": "every 2,000-update checkpoint common to both arms for metric 1 on the 2 RTE validation grids (case1888rte, case2848rte) to keep cost small, and the 12k/24k/48k/96k/final checkpoints (whichever exist) on the locked 15 and metrics 2 and 3",
+    "m1_locked15": "genco_challenge.score_ckpts (the post's pipeline, ladder_eval): per-grid ratio to DC of branch-angle-difference error, |V| error and active residual; median over the 15 locked grids (genco_challenge.score_retrain.HELDOUT15). Zero-shot, no normalizer file, as everywhere in the post.",
+    "m2_collapse_reproduction": "results/2026-10-09-collapsed-label-pretrain-mask/run_pretrain_mask.py --ckpt <state>: share of hidden collapsed PQ buses (label |V| < 0.5, 1,083 scored scenarios, 9 affected subgrids) whose predicted |V| is also < 0.5, under the pretraining mask. Released model: 0.97. Also reported on the 7 training-only subgrids (the collapsed scenarios are IN training for both arms).",
+    "m3_pf_task_at_collapsed_buses": "results/2026-10-08-collapsed-label-genco (analyze.py, run_genco_inference.py) with the checkpoint: distance of the PF-task |V| to the repaired root and to the label at the flagged buses, median and p90 (released model: 0.0083 pu to the root, 1.13 pu to the label)",
+    "m4_training_curves": "validation loss (unaffected subgrids) and training loss from the logs, for both arms, per matched update",
+    "selection": "the FINAL state and the matched checkpoints are reported; no best-validation selection (validation labels are shared but the training objective differs between arms)"
+  },
+  "what_counts_as_a_difference": {
+    "noise_sources": [
+      "run-to-run spread of identical configurations in the transfer study: paired RTE-validation ratios of the same configuration (arms D and b through 14k updates) differed by a median 1.62x and up to 2.77x (results/2026-10-20-genco-transfer/report.md item 4)",
+      "GPU nondeterminism: the seed-200 step-25 identity check FAILED the 1e-4 weight tolerance (commit 258e4ed; loss trajectories matched). Bitwise-identical arms are not achievable, even with the same seed, same data order and same init; the 300-update smoke already shows 0.197 max weight difference between the two label sets."
+    ],
+    "rule_m1": "a locked-15 (or RTE) median-ratio difference between arms counts only if corrected/original lies outside [1/1.62, 1.62] AND has the same sign at three consecutive matched checkpoints AND (if two seeds ran) exceeds the between-seed gap within an arm",
+    "rule_m2_m3": "a collapse-reproduction gap counts only if at least one arm reproduces at least 20% of hidden collapsed buses, the gap is at least 20 points, it has the same sign at the last three matched checkpoints, and (two seeds) it exceeds the within-arm seed gap. Reference size: continued pretraining of the released model moved the share by only ~10 points.",
+    "single_seed": "with one seed per arm NO difference is called established; it is reported as 'consistent with a label effect' or 'not distinguishable from run-to-run noise'. Two seeds per arm (optional jobs 2 and 3) is the minimum for an established difference."
+  },
+  "preregistered_null": "If both arms reproduce < 10% of hidden collapsed buses at every checkpoint (the withdrawn 10-19 retrain reproduced 2-3% against 96% for the released model; the released run's validation loss was 0.45 at 48k updates vs 0.0104 at the end), the outcome is 'budget too small to learn the collapse: uninformative', NOT 'labels do not matter'. If the underfit gate fails, the outcome is 'underfit'.",
+  "sentences_supportable": {
+    "if_gate_passes_and_no_collapse": "An early-training comparison only: 'Trained from scratch on 28 of GENCO's hosted pretraining subgrids with identical seed, init, recipe and data order, a model on the original labels and a model on the corrected labels were compared at matched updates up to N (X% of GENCO's schedule). Neither/one reproduced the collapse ...' with the matched-checkpoint numbers and the noise rule above.",
+    "never": ["any claim about GENCO's own 100-subgrid checkpoint (69 subgrids are not public)", "'labels do not cause the collapse'", "any difference from a single seed per arm called established", "any statement about the end of GENCO's training (we cover ~1-3% of its updates)"]
+  },
+  "scoring_order_sunday": "see READY.md audit plan",
+  "not_in_scope": ["multi-GPU DDP (see READY.md section on the informative version)", "mask changes, curriculum, ladder data (the transfer study's arms)"]
+}

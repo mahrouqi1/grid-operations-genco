@@ -1,0 +1,23 @@
+classical case14 --n 40
+pm case14 --n-fast 30 --n-ipopt 10
+genco case14
+classical case57 --n 40
+pm case57 --n-fast 30 --n-ipopt 10
+genco case57
+classical case118 --n 40
+pm case118 --n-fast 30 --n-ipopt 10
+genco case118
+classical case300 --n 40
+pm case300 --n-fast 30 --n-ipopt 10
+genco case300
+classical case1354 --n 40
+pm case1354 --n-fast 30 --n-ipopt 5
+genco case1354
+classical goc2000 --n 40
+pm goc2000 --n-fast 30 --n-ipopt 3
+genco goc2000 --ckpt tiny_s0 --cpu-batches 1
+genco goc2000 --ckpt small_s0 --cpu-batches 1
+classical goc10000 --n 30
+pm goc10000 --n-fast 12 --no-ipopt
+genco goc10000 --ckpt tiny_s0 --cpu-batches 1
+genco goc10000 --ckpt small_s0 --cpu-batches 1

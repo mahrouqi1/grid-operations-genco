@@ -1,0 +1,44 @@
+{
+ "C00": {
+  "median_angle_ratio": 4.4767523235029305,
+  "change_vs_released": 0.2126803720420778,
+  "angle_better": 1,
+  "V_worse": 14
+ },
+ "C01": {
+  "median_angle_ratio": 4.4505864215869195,
+  "change_vs_released": 0.205592449061899,
+  "angle_better": 3,
+  "V_worse": 12
+ },
+ "D": {
+  "median_angle_ratio": 5.7033798068966854,
+  "change_vs_released": 0.5449540752598256,
+  "angle_better": 0,
+  "V_worse": 14
+ },
+ "a": {
+  "median_angle_ratio": 6.908791743252579,
+  "change_vs_released": 0.8714808272022307,
+  "angle_better": 1,
+  "V_worse": 12
+ },
+ "b": {
+  "median_angle_ratio": 5.851839721073765,
+  "change_vs_released": 0.5851694838747754,
+  "angle_better": 0,
+  "V_worse": 12
+ },
+ "c": {
+  "median_angle_ratio": 7.130609074973059,
+  "change_vs_released": 0.9315675831623398,
+  "angle_better": 0,
+  "V_worse": 13
+ },
+ "m": {
+  "median_angle_ratio": 7.597548028184275,
+  "change_vs_released": 1.0580538532488752,
+  "angle_better": 0,
+  "V_worse": 12
+ }
+}

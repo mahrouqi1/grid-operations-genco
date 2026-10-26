@@ -1,0 +1,2 @@
+pm goc2000 --only-ipopt --n-ipopt 3 --ipopt-max-iter 120
+pm goc10000 --only-ipopt --n-ipopt 3 --ipopt-max-iter 200

@@ -1,0 +1,15 @@
+{
+ "n_scenarios": 1136,
+ "has_residual": true,
+ "categories": {
+  "healthy": 1120,
+  "collapsed": 16,
+  "negative_only": 0,
+  "angle_gt90": 0
+ },
+ "angle_gt90_any_category": 0,
+ "min_abs_vm_over_dataset": 0.09236769720282625,
+ "residual_gt_1e-9_total": 376,
+ "residual_gt_1e-9_in_healthy": 373,
+ "max_residual_healthy": 9.886976515272039e-09
+}

@@ -1,0 +1,14 @@
+{
+ "written": "2026-10-22 04:26:48 EDT. Written BEFORE any flatuncapped or uncapped scenario was run (the flatprior arm of amendment 3 was already running: ~23 of 36 pieces done; no verdict number was used for any decision except that the partial flatprior tally showed the flat arm mostly hits the iteration cap).",
+ "status": "UNAUDITED",
+ "amends": "protocol_amendment_3.json (sha256 in protocol_amendment_3.sha256).",
+ "reason": "The flatprior arm (8,12 LM iterations, as published) converges on far fewer scenarios than the informed published arm (on the carved pieces done so far most flat cells are <30% converged vs 60-100% for the informed prior). A flat-vs-informed contrast at the same iteration cap therefore mixes 'less informative prior' with 'less converged'. This is the same confound the audit raised in F2 for the capped published arm.",
+ "new_arm_WLS_flatuncapped": "The F1 flat prior (identical definition to amendment 3 'F1_arm_WLS_flatprior') with the F2 iteration budget (LM iterations (40,60) instead of (8,12)); nothing else changes. Run as 'run_wls_v2.py --arm flatuncapped' (a one-line extension of the same file; its sha256 below replaces the amendment-3 pin of run_wls_v2.py).",
+ "cap_controlled_comparisons_preregistered": "(a) informed-uncapped vs flat-uncapped on the same cells (both with (40,60)): the effect of the dispatch prior at a converged solver; (b) informed-capped vs flat-capped (amendment 3): as published; (c) flat-uncapped vs GENCO released and vs GENCO-A1 (limit ablation) with the amendment-3 win rule. The cell tally for every arm is restricted to the cells in which that arm exists, with the like-for-like I1-I5 and published counts shown on the same cells.",
+ "queue_change": "jobs_v2.txt lines are claimed by line number via locks_v2/<n>. Lines 84-134 (the original uncapped-seen block and the genctl block) were PRE-LOCKED (locks_v2/<n> created by hand, no job run) and re-appended as lines 135+ in this order: (1) flatuncapped on the 36 carved pieces (f40_s0..2, first 30); (2) uncapped (informed prior, F2) on the 15 seen whole grids ascending (first 10); (3) uncapped (informed) on the 36 pieces (so the cap-controlled informed-vs-flat contrast exists on pieces); (4) flatuncapped locked-15 f40_s0; (5) flatuncapped on the seen whole grids ascending; (6) flatuncapped on unseen whole grids ascending; (7) flatprior on the 36 ladder-generated pieces (genctl, extra). Flat-prior blocks 1-83 of amendment 3 (pieces, locked-15, seen, unseen) are untouched and still run first. The deadline is unchanged (07:15 EDT); whatever is not reached is listed as not run.",
+ "pins_sha256_now": {
+  "protocol_amendment_3.json": "864b5791a66d5634d35b94ea875287f41524c2e43ebd00e95cb09ff8fdb44742",
+  "run_wls_v2.py": "b22110e076bc6fa85622b212a688ae9f7432bcf3a63ea9d28ea466a653b956b2",
+  "launch_v2.sh": "ec616d4952f2e27a6cef9225a3c9529aa5d6e55241d7ae4c9e98483fc36fea58"
+ }
+}

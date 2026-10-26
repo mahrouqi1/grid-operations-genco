@@ -1,0 +1,62 @@
+{
+ "ran": {
+  "pieces": 36,
+  "seen_whole": 6,
+  "unseen_whole": 10
+ },
+ "by_set": {
+  "pieces": {
+   "A0": 33,
+   "A1": 33,
+   "A2": 32,
+   "A3": 33
+  },
+  "seen_whole": {
+   "A0": 6,
+   "A1": 6,
+   "A2": 6,
+   "A3": 6
+  },
+  "unseen_whole": {
+   "A0": 6,
+   "A1": 5,
+   "A2": 6,
+   "A3": 5
+  }
+ },
+ "whole": {
+  "A0": 12,
+  "A1": 11,
+  "A2": 12,
+  "A3": 11
+ },
+ "threshold": {
+  "per_arm": {
+   "A1": {
+    "delta_pieces": 0,
+    "delta_whole_pooled": 1,
+    "crossed": false
+   },
+   "A2": {
+    "delta_pieces": 1,
+    "delta_whole_pooled": 0,
+    "crossed": false
+   },
+   "A3": {
+    "delta_pieces": 0,
+    "delta_whole_pooled": 1,
+    "crossed": false
+   }
+  },
+  "THRESHOLD_CROSSED": false,
+  "inconclusive_less_than_half_ran": {
+   "pieces": false,
+   "whole_pooled": false
+  },
+  "complete": {
+   "pieces": true,
+   "seen_whole": false,
+   "unseen_whole": false
+  }
+ }
+}

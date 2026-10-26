@@ -1,0 +1,40 @@
+# grid-operations-genco: DOCUMENTED EXCEPTION to one-env-per-repo (decided 2026-10-06).
+# Why: GENCO's paper-repro branches of gridfm-graphkit pin torch>=2.7.1,<2.9, while the repo env
+# `grid-operations` stays on torch 2.6.0+cu124 under the PF-Delta harness and its numbers. A
+# second env keeps those numbers untouched. Used only by tracks/genco-challenge/.
+# Curated spec per .framework/_docs/conda-environments.md (build with conda_envs/.tools mamba,
+# TMPDIR/PIP_CACHE_DIR on NFS, PYTHONNOUSERSITE=1). torch pinned to cu128 (driver 580, CUDA 13,
+# measured 2026-10-06). Retire when graphkit main's torch range and the
+# PF-Delta harness can share one env.
+name: grid-operations-genco
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numba=0.61.*
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - --find-links https://data.pyg.org/whl/torch-2.8.0+cu128.html
+      - torch==2.8.0+cu128
+      - torchvision==0.23.0+cu128
+      - torchaudio==2.8.0+cu128
+      # torch-scatter: the pt28cu128 wheel needs glibc 2.32 (this node has 2.31). After create, rebuild:
+      #   CUDA_HOME=/usr/local/cuda-12.3 TORCH_CUDA_ARCH_LIST=8.6 FORCE_CUDA=1 MAX_JOBS=6 \
+      #   pip install --no-build-isolation --no-binary torch-scatter --force-reinstall --no-deps torch-scatter==2.1.2
+      # and install datakit from its genco-paper-repro branch (1.0.4) with --no-deps:
+      #   pip install --no-deps ./data/external/gridfm-datakit-repro
+      - torch-scatter==2.1.*
+      - torch-geometric==2.7.*
+      # GENCO section 5.5.3 transfer reproduction branch (pins torch <2.9)
+      - gridfm-graphkit @ git+https://github.com/gridfm/gridfm-graphkit.git@genco-paper-repro
+      - huggingface_hub
+      # shared with the repo env so the ladder/oracle/baselines import here too
+      - pandapower==3.4.*
+      - matpowercaseframes==2.1.*
+      - simbench==1.6.*
+      - scipy
+      - pyyaml
+      - tqdm
+      - pytest==9.0.*
+      - ruff==0.15.*

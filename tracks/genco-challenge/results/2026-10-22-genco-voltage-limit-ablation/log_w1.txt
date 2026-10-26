@@ -1,0 +1,301 @@
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 0.4941291809082031 MB
+Total memory usage of gen_data: 0.020420074462890625 MB
+[w1] pieces carved_case10480_goc_c12 buses=185 n_scen=69 setup 2s
+[w1] carved_case10480_goc_c12 A1 f40_s0 69 scen 15s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A1 f40_s1 69 scen 13s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A1 f40_s2 69 scen 14s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A2 f40_s0 69 scen 13s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A2 f40_s1 69 scen 14s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A2 f40_s2 69 scen 15s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A3 f40_s0 69 scen 17s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A3 f40_s1 69 scen 19s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 A3 f40_s2 69 scen 18s  vm_visible_dev=0.00e+00
+[w1] carved_case10480_goc_c12 finished in 140s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 1.0758705139160156 MB
+Total memory usage of gen_data: 0.038578033447265625 MB
+[w1] pieces carved_case4837_goc_c1 buses=235 n_scen=118 setup 2s
+[w1] carved_case4837_goc_c1 A1 f40_s0 118 scen 35s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A1 f40_s1 118 scen 30s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A1 f40_s2 118 scen 29s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A2 f40_s0 118 scen 30s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A2 f40_s1 118 scen 32s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A2 f40_s2 118 scen 27s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A3 f40_s0 118 scen 27s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A3 f40_s1 118 scen 27s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 A3 f40_s2 118 scen 25s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c1 finished in 264s
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 0.23724746704101562 MB
+Total memory usage of gen_data: 0.002689361572265625 MB
+[w1] pieces carved_case19402_goc_c10 buses=259 n_scen=23 setup 1s
+[w1] carved_case19402_goc_c10 A1 f40_s0 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A1 f40_s1 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A1 f40_s2 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A2 f40_s0 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A2 f40_s1 23 scen 6s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A2 f40_s2 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A3 f40_s0 23 scen 7s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A3 f40_s1 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 A3 f40_s2 23 scen 5s  vm_visible_dev=0.00e+00
+[w1] carved_case19402_goc_c10 finished in 53s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 1.2560005187988281 MB
+Total memory usage of gen_data: 0.034336090087890625 MB
+[w1] pieces carved_case4837_goc_c0 buses=279 n_scen=116 setup 1s
+[w1] carved_case4837_goc_c0 A1 f40_s1 116 scen 31s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 A1 f40_s2 116 scen 31s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 A2 f40_s1 116 scen 34s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 A2 f40_s2 116 scen 33s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 A3 f40_s1 116 scen 32s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 A3 f40_s2 116 scen 41s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c0 finished in 203s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 1.5794105529785156 MB
+Total memory usage of gen_data: 0.09137344360351562 MB
+[w1] pieces carved_case5658_epigrids_c0 buses=360 n_scen=113 setup 3s
+[w1] carved_case5658_epigrids_c0 A1 f40_s0 113 scen 49s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A1 f40_s1 113 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A1 f40_s2 113 scen 83s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A2 f40_s0 113 scen 77s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A2 f40_s1 113 scen 91s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A2 f40_s2 113 scen 90s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A3 f40_s0 113 scen 94s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A3 f40_s1 113 scen 88s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 A3 f40_s2 113 scen 88s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c0 finished in 730s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 2.0737953186035156 MB
+Total memory usage of gen_data: 0.058719635009765625 MB
+[w1] pieces carved_case30000_goc_c2 buses=453 n_scen=118 setup 8s
+[w1] carved_case30000_goc_c2 A1 f40_s0 118 scen 101s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A1 f40_s1 118 scen 103s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A1 f40_s2 118 scen 88s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A2 f40_s0 118 scen 84s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A2 f40_s1 118 scen 102s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A2 f40_s2 118 scen 102s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A3 f40_s0 118 scen 121s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A3 f40_s1 118 scen 113s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 A3 f40_s2 118 scen 101s  vm_visible_dev=0.00e+00
+[w1] carved_case30000_goc_c2 finished in 922s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 2.204944610595703 MB
+Total memory usage of gen_data: 0.24292373657226562 MB
+[w1] pieces carved_case5658_epigrids_c3 buses=494 n_scen=115 setup 5s
+[w1] carved_case5658_epigrids_c3 A1 f40_s0 115 scen 184s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A1 f40_s1 115 scen 122s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A1 f40_s2 115 scen 131s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A2 f40_s0 115 scen 98s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A2 f40_s1 115 scen 104s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A2 f40_s2 115 scen 107s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A3 f40_s0 115 scen 124s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A3 f40_s1 115 scen 132s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 A3 f40_s2 115 scen 118s  vm_visible_dev=0.00e+00
+[w1] carved_case5658_epigrids_c3 finished in 1126s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 2.6994056701660156 MB
+Total memory usage of gen_data: 0.20013809204101562 MB
+[w1] pieces carved_case7336_epigrids_c2 buses=610 n_scen=114 setup 3s
+[w1] carved_case7336_epigrids_c2 A1 f40_s0 114 scen 134s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A1 f40_s1 114 scen 125s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A1 f40_s2 114 scen 143s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A2 f40_s0 114 scen 128s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A2 f40_s1 114 scen 127s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A2 f40_s2 114 scen 131s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A3 f40_s0 114 scen 118s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A3 f40_s1 114 scen 125s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 A3 f40_s2 114 scen 127s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c2 finished in 1162s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 3.0552024841308594 MB
+Total memory usage of gen_data: 0.2616004943847656 MB
+[w1] pieces carved_case7336_epigrids_c4 buses=673 n_scen=117 setup 5s
+[w1] carved_case7336_epigrids_c4 A1 f40_s0 117 scen 165s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A1 f40_s1 117 scen 138s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A1 f40_s2 117 scen 190s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A2 f40_s0 117 scen 145s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A2 f40_s1 117 scen 141s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A2 f40_s2 117 scen 141s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A3 f40_s0 117 scen 152s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A3 f40_s1 117 scen 153s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 A3 f40_s2 117 scen 148s  vm_visible_dev=0.00e+00
+[w1] carved_case7336_epigrids_c4 finished in 1378s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 3.685924530029297 MB
+Total memory usage of gen_data: 0.11441421508789062 MB
+[w1] pieces carved_case4837_goc_c2 buses=903 n_scen=105 setup 3s
+[w1] carved_case4837_goc_c2 A1 f40_s0 105 scen 158s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A1 f40_s1 105 scen 162s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A1 f40_s2 105 scen 172s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A2 f40_s0 105 scen 164s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A2 f40_s1 105 scen 169s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A2 f40_s2 105 scen 151s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A3 f40_s0 105 scen 161s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A3 f40_s1 105 scen 161s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 A3 f40_s2 105 scen 147s  vm_visible_dev=0.00e+00
+[w1] carved_case4837_goc_c2 finished in 1449s
+[w1] pieces: cap=None
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 1.1033363342285156 MB
+Total memory usage of gen_data: 0.08252334594726562 MB
+[w1] pieces carved_case2383wp_k_c40 buses=241 n_scen=118 setup 6s
+[w1] carved_case2383wp_k_c40 A1 f40_s0 118 scen 48s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A1 f40_s1 118 scen 53s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A1 f40_s2 118 scen 51s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A2 f40_s0 118 scen 52s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A2 f40_s1 118 scen 55s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A2 f40_s2 118 scen 51s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A3 f40_s0 118 scen 47s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A3 f40_s1 118 scen 47s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 A3 f40_s2 118 scen 40s  vm_visible_dev=0.00e+00
+[w1] carved_case2383wp_k_c40 finished in 450s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 1.4787025451660156 MB
+Total memory usage of gen_data: 0.055057525634765625 MB
+[w1] pieces carved_case2848_rte_c22 buses=323 n_scen=118 setup 3s
+[w1] carved_case2848_rte_c22 A1 f40_s0 118 scen 50s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A1 f40_s1 118 scen 48s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A1 f40_s2 118 scen 43s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A2 f40_s0 118 scen 39s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A2 f40_s1 118 scen 35s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A2 f40_s2 118 scen 41s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A3 f40_s0 118 scen 40s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A3 f40_s1 118 scen 44s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 A3 f40_s2 118 scen 43s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c22 finished in 385s
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 0.3868217468261719 MB
+Total memory usage of gen_data: 0.019992828369140625 MB
+[w1] pieces carved_case8387_pegase_c2 buses=327 n_scen=30 setup 1s
+[w1] carved_case8387_pegase_c2 A1 f40_s0 30 scen 15s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A1 f40_s1 30 scen 13s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A1 f40_s2 30 scen 11s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A2 f40_s0 30 scen 12s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A2 f40_s1 30 scen 14s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A2 f40_s2 30 scen 12s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A3 f40_s0 30 scen 12s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A3 f40_s1 30 scen 14s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 A3 f40_s2 30 scen 11s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c2 finished in 116s
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 1.4832801818847656 MB
+Total memory usage of gen_data: 0.18323135375976562 MB
+[w1] pieces carved_case8387_pegase_c3 buses=405 n_scen=95 setup 2s
+[w1] carved_case8387_pegase_c3 A1 f40_s0 95 scen 52s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A1 f40_s1 95 scen 51s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A1 f40_s2 95 scen 49s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A2 f40_s0 95 scen 47s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A2 f40_s1 95 scen 51s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A2 f40_s2 95 scen 54s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A3 f40_s0 95 scen 51s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A3 f40_s1 95 scen 47s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 A3 f40_s2 95 scen 50s  vm_visible_dev=0.00e+00
+[w1] carved_case8387_pegase_c3 finished in 453s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 2.1595497131347656 MB
+Total memory usage of gen_data: 0.18420791625976562 MB
+[w1] pieces carved_case9241_pegase_c2 buses=488 n_scen=114 setup 2s
+[w1] carved_case9241_pegase_c2 A1 f40_s0 114 scen 75s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A1 f40_s1 114 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A1 f40_s2 114 scen 66s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A2 f40_s0 114 scen 69s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A2 f40_s1 114 scen 72s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A2 f40_s2 114 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A3 f40_s0 114 scen 66s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A3 f40_s1 114 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 A3 f40_s2 114 scen 65s  vm_visible_dev=0.00e+00
+[w1] carved_case9241_pegase_c2 finished in 617s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 2.515003204345703 MB
+Total memory usage of gen_data: 0.07094192504882812 MB
+[w1] pieces carved_case2848_rte_c4 buses=554 n_scen=117 setup 2s
+[w1] carved_case2848_rte_c4 A1 f40_s0 117 scen 64s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A1 f40_s1 117 scen 63s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A1 f40_s2 117 scen 62s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A2 f40_s0 117 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A2 f40_s1 117 scen 70s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A2 f40_s2 117 scen 64s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A3 f40_s0 117 scen 66s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A3 f40_s1 117 scen 66s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 A3 f40_s2 117 scen 67s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c4 finished in 590s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 3.336650848388672 MB
+Total memory usage of gen_data: 0.11633682250976562 MB
+[w1] pieces carved_case2848_rte_c21 buses=735 n_scen=117 setup 2s
+[w1] carved_case2848_rte_c21 A1 f40_s0 117 scen 85s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A1 f40_s1 117 scen 80s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A1 f40_s2 117 scen 77s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A2 f40_s0 117 scen 78s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A2 f40_s1 117 scen 79s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A2 f40_s2 117 scen 79s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A3 f40_s0 117 scen 72s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A3 f40_s1 117 scen 81s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 A3 f40_s2 117 scen 75s  vm_visible_dev=0.00e+00
+[w1] carved_case2848_rte_c21 finished in 709s
+[w1] seen_whole: cap=2500
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 3.085681915283203 MB
+Total memory usage of gen_data: 0.3331947326660156 MB
+[w1] seen_whole pglib_opf_case793_goc buses=793 n_scen=100 setup 1s
+[w1] pglib_opf_case793_goc A1 f40_s0 100 scen 73s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A1 f40_s1 100 scen 72s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A1 f40_s2 100 scen 70s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A2 f40_s0 100 scen 67s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A2 f40_s1 100 scen 66s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A2 f40_s2 100 scen 66s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A3 f40_s0 100 scen 70s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A3 f40_s1 100 scen 67s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc A3 f40_s2 100 scen 69s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case793_goc finished in 621s
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 8.996097564697266 MB
+Total memory usage of gen_data: 0.6911659240722656 MB
+[w1] seen_whole pglib_opf_case2312_goc buses=2312 n_scen=100 setup 2s
+[w1] pglib_opf_case2312_goc A1 f40_s0 100 scen 196s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A1 f40_s1 100 scen 207s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A1 f40_s2 100 scen 237s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A2 f40_s0 100 scen 237s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A2 f40_s1 100 scen 219s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A2 f40_s2 100 scen 227s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A3 f40_s0 100 scen 233s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A3 f40_s1 100 scen 232s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc A3 f40_s2 100 scen 242s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2312_goc finished in 2031s
+[w1] unseen_whole: cap=2500
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 9.09054946899414 MB
+Total memory usage of gen_data: 0.4990882873535156 MB
+[w1] unseen_whole pglib_opf_case2383wp_k buses=2383 n_scen=99 setup 3s
+[w1] pglib_opf_case2383wp_k A1 f40_s0 99 scen 226s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A1 f40_s1 99 scen 214s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A1 f40_s2 99 scen 201s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A2 f40_s0 99 scen 220s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A2 f40_s1 99 scen 206s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A2 f40_s2 99 scen 205s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A3 f40_s0 99 scen 226s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A3 f40_s1 99 scen 260s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k A3 f40_s2 99 scen 225s  vm_visible_dev=0.00e+00
+[w1] pglib_opf_case2383wp_k finished in 1987s
+CHAIN w1 END Thu 22 Oct 2026 05:20:07 AM EDT

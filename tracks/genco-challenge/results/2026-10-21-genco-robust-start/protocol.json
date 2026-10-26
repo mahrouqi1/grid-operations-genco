@@ -1,0 +1,47 @@
+{
+ "title": "Zero-shot released GENCO as a Newton-Raphson start on large unseen grids (plan candidate #1)",
+ "preregistered": "2026-10-21, committed BEFORE any Newton run from a GENCO-derived start",
+ "plan": "the study plan, candidate 1",
+ "question": "Can the RELEASED GENCO (checkpoint data/external/genco-pf-transfer/pretraining/best_model_state_dict.pt, model 'zeroshot', no normalizer file), zero-shot with no training on the target grid, give Newton-Raphson a start that converges to the verified physical root on large unseen grids where flat, DC and fd2 starts fail or reach a wrong root, at equal or lower total cost?",
+ "grids": {
+  "RTE": ["case1888rte", "case2848rte", "case6470rte", "case6495rte", "case6515rte"],
+  "PEGASE": ["case2869pegase", "pglib_opf_case8387_pegase", "case9241pegase"],
+  "Polish": ["pglib_opf_case2383wp_k", "pglib_opf_case3012wp_k", "pglib_opf_case3375wp_k"]
+ },
+ "data": "verified ladder labels (two-start oracle) in datakit format. RTE: data/external/genco-transfer-val/<case> (500 points each). Others: genco_challenge.ladder_to_datakit --n 100 --seed 0 into data/external/genco-robust-start/<case>. Same table conversion for every grid.",
+ "scenarios": "the first 100 scenario ids (sorted ascending) present in the GENCO prediction file of each grid (graphkit's test split); identical for every start.",
+ "grids_ge_5000_buses": ["case6470rte", "case6495rte", "case6515rte", "pglib_opf_case8387_pegase", "case9241pegase"],
+ "starts": {
+  "flat": "|V| = setpoint at PV/REF, 1.0 at PQ; every angle = the REF angle (hybrid.starts_for 'flat')",
+  "dc": "|V| as flat; angles = datakit Va_dc column (hybrid.starts_for 'dc'). Cost charged = a timed own DC solve spsolve(B',P) (the same solve as t_classical.dc_state, agrees with Va_dc to ~2e-10 per ladder_to_datakit docs; the agreement is reported as a control).",
+  "fd2": "start = 'dc'; then two XB fast-decoupled iterations (hybrid Scenario.fdxb_step, same code as the timing table fd2), LU factorisations timed inside the start cost.",
+  "genco_vmdc": "released-GENCO |V| with REF/PV |V| put back to their setpoints (hybrid 'vmdc'), angles = Va_dc",
+  "genco_full": "released-GENCO |V| and angles with the quantities a power-flow problem specifies put back: REF angle, REF/PV |V| (hybrid 'pinned'). Uses inputs only, never labels."
+ },
+ "genco_inference": "graphkit evaluate via genco_challenge.ladder_eval.run_graphkit (released checkpoint, zero-shot, PF task), predictions parquet Vm_pred / Va_pred in radians joined on (scenario, bus). Start cost for GENCO arms = median per-scenario time of the in-memory end-to-end pipeline at batch 64 (graph build + normalise/mask + collate + H2D + forward + D2H) on GPU 0 (CUDA_VISIBLE_DEVICES=0), a constant per grid, divided by the batch size; forward-only also reported. If batch 64 does not fit in memory the largest batch that fits is used and recorded.",
+ "solver": {
+  "name": "grid_ops.reference_pf.newton_raphson_pf (sparse Jacobian + spsolve)",
+  "tol": "1e-8 pu on the max power mismatch (P at PV+PQ, Q at PQ)",
+  "max_iterations": 25,
+  "damping": "none in any arm; identical solver for all starts"
+ },
+ "outcome_classes": {
+  "verified_root": "converged AND max |Vm - label| < 1e-4 pu AND max wrapped |Va - label| < 1e-2 deg after aligning the slack angle (the labels are verified roots)",
+  "other_root": "converged (mismatch <= 1e-8 within 25 iterations, finite) but not the verified root",
+  "diverged": "not converged within 25 iterations, non-finite, or solver exception"
+ },
+ "timing": "per scenario total = start cost + Newton wall time. Start cost: flat 0; dc = DC solve; fd2 = DC solve + 2 FD iterations; genco_vmdc = DC solve + GENCO per-scenario cost; genco_full = GENCO per-scenario cost. Ybus/Sbus assembly is common to every arm and excluded from all. Median over all 100 scenarios (failed scenarios included, they cost their wasted iterations). Single process, CPU Newton, machine load recorded.",
+ "controls": [
+  "identity: Newton started AT the label converges in 0-1 iterations with the label unchanged, every grid",
+  "released-GENCO prediction errors vs label per grid: median |V| error (all buses, and PQ) and median branch angle-difference error",
+  "Va_dc column vs own DC solve agreement"
+ ],
+ "success_test": {
+  "arm_choice": "ONE GENCO arm is used for the verdict: whichever of genco_vmdc / genco_full has the higher verified-root rate pooled over all 11 grids (ties: genco_vmdc). Both arms are still reported.",
+  "family_rate": "mean over the family's grids of the per-grid verified-root rate (equal weight per grid)",
+  "best_classical": "per family (and per grid): the classical start (flat, dc, fd2) with the highest verified-root rate",
+  "condition_a": "the GENCO arm's family rate is >= 10 percentage points above the best classical family rate on >= 2 of the 3 families, AND on every grid belonging to a family that does NOT pass, the GENCO per-grid rate is no more than 2 points below the best classical per-grid rate. (Also reported: strict variant requiring the 2-point bound on every grid of all families.)",
+  "condition_b": "on EVERY grid with >= 5000 buses: GENCO rate >= best classical per-grid rate - 2 points (equal convergence), AND GENCO median total time <= 0.8 x the median total time of the best classical pipeline (best classical = highest rate, ties within 2 points broken by lowest median total time). A grid where both rates are 0 does not satisfy (b).",
+  "verdict": "GO if (a) or (b); NO-GO otherwise. Reported either way. Computed by verdict.py from the per-scenario CSV, never by hand."
+ }
+}

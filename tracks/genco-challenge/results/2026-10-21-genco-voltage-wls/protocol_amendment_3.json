@@ -1,0 +1,64 @@
+{
+ "written": "2026-10-22 04:18:36 EDT. Written BEFORE any flatprior or uncapped WLS scenario was run. Before this file, the only things run were (a) one replication of the published arm through the new runner on carved_case10480_goc_c12 f40_s0 (30 scenarios; bit-identical MAE and status to per_case/control, max abs diff 0.0), and (b) reading the round-1 audit, the limit-ablation protocol and the existing code.",
+ "status": "UNAUDITED",
+ "amends": "protocol.json (hash-pinned below). Answers the independent audit, round 1, F1-F6. Nothing in protocol.json is rewritten; drift between it and the code is DOCUMENTED here.",
+ "F1_arm_WLS_flatprior": {
+  "question": "How much of WLS's advantage over GENCO comes from the generator-limit dispatch prior? Make the prior carry no generator-specific information, exactly as GENCO's A1 arm does, and rerun.",
+  "definition": "Identical to the published arm (same scenarios, masks, seeds, noise, solver (8,12) LM iterations, DC-angle start, sigma continuation, priors on Q, weak |V| prior, metric) EXCEPT the generator active-power limits entering the P prior (and therefore also the DC-angle start, which is built from p_pri): for every in-service generator of a scenario, Pmax := median of Pmax over that scenario's in-service generators (one value for all of them), Pmin := 0. Bus-level Pmin/Pmax are then sums over the generators at the bus, as before. So s = clip((1.02*sum(Pd) - 0)/(sum Pmax_flat - 0),0,1), the P prior at a bus is n_gens_at_bus * s * Pmax_median minus the bus load, and sigma_P = max(n_gens_at_bus*Pmax_median/2, 10 MW)/100 (an equal-share, wide prior). Q limits (Qmin/Qmax) are LEFT as published, because GENCO's A1 leaves Qg limits and voltage limits untouched; WLS uses no cost coefficients so A2 has no WLS counterpart.",
+  "matches": "tracks/genco-challenge/results/2026-10-22-genco-voltage-limit-ablation/protocol.json arm A1_nolimits: 'Pmax := median of the Pmax values of that scenario's in-service generators (same value for every generator), Pmin := 0'. That protocol file was read before this amendment.",
+  "sets_and_order": "40% measured buses, noise-free, configs f40_s0..2, in this order: (1) 36 carved datakit pieces (control + family-vs-size, the ablation's 'pieces' set), first 30 scenarios of each test list; (2) locked-15 grids, f40_s0 (the only 40% config of that study) then f20_s0..2, first 30 scenarios; (3) the 15 seen-family whole grids, first 10 scenarios; (4) the 17 unseen-family whole grids, first 10 scenarios; (5) EXTRA, only if time remains: 36 ladder-generated pieces (generator-control), first 30 scenarios, f40. Within a set, grids run smallest first (by the published WLS wall time). 10% and noisy configurations are not run for the flat prior.",
+  "comparisons_preregistered": "Per cell, with the same bootstrap draws as the published cells (rng seeded by crc32(study|grid|cond), 2000 resamples, win = point ratio<1 and 95% CI upper<1, best comparator re-selected inside each resample): (i) 'info-asymmetric': GENCO as released vs best(I1-I5, W_flat); (ii) 'flat both sides': GENCO-A1 (limits made uninformative, read from 2026-10-22-genco-voltage-limit-ablation/per_grid/genco_ablate_<grid>.jsonl, arm A1, configs f40_s0..2, subset to the same first-k scenarios) vs best(I1-I5, W_flat); also (iii) GENCO-A1 vs W_flat alone and GENCO vs W_flat alone, reported as both 'GENCO significantly better' (ratio<1, CI upper<1) and 'WLS significantly better' (ratio>1, CI lower>1). Cells where the A1 file is missing/incomplete are reported as 'flat-both-sides not available', never imputed. Interpolators are I1-I5 as stored (they have no access to generator limits).",
+  "fallback_variant": "Same as published: non-converged scenarios replaced by the I2 error, reported next to the primary."
+ },
+ "F2_arm_WLS_uncapped": {
+  "question": "Does the seen-whole-grid headline survive when WLS is allowed to converge?",
+  "definition": "The PUBLISHED arm (informed limits-based prior, i.e. NOT flat) with the LM iteration budget raised from (8, 12) to (40, 60) (stage 1, stage 2); everything else identical. Run on the 15 seen-family whole grids at 40% (f40_s0..2), first 10 scenarios (the same subset as the published oos run), ascending by size, after the flatprior sets above, as far as time allows before the 07:15 EDT compute stop. A grid enters the table only if all three seeds completed.",
+  "reported": "Per grid: fraction converged and median iterations (capped vs uncapped), win5/win6 under the published capped arm and the uncapped arm, and the I1-I6 win count over the grids that were run (published counts restricted to the same grids shown beside it). Sets/grids not run are listed."
+ },
+ "F3_tuning_evidence": "Statement, no files exist: the tuning runs (4 scenarios each of pglib_opf_case500_goc and case1888rte; iteration cap and damping) left no log or script. The '2x' sensitivity sentence in report.md has no file behind it. See tuning_evidence_2026-10-22.md; nothing is reconstructed.",
+ "F4_hash_pin_and_documented_drift": {
+  "pinned_sha256_at_this_time": {
+   "protocol.json": "f23b59dd6f4102cfbf166e94f199b9c1e328eb1142046d4fd73b1f89ae59d452",
+   "wlslib.py": "e929686b64608394b5815fd71a00416bbfb9ebdd7cfe69ba8219761bfeb24c20",
+   "run_wls.py": "82aa120632a811294684fe6dc52c4c6417cb9f52020c65d4aa134d36367f8819",
+   "verdict.py": "3a79dc15e257446cf2229225d58a4081b0f9ff52e35fd7413d8c65e1a4587e55",
+   "protocol_code.sha": "0e28cd4c626a435ac7b18f6fc7496827ab7585d4e7210828ee6a2951b50a7743",
+   "run_wls_v2.py": "0b745c49f0ff76cc097d66c17d9b89b838be54073389cfdc7336afbb94b7a36d",
+   "launch_v2.sh": "ec616d4952f2e27a6cef9225a3c9529aa5d6e55241d7ae4c9e98483fc36fea58",
+   "jobs_v2.txt": "315c28d4ab1d66eaede581d3f0da2373848b86083e2c06c8a8f2dc3a9ee423a0",
+   "tests/test_wls_recovery.py": "9d289da4a18c8e78ce4aa0d7800a1da2c6d5895798558d01fdd5e9b0083ffb5a"
+  },
+  "note_on_pins": "These are hashes of the files AS THEY ARE NOW (after the run). They prove what the published numbers' files are today; they cannot prove the text of protocol.json at 22:04 on 2026-10-21, which was edited afterwards (mtime 2026-10-22 01:47:30) and is not recoverable. wlslib.py, protocol_code.sha and run_wls.py were last modified 22:15:34 / 22:15:45 / 22:07:16 on 2026-10-21, before the first scored file (22:15:58); verdict.py was last modified 01:47:20 on 2026-10-22.",
+  "drift_protocol_vs_code": [
+   "protocol.json 'solver' (flat start, 40 LM iterations, lambda0 1e-3, converged if max|dx|<1e-6) is SUPERSEDED by amendment_1 and by wlslib.py: DC-angle start, two stages with the zero-injection sigma x100 then x1, (8,12) LM iterations, lambda0 1e-5 divided by 10 per accepted step, converged = max|dx|<1e-4 or relative cost decrease<1e-5 at the last accepted step. The original text was not rewritten.",
+   "protocol.json 'win_rule' says 'rng seed 7'; verdict.py seeds each cell with zlib.crc32('study|grid|cond') through numpy default_rng, with the same index draws shared by all arms of that cell (paired). The code is authoritative; the '7' is not what was run.",
+   "protocol.json amendment_2 is stamped '~01:55 EDT' but the file's last write is 01:47:30 EDT; the stamp is the writing chat's estimate and is not a hash-verified time.",
+   "protocol_code.sha (e929686b64608394 / 82aa120632a81129) hashes wlslib.py and run_wls.py as of 22:15, which is AFTER the amendment-1 tuning on case500_goc and case1888rte; it is therefore a post-tuning pin, not a pre-registration of the solver.",
+   "table.md/verdict.json column 'cells WLS beats GENCO alone' counts cells where GENCO beats WLS (see F5); corrected in table_v2.md."
+  ]
+ },
+ "F5_table_v2": "table_v2.md is regenerated by verdict_v2.py from the per-scenario files, with the inverted column renamed 'cells GENCO beats WLS alone (CI)' and a new column 'cells WLS beats GENCO alone (CI)' (ratio G/W>1 and bootstrap CI lower>1), plus 'cells GENCO median < WLS median'. Existing table.md/verdict.json/cells.csv are not touched.",
+ "F6_selftest": "tests/test_wls_partial.py (new): case14, partial |V| measurements, zero-injection buses, generator buses with TIGHT label-derived P/Q priors (identity control: must reproduce reference_pf), plus a null control with a perturbed Ybus (must NOT), plus the shipped configuration check (limit-style priors, 8 of 14 |V| measured: must beat the mean-fill start). Run before reading any flatprior result.",
+ "validity_rules": {
+  "same_subsets_and_seeds": "first-30 (pieces, locked15, genctl) / first-10 (oos) scenarios of each test list and the published measured-bus masks (measured_seeded, seeds 0-2) and noise draws; the runner reuses the published scenario() construction line for line.",
+  "partial_results": "A config is written only when all of its scenarios finished; a cell is scored only when all of its configs finished. The compute stop is 07:15 EDT; unfinished sets are listed as not run.",
+  "no_post_hoc_tuning": "No solver setting is changed for the new arms; the only differences are the two arm switches above. If an arm turns out to behave badly (e.g. non-convergence), it is REPORTED, not retuned."
+ },
+ "analysis_code": "verdict_v2.py, written before any flatprior result is read; it reproduces the published cells.csv win5/win6 flags exactly as a built-in check (mismatches are printed).",
+ "outputs_new_files_only": [
+  "protocol_amendment_3.json",
+  "protocol_amendment_3.sha256",
+  "run_wls_v2.py",
+  "launch_v2.sh",
+  "jobs_v2.txt",
+  "per_case_v2/",
+  "logs_v2/",
+  "verdict_v2.py",
+  "cells_v2.csv",
+  "verdict_v2.json",
+  "table_v2.md",
+  "tests/test_wls_partial.py",
+  "tuning_evidence_2026-10-22.md",
+  "report_addendum_2026-10-22.md"
+ ]
+}

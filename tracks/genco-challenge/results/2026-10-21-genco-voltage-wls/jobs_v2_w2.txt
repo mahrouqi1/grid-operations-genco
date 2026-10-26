@@ -1,0 +1,140 @@
+flatuncapped control carved_case19402_goc_c10 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case4837_goc_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case5658_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case7336_epigrids_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case10480_goc_c13 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2383wp_k_c42 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2869_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case7336_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2383wp_k_c4 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2848_rte_c20 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case5658_epigrids_c3 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case8387_pegase_c3 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case3375wp_k_c53 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2869_pegase_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2848_rte_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case4837_goc_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case7336_epigrids_c4 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2383wp_k_c40 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2383wp_k_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case9241_pegase_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case8387_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case10480_goc_c12 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2848_rte_c22 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case9241_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2848_rte_c4 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case4837_goc_c3 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case7336_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case30000_goc_c3 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2383wp_k_c41 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case4837_goc_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped fvs carved_case2848_rte_c21 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case20758_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case30000_goc_c1 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case30000_goc_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case20758_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+flatuncapped control carved_case30000_goc_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped locked15 pglib_opf_case5_pjm 30 f40_s0
+flatuncapped locked15 pglib_opf_case24_ieee_rts 30 f40_s0
+flatuncapped locked15 pglib_opf_case14_ieee 30 f40_s0
+flatuncapped locked15 pglib_opf_case30_ieee 30 f40_s0
+flatuncapped locked15 pglib_opf_case39_epri 30 f40_s0
+flatuncapped locked15 pglib_opf_case73_ieee_rts 30 f40_s0
+flatuncapped locked15 pglib_opf_case89_pegase 30 f40_s0
+flatuncapped locked15 pglib_opf_case118_ieee 30 f40_s0
+flatuncapped locked15 pglib_opf_case57_ieee 30 f40_s0
+flatuncapped locked15 pglib_opf_case240_pserc 30 f40_s0
+flatuncapped locked15 pglib_opf_case162_ieee_dtc 30 f40_s0
+flatuncapped locked15 pglib_opf_case300_ieee 30 f40_s0
+flatuncapped locked15 pglib_opf_case1354_pegase 30 f40_s0
+flatuncapped locked15 pglib_opf_case2736sp_k 30 f40_s0
+flatuncapped locked15 pglib_opf_case3120sp_k 30 f40_s0
+uncapped control carved_case19402_goc_c10 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case4837_goc_c1 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case5658_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case7336_epigrids_c1 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case10480_goc_c13 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2383wp_k_c42 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2869_pegase_c2 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case7336_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2383wp_k_c4 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2848_rte_c20 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case5658_epigrids_c3 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case8387_pegase_c3 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case3375wp_k_c53 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2869_pegase_c1 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2848_rte_c1 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case4837_goc_c0 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case7336_epigrids_c4 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2383wp_k_c40 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2383wp_k_c2 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case9241_pegase_c1 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case8387_pegase_c2 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case10480_goc_c12 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2848_rte_c22 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case9241_pegase_c2 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2848_rte_c4 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case4837_goc_c3 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case7336_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case30000_goc_c3 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2383wp_k_c41 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case4837_goc_c2 30 f40_s0 f40_s1 f40_s2
+uncapped fvs carved_case2848_rte_c21 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case20758_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case30000_goc_c1 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case30000_goc_c2 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case20758_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+uncapped control carved_case30000_goc_c0 30 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case500_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case793_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case2000_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case2312_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case3022_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case2742_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case4837_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case3970_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case4917_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case5658_epigrids 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case4619_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case4601_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case4020_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case7336_epigrids 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos pglib_opf_case9591_goc 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos 1-HV-mixed--0-no_sw 10 f40_s0 f40_s1 f40_s2
+flatuncapped oos 1-HV-mixed--1-no_sw 10 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case4837_goc_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case4837_goc_c0 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case30000_goc_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case30000_goc_c0 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case30000_goc_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2869_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case7336_epigrids_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case3375wp_k_c53 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2848_rte_c20 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case19402_goc_c10 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case8387_pegase_c3 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case5658_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case20758_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case10480_goc_c12 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2383wp_k_c42 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case20758_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2383wp_k_c4 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case9241_pegase_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case8387_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case10480_goc_c13 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2383wp_k_c40 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case5658_epigrids_c3 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2869_pegase_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2848_rte_c1 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case30000_goc_c3 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case9241_pegase_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2848_rte_c22 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2848_rte_c4 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2383wp_k_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case4837_goc_c3 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case7336_epigrids_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case7336_epigrids_c4 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case7336_epigrids_c0 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case4837_goc_c2 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2848_rte_c21 30 f40_s0 f40_s1 f40_s2
+flatprior genctl pglib_opf_carved_case2383wp_k_c41 30 f40_s0 f40_s1 f40_s2

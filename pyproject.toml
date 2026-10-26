@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+pythonpath = ["core", "tracks/genco-challenge/src"]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "slow: the dense-Newton-Raphson or largest-grid cases; skip with -m 'not slow' for a fast inner loop",
+]

@@ -1,0 +1,42 @@
+{
+ "saved_vs_published": {
+  "interp": {
+   "groups": 150,
+   "scenarios": 23980,
+   "max_abs_diff_pu": 9.992007221626409e-16,
+   "worst": {
+    "kind": "interp",
+    "grid": "pglib_opf_case1354_pegase",
+    "config": "f40_s0",
+    "method": "I4",
+    "n": 27,
+    "max_abs_diff": 9.992007221626409e-16,
+    "max_ref": 0.006460192315725001
+   }
+  },
+  "genco": {
+   "groups": 30,
+   "scenarios": 4796,
+   "max_abs_diff_pu": 1.8644920017094578e-05,
+   "worst": {
+    "kind": "genco",
+    "grid": "pglib_opf_case3120sp_k",
+    "config": "f20_s0",
+    "method": "G",
+    "n": 98,
+    "max_abs_diff": 1.8644920017094578e-05,
+    "max_ref": 0.009231370366387001
+   }
+  }
+ },
+ "log_vs_published": {
+  "interp": {
+   "n": 23980,
+   "max_abs_diff_pu": 0.0
+  },
+  "genco": {
+   "n": 4796,
+   "max_abs_diff_pu": 1.8644920017000036e-05
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "subnet_case10480_goc_idx_26": {
+  "original": 105.16579452089033,
+  "corrected": 105.16579451559417,
+  "ratio_corrected_over_original": 0.99999999994964
+ },
+ "subnet_case10480_goc_idx_40": {
+  "original": 91.4930222884501,
+  "corrected": 91.23249563860955,
+  "ratio_corrected_over_original": 0.9971524970612601
+ },
+ "subnet_case19402_goc_idx_47": {
+  "original": 66.22916551236042,
+  "corrected": 66.22916548948226,
+  "ratio_corrected_over_original": 0.9999999996545605
+ },
+ "subnet_case20758_epigrids_idx_49": {
+  "original": 114.10329768047274,
+  "corrected": 113.16872590798289,
+  "ratio_corrected_over_original": 0.9918094236407877
+ },
+ "subnet_case4837_goc_idx_28": {
+  "original": 115.00000052401722,
+  "corrected": 115.00000039691915,
+  "ratio_corrected_over_original": 0.9999999988947993
+ },
+ "subnet_case4837_goc_idx_35": {
+  "original": 128.700001069787,
+  "corrected": 128.70000047317106,
+  "ratio_corrected_over_original": 0.9999999953642896
+ },
+ "subnet_case4837_goc_idx_37": {
+  "original": 87.00000090007714,
+  "corrected": 87.00000089816662,
+  "ratio_corrected_over_original": 0.99999999997804
+ },
+ "subnet_case5658_epigrids_idx_8": {
+  "original": 117.02350408697588,
+  "corrected": 115.94806057308863,
+  "ratio_corrected_over_original": 0.9908100212664291
+ },
+ "subnet_case9591_goc_idx_12": {
+  "original": 58.490935608453384,
+  "corrected": 58.30425178908418,
+  "ratio_corrected_over_original": 0.9968083290611234
+ }
+}

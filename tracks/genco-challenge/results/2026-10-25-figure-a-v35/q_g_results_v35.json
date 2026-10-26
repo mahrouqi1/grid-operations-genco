@@ -1,0 +1,163 @@
+{
+ "mask_seed": 0,
+ "max_abs_diff_vs_cells_v3": {
+  "inf": 9.094947017729282e-13,
+  "infunc": 9.094947017729282e-13,
+  "flat": 8.881784197001252e-16,
+  "flatunc": 5.684341886080802e-14
+ },
+ "sets": {
+  "carved pieces": {
+   "inf": {
+    "n": 36,
+    "median": 7.344438013566027,
+    "min": 0.12193979801372191,
+    "max": 49.31383760339008,
+    "n_genco_better_pt": 6,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.624074074074074
+   },
+   "infunc": {
+    "n": 36,
+    "median": 10.304512189637085,
+    "min": 0.26963241329820226,
+    "max": 52.76268798272545,
+    "n_genco_better_pt": 4,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.1962962962962963
+   },
+   "flat": {
+    "n": 36,
+    "median": 2.192309496274616,
+    "min": 0.08297515660392689,
+    "max": 34.94908079201381,
+    "n_genco_better_pt": 10,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.8759259259259259
+   },
+   "flatunc": {
+    "n": 36,
+    "median": 3.626068227945715,
+    "min": 0.11715770055581216,
+    "max": 26.03728092554607,
+    "n_genco_better_pt": 7,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.35185185185185186
+   }
+  },
+  "locked 15": {
+   "inf": {
+    "n": 15,
+    "median": 2.6808382735830842,
+    "min": 0.3599452714643306,
+    "max": 26.33974714898392,
+    "n_genco_better_pt": 3,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.45111111111111113
+   },
+   "infunc": {
+    "n": 15,
+    "median": 2.775552973748266,
+    "min": 0.6868044088406754,
+    "max": 31.205176328745306,
+    "n_genco_better_pt": 1,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.20765432098765432
+   },
+   "flat": {
+    "n": 15,
+    "median": 1.283476098727271,
+    "min": 0.15191971309643768,
+    "max": 6.044535068558405,
+    "n_genco_better_pt": 6,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.5022222222222222
+   },
+   "flatunc": {
+    "n": 15,
+    "median": 1.4298357434723274,
+    "min": 0.16745597141858806,
+    "max": 6.104687797626827,
+    "n_genco_better_pt": 3,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.24790123456790128
+   }
+  },
+  "seen whole grids": {
+   "inf": {
+    "n": 15,
+    "median": 1.6808847154911843,
+    "min": 0.29758782122465,
+    "max": 10.471144469349738,
+    "n_genco_better_pt": 3,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.9800000000000001
+   },
+   "infunc": {
+    "n": 15,
+    "median": 8.788775815113533,
+    "min": 0.2896751228411847,
+    "max": 35.693029212905735,
+    "n_genco_better_pt": 3,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.5666666666666667
+   },
+   "flat": {
+    "n": 15,
+    "median": 0.5826494134080082,
+    "min": 0.1077659379104011,
+    "max": 3.8143399842966743,
+    "n_genco_better_pt": 12,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.9866666666666667
+   },
+   "flatunc": {
+    "n": 15,
+    "median": 1.1561288382965262,
+    "min": 0.2626539461118313,
+    "max": 5.126345281850692,
+    "n_genco_better_pt": 7,
+    "n_ratio_gt120": 0,
+    "mean_frac_not_converged": 0.8133333333333332
+   }
+  },
+  "unseen whole grids": {
+   "inf": {
+    "n": 17,
+    "median": 2.432265505325418,
+    "min": 0.596726518388534,
+    "max": 6145.5003945175995,
+    "n_genco_better_pt": 2,
+    "n_ratio_gt120": 5,
+    "mean_frac_not_converged": 0.6352941176470589
+   },
+   "infunc": {
+    "n": 17,
+    "median": 6.187444834510833,
+    "min": 0.6974375752769145,
+    "max": 6145.5003945175995,
+    "n_genco_better_pt": 2,
+    "n_ratio_gt120": 5,
+    "mean_frac_not_converged": 0.4294117647058824
+   },
+   "flat": {
+    "n": 17,
+    "median": 0.9637046668495429,
+    "min": 0.20874986275973342,
+    "max": 1606.207916302885,
+    "n_genco_better_pt": 9,
+    "n_ratio_gt120": 4,
+    "mean_frac_not_converged": 0.6470588235294118
+   },
+   "flatunc": {
+    "n": 17,
+    "median": 1.392944711943207,
+    "min": 0.23760055215033887,
+    "max": 1606.207916302885,
+    "n_genco_better_pt": 7,
+    "n_ratio_gt120": 4,
+    "mean_frac_not_converged": 0.4411764705882353
+   }
+  }
+ }
+}

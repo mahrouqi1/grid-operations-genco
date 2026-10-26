@@ -1,0 +1,10 @@
+subgrid,source,n_scen,gt90,max_angle_deg
+subnet_case4837_goc_idx_35,genco-pf-pretraining-corrected,1198,3,104.1
+subnet_case20758_epigrids_idx_49,genco-pf-pretraining-corrected,1083,0,89.0
+subnet_case9591_goc_idx_12,genco-pf-pretraining-corrected,1132,517,179.9
+subnet_case5658_epigrids_idx_8,genco-pf-pretraining-corrected,1159,0,26.1
+subnet_case4837_goc_idx_28,genco-pf-pretraining-corrected,1136,0,45.7
+subnet_case19402_goc_idx_47,genco-pf-pretraining-corrected,1067,0,41.5
+subnet_case10480_goc_idx_40,genco-pf-pretraining-corrected,1060,1,145.8
+subnet_case4837_goc_idx_37,genco-pf-pretraining-corrected,1131,0,40.4
+subnet_case10480_goc_idx_26,genco-pf-pretraining-corrected,1162,0,47.4

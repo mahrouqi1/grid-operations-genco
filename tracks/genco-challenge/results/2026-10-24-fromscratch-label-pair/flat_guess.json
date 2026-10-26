@@ -1,0 +1,34 @@
+{
+ "subnet_case4837_goc_idx_35": {
+  "n_pq": 359146,
+  "flat1_mae": 0.05450382176617573
+ },
+ "subnet_case20758_epigrids_idx_49": {
+  "n_pq": 517193,
+  "flat1_mae": 0.02168292882525991
+ },
+ "subnet_case5658_epigrids_idx_8": {
+  "n_pq": 747716,
+  "flat1_mae": 0.02730610189345179
+ },
+ "subnet_case4837_goc_idx_28": {
+  "n_pq": 765066,
+  "flat1_mae": 0.05590061861412897
+ },
+ "subnet_case10480_goc_idx_40": {
+  "n_pq": 297570,
+  "flat1_mae": 0.044072663907582924
+ },
+ "subnet_case4837_goc_idx_37": {
+  "n_pq": 267826,
+  "flat1_mae": 0.0698917741265251
+ },
+ "subnet_case10480_goc_idx_26": {
+  "n_pq": 432503,
+  "flat1_mae": 0.06588546987382975
+ },
+ "pooled": {
+  "n_pq": 3387020,
+  "flat1_mae": 0.04555720391878116
+ }
+}

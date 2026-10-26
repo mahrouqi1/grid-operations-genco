@@ -1,0 +1,30 @@
+{
+ "pool_size_fixed": 469,
+ "pool_size_labelfree_used": null,
+ "draws": {
+  "0": {
+   "old_collapsed": 2,
+   "new_collapsed": 0,
+   "same_split": false,
+   "overlap_old_new": 23,
+   "old_train_collapsed": 1,
+   "old_test_collapsed": 1
+  },
+  "1": {
+   "old_collapsed": 2,
+   "new_collapsed": 0,
+   "same_split": false,
+   "overlap_old_new": 29,
+   "old_train_collapsed": 2,
+   "old_test_collapsed": 0
+  },
+  "2": {
+   "old_collapsed": 0,
+   "new_collapsed": 0,
+   "same_split": false,
+   "overlap_old_new": 27,
+   "old_train_collapsed": 0,
+   "old_test_collapsed": 0
+  }
+ }
+}

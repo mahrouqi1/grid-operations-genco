@@ -1,0 +1,13 @@
+{
+ "written": "2026-10-22 04:52:16 EDT. Written BEFORE any flatuncapped or uncapped scenario was run (as of writing only 'flatprior' scenarios had run: carved pieces, locked-15 and the first 6 seen whole grids).",
+ "status": "UNAUDITED",
+ "amends": "protocol_amendment_3b.json 'queue_change' (ordering only).",
+ "reason": "Timing: flat-prior blocks 1-83 finish at about 06:00 EDT; the (40,60) arms cost up to ~5x the (8,12) arms. In the single shared queue of 3b, the 36-piece flatuncapped block (est. 65-110 min wall on 2 workers) would have consumed all remaining time before the F2 request (informed-prior uncapped on the seen whole grids) started.",
+ "change": "Lines 135-304 of jobs_v2.txt are pre-locked (no job run). When the two flat-prior workers finish blocks 1-83 they exit, and each is replaced by a dedicated worker: worker 1 runs jobs_v2_w1.txt = (a) 'uncapped' (informed prior) on the 15 seen whole grids ascending, then (b) 'flatuncapped' on the seen whole grids ascending; worker 2 runs jobs_v2_w2.txt = (a) 'flatuncapped' on the 36 carved pieces, (b) 'flatuncapped' on locked-15 f40_s0, (c) 'uncapped' (informed prior) on the 36 pieces, (d) 'flatuncapped' on the unseen whole grids ascending, (e) flatprior on the 36 ladder-generated pieces (extra). Same code, same arms, same deadline 07:15 EDT. Nothing about any arm definition changes.",
+ "pins_sha256_now": {
+  "protocol_amendment_3b.json": "0a39ae6463516929907a29a6b1ae1481425447db74914a9add25127a27d67e75",
+  "run_wls_v2.py": "b22110e076bc6fa85622b212a688ae9f7432bcf3a63ea9d28ea466a653b956b2",
+  "jobs_v2_w1.txt": "f4f32e16013694ef41dd96810bf1e827f45916b166d7db2fe9e769a26f0253a1",
+  "jobs_v2_w2.txt": "81d43e4e35effb43ed72e24bb9a3c9af807cdae8d8984c5e00bc894feba247b2"
+ }
+}

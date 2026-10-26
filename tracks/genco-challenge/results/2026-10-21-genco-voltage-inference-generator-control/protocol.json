@@ -1,0 +1,263 @@
+{
+ "written": "2026-10-21, committed BEFORE any generation or evaluation for this control (no ladder-generated piece exists yet).",
+ "audit_origin": "the independent audit, round 1, finding F1: the whole-grid arm (candidate 9) and the carved-piece arms (candidates 10/11) used different scenario generators.",
+ "question": "Within ONE generator (the ladder generator: load-only perturbation, PV |V| fixed, repo oracle), does the whole-vs-piece (size) contrast for UNSEEN families persist? i.e. are carved 150-950-bus pieces of the unseen families won by GENCO more often than the unseen whole grids when both are made by the same generator?",
+ "option_choice": "Option (a) (whole grids through datakit default_pf) was ruled out by existing evidence: ladder_data runs on the unseen whole grids in data/external/genco-ladder/data/*/meta.json ended 'failed' (case2383wp_k after 5,704 s, case2868_rte, case3375wp_k), 'insufficient_valid_scenarios' with every generated sample a collapsed root (case2869_pegase 97/97, case2848_rte 1/1, case1888_rte, case1951_rte, case2746wp_k, case3012wp_k), so datakit default_pf cannot make usable unseen whole-grid data in the time available. Option (b) is therefore used: the carved pieces of BOTH families are regenerated through the ladder generator (powerflow_surrogate.generate load-only perturbation 0.8-1.2 global x 0.1 jitter, PV |V| fixed, verified AC solves) and converted by genco_challenge.ladder_to_datakit + pglib_rate_a_fix exactly as the whole-grid arm was.",
+ "pieces": {
+  "pglib_opf_carved_case20758_epigrids_c0": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 165,
+   "source": "carved_case20758_epigrids_c0"
+  },
+  "pglib_opf_carved_case20758_epigrids_c2": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 405,
+   "source": "carved_case20758_epigrids_c2"
+  },
+  "pglib_opf_carved_case30000_goc_c0": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 247,
+   "source": "carved_case30000_goc_c0"
+  },
+  "pglib_opf_carved_case30000_goc_c1": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 299,
+   "source": "carved_case30000_goc_c1"
+  },
+  "pglib_opf_carved_case4837_goc_c0": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 279,
+   "source": "carved_case4837_goc_c0"
+  },
+  "pglib_opf_carved_case4837_goc_c1": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 235,
+   "source": "carved_case4837_goc_c1"
+  },
+  "pglib_opf_carved_case5658_epigrids_c0": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 360,
+   "source": "carved_case5658_epigrids_c0"
+  },
+  "pglib_opf_carved_case5658_epigrids_c3": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 494,
+   "source": "carved_case5658_epigrids_c3"
+  },
+  "pglib_opf_carved_case7336_epigrids_c0": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 632,
+   "source": "carved_case7336_epigrids_c0"
+  },
+  "pglib_opf_carved_case7336_epigrids_c1": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 501,
+   "source": "carved_case7336_epigrids_c1"
+  },
+  "pglib_opf_carved_case19402_goc_c10": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 259,
+   "source": "carved_case19402_goc_c10"
+  },
+  "pglib_opf_carved_case10480_goc_c12": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 185,
+   "source": "carved_case10480_goc_c12"
+  },
+  "pglib_opf_carved_case10480_goc_c13": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 268,
+   "source": "carved_case10480_goc_c13"
+  },
+  "pglib_opf_carved_case4837_goc_c2": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 903,
+   "source": "carved_case4837_goc_c2"
+  },
+  "pglib_opf_carved_case4837_goc_c3": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 493,
+   "source": "carved_case4837_goc_c3"
+  },
+  "pglib_opf_carved_case30000_goc_c2": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 453,
+   "source": "carved_case30000_goc_c2"
+  },
+  "pglib_opf_carved_case30000_goc_c3": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 792,
+   "source": "carved_case30000_goc_c3"
+  },
+  "pglib_opf_carved_case7336_epigrids_c2": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 610,
+   "source": "carved_case7336_epigrids_c2"
+  },
+  "pglib_opf_carved_case7336_epigrids_c4": {
+   "group": "seen",
+   "family": "seen",
+   "n_bus": 673,
+   "source": "carved_case7336_epigrids_c4"
+  },
+  "pglib_opf_carved_case2848_rte_c1": {
+   "group": "unseen",
+   "family": "RTE",
+   "n_bus": 242,
+   "source": "carved_case2848_rte_c1"
+  },
+  "pglib_opf_carved_case2848_rte_c4": {
+   "group": "unseen",
+   "family": "RTE",
+   "n_bus": 554,
+   "source": "carved_case2848_rte_c4"
+  },
+  "pglib_opf_carved_case2848_rte_c20": {
+   "group": "unseen",
+   "family": "RTE",
+   "n_bus": 167,
+   "source": "carved_case2848_rte_c20"
+  },
+  "pglib_opf_carved_case2848_rte_c21": {
+   "group": "unseen",
+   "family": "RTE",
+   "n_bus": 735,
+   "source": "carved_case2848_rte_c21"
+  },
+  "pglib_opf_carved_case2848_rte_c22": {
+   "group": "unseen",
+   "family": "RTE",
+   "n_bus": 323,
+   "source": "carved_case2848_rte_c22"
+  },
+  "pglib_opf_carved_case2869_pegase_c1": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 513,
+   "source": "carved_case2869_pegase_c1"
+  },
+  "pglib_opf_carved_case9241_pegase_c1": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 439,
+   "source": "carved_case9241_pegase_c1"
+  },
+  "pglib_opf_carved_case2869_pegase_c2": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 327,
+   "source": "carved_case2869_pegase_c2"
+  },
+  "pglib_opf_carved_case9241_pegase_c2": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 488,
+   "source": "carved_case9241_pegase_c2"
+  },
+  "pglib_opf_carved_case8387_pegase_c2": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 327,
+   "source": "carved_case8387_pegase_c2"
+  },
+  "pglib_opf_carved_case2383wp_k_c2": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 353,
+   "source": "carved_case2383wp_k_c2"
+  },
+  "pglib_opf_carved_case3375wp_k_c53": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 165,
+   "source": "carved_case3375wp_k_c53"
+  },
+  "pglib_opf_carved_case2383wp_k_c4": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 202,
+   "source": "carved_case2383wp_k_c4"
+  },
+  "pglib_opf_carved_case2383wp_k_c40": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 241,
+   "source": "carved_case2383wp_k_c40"
+  },
+  "pglib_opf_carved_case2383wp_k_c41": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 660,
+   "source": "carved_case2383wp_k_c41"
+  },
+  "pglib_opf_carved_case2383wp_k_c42": {
+   "group": "unseen",
+   "family": "Polish",
+   "n_bus": 159,
+   "source": "carved_case2383wp_k_c42"
+  },
+  "pglib_opf_carved_case8387_pegase_c3": {
+   "group": "unseen",
+   "family": "PEGASE",
+   "n_bus": 405,
+   "source": "carved_case8387_pegase_c3"
+  }
+ },
+ "piece_set": "every piece that ran in candidate 10 (19 seen-family) and candidate 11 (17 unseen-family); a piece 'runs' here iff >= 20 usable ladder samples survive generation, conversion and the residual verification; the list of pieces that ran is written to protocol_ran.json after generation and BEFORE any GENCO or interpolator evaluation on them.",
+ "generator_details": "ladder: 120 usable samples per piece targeted (seed 0), load-only perturbation, oracle-verified; conversion keeps the first 120 of a seeded draw, requires |dVm|<1e-6, |dVa|<1e-4 deg vs the stored label and a residual < 1e-6 pu; rate_a taken from the .m. Carved .m files are copied as pglib_opf_<piece>.m so the repo's pglib route is used.",
+ "evaluation": "identical to candidates 9-11: GENCO zero-shot with candidate 7's mask, I1-I5 (same code), 3 mask seeds, 40% and 20% measured, noise-free, |V| MAE at unmeasured buses vs the label, ratio = median G / min median I, scenario-cluster bootstrap (2000, seed 7), win = ratio<1 and CI upper<1. graphkit test split test_ratio 0.99 intersected with verified labels.",
+ "interpolators": [
+  "I1",
+  "I2",
+  "I3",
+  "I4",
+  "I5"
+ ],
+ "bootstrap": {
+  "n": 2000,
+  "seed": 7
+ },
+ "alpha": 0.05,
+ "comparisons": "All win counts at 40% (primary) and 20% (secondary). Reused, not rerun: ladder-generated unseen whole grids (candidate 9: 17 grids, 8/17 at 40%, 3/17 at 20%) and ladder-generated seen whole grids (15 grids, 15/15 at 40%, 13/15 at 20%) from ../2026-10-21-genco-voltage-inference-oos/verdict.json.",
+ "primary_test": "Fisher exact, one-sided: the proportion of ladder-generated UNSEEN-family PIECES where GENCO wins at 40% is HIGHER than the proportion of ladder-generated UNSEEN WHOLE grids (8/17), at p < 0.05 => 'size contrast persists within the ladder generator'; otherwise 'not shown'.",
+ "secondary_tests": [
+  "same at 20% (unseen pieces vs unseen whole)",
+  "seen pieces (ladder) vs seen whole grids (ladder), one-sided, 40% and 20%",
+  "seen vs unseen PIECES within the ladder generator, two-sided Fisher, 40% and 20% (the family contrast at piece size, one generator)",
+  "descriptive: the same pieces under datakit (candidates 10/11) vs ladder: 2x2 table of win flags (generator effect on identical cut grids); median ratios"
+ ],
+ "post_sentences": {
+  "persists (p < 0.05)": "Within one generator (ladder), carved 150-950-bus pieces of the unseen families are won by GENCO more often than the unseen whole grids (X of N pieces vs 8 of 17 whole grids at 40%; one-sided Fisher p = P). So the whole-vs-piece contrast is not an artefact of the generator change between candidate 9 and candidates 10/11: wholeness or size of the grid, not only the scenario generator, separates them. This does not by itself say it is size (the pieces are also boundary-folded and OPF-screened), and it must be read with the seen-family whole grids that win 15/15, which neither size nor wholeness alone explains. Unaudited.",
+  "not shown (p >= 0.05)": "Within one generator (ladder), carved pieces of the unseen families are NOT won more often than the unseen whole grids (X of N vs 8 of 17 at 40%; one-sided Fisher p = P). The whole-vs-piece contrast of candidates 9 vs 11 is therefore not shown to survive a common generator and may be (partly) a generator effect. Unaudited."
+ },
+ "caveats_preregistered": "Pieces are not independent draws of a family (RTE = one parent case2848, Polish ~ one parent); the carved pieces' boundary injections are scaled by the ladder generator's load perturbation as well; ladder pieces whose generation fails are reported as not run, and failure rate is itself informative (the ladder generator has a loadability limit); pieces were OPF-screened (easier); the whole-grid arm used the PGLib/pandapower built-in networks of candidate 9 while the pieces use PGLib-derived carvings; unaudited.",
+ "code_sha256_16": {
+  "grids.py": "caa0f07ba7182066",
+  "stage_pieces.py": "f73f4e290bb2191c",
+  "gen_ladder.py": "663b9ab137f2374d",
+  "verify.py": "4a7364dce1799372",
+  "make_ids.py": "bcbbbc50d33365d4",
+  "ocommon.py": "b290159d56f46db8",
+  "run_interp.py": "4a4127912d671e3c",
+  "run_genco_o.py": "d871f20169b94d2b",
+  "verdict.py": "7785593c42b8322f"
+ }
+}

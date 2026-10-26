@@ -1,0 +1,233 @@
+{
+ "n_scored": 1083,
+ "n_low_buses": 1154,
+ "outcome_counts": {
+  "no_finite_convergence": 744,
+  "root_found_flat": 185,
+  "root_found_dc": 98,
+  "converged_but_rejected": 56
+ },
+ "rejected_best_resid_quantiles": [
+  3.5441335544110997e-13,
+  5.0217295599619405e-12,
+  8.564455145076977e-09
+ ],
+ "rejected_resid_lt_1e-8": 56,
+ "by_grid": {
+  "subnet_case10480_goc_idx_26": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 3,
+   "root_found_dc": 0,
+   "root_found_flat": 0
+  },
+  "subnet_case10480_goc_idx_40": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 0,
+   "root_found_dc": 0,
+   "root_found_flat": 9
+  },
+  "subnet_case19402_goc_idx_47": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 0,
+   "root_found_dc": 0,
+   "root_found_flat": 10
+  },
+  "subnet_case20758_epigrids_idx_49": {
+   "converged_but_rejected": 12,
+   "no_finite_convergence": 121,
+   "root_found_dc": 41,
+   "root_found_flat": 101
+  },
+  "subnet_case4837_goc_idx_28": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 0,
+   "root_found_dc": 1,
+   "root_found_flat": 15
+  },
+  "subnet_case4837_goc_idx_35": {
+   "converged_but_rejected": 4,
+   "no_finite_convergence": 592,
+   "root_found_dc": 56,
+   "root_found_flat": 13
+  },
+  "subnet_case4837_goc_idx_37": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 0,
+   "root_found_dc": 0,
+   "root_found_flat": 6
+  },
+  "subnet_case5658_epigrids_idx_8": {
+   "converged_but_rejected": 0,
+   "no_finite_convergence": 0,
+   "root_found_dc": 0,
+   "root_found_flat": 28
+  },
+  "subnet_case9591_goc_idx_12": {
+   "converged_but_rejected": 40,
+   "no_finite_convergence": 28,
+   "root_found_dc": 0,
+   "root_found_flat": 3
+  }
+ },
+ "scored_in_repair_status": 1083,
+ "repair_status_counts_for_scored": {
+  "recovered": 1070,
+  "recovered_signflip": 13
+ },
+ "repair_phase_counts_for_scored": {
+  "2": 643,
+  "1": 427,
+  "0": 13
+ },
+ "not_found_n": 800,
+ "not_found_repair_status": {
+  "recovered": 790,
+  "recovered_signflip": 10
+ },
+ "not_found_repair_phase": {
+  "2": 634,
+  "1": 156,
+  "0": 10
+ },
+ "not_found_start_family": {
+  "contains_neighbor": 514,
+  "contains_homotopy": 128,
+  "other": 166
+ },
+ "not_found_start_pair_top": {
+  "damped_dc_shift+repaired_label": 86,
+  "neighbor3291+neighbor3267": 29,
+  "damped_dc_shift_pert+repaired_label": 25,
+  "damped_flat+damped_dc_shift": 22,
+  "flip_as_written+identity": 10,
+  "neighbor53+neighbor13": 9,
+  "neighbor1672+neighbor1623": 9,
+  "damped_dc_shift+damped_dc_shift_pert": 7
+ },
+ "n_compared": 1083,
+ "closer_to_repaired_root_all": 1083,
+ "closer_to_repaired_root_not_found": [
+  800,
+  800
+ ],
+ "closer_to_repaired_root_found": [
+  283,
+  283
+ ],
+ "median_mae_root_found": 0.0036248048679429212,
+ "median_mae_root_not_found": 0.009103131381430485,
+ "median_mae_label_all": 1.134700894355774,
+ "pred_lt_half_buses_frac_all": 0.0,
+ "per_grid_vs_repaired_root": {
+  "subnet_case10480_goc_idx_26": {
+   "n": 3,
+   "n_nf": 3,
+   "label_med": 0.0059,
+   "root_med": 1.0847,
+   "pred_med": 1.0858,
+   "mae_label": 1.0906,
+   "mae_root": 0.0011,
+   "closer": 3,
+   "root_min_vm": 1.0163
+  },
+  "subnet_case10480_goc_idx_40": {
+   "n": 9,
+   "n_nf": 0,
+   "label_med": -0.0036,
+   "root_med": 1.098,
+   "pred_med": 1.0769,
+   "mae_label": 1.0812,
+   "mae_root": 0.0219,
+   "closer": 9,
+   "root_min_vm": 0.9426
+  },
+  "subnet_case19402_goc_idx_47": {
+   "n": 10,
+   "n_nf": 0,
+   "label_med": -0.043,
+   "root_med": 1.0949,
+   "pred_med": 1.0975,
+   "mae_label": 1.1424,
+   "mae_root": 0.0021,
+   "closer": 10,
+   "root_min_vm": 0.9757
+  },
+  "subnet_case20758_epigrids_idx_49": {
+   "n": 275,
+   "n_nf": 133,
+   "label_med": 0.0222,
+   "root_med": 1.0031,
+   "pred_med": 1.0101,
+   "mae_label": 0.9977,
+   "mae_root": 0.0029,
+   "closer": 275,
+   "root_min_vm": 0.9
+  },
+  "subnet_case4837_goc_idx_28": {
+   "n": 16,
+   "n_nf": 0,
+   "label_med": -0.1232,
+   "root_med": 0.9032,
+   "pred_med": 0.9023,
+   "mae_label": 1.026,
+   "mae_root": 0.001,
+   "closer": 16,
+   "root_min_vm": 0.9
+  },
+  "subnet_case4837_goc_idx_35": {
+   "n": 665,
+   "n_nf": 596,
+   "label_med": -0.061,
+   "root_med": 1.0832,
+   "pred_med": 1.0933,
+   "mae_label": 1.1517,
+   "mae_root": 0.0095,
+   "closer": 665,
+   "root_min_vm": 0.9
+  },
+  "subnet_case4837_goc_idx_37": {
+   "n": 6,
+   "n_nf": 0,
+   "label_med": 0.0413,
+   "root_med": 1.0924,
+   "pred_med": 1.0924,
+   "mae_label": 1.0422,
+   "mae_root": 0.0006,
+   "closer": 6,
+   "root_min_vm": 0.9556
+  },
+  "subnet_case5658_epigrids_idx_8": {
+   "n": 28,
+   "n_nf": 0,
+   "label_med": 0.0,
+   "root_med": 1.0732,
+   "pred_med": 1.0652,
+   "mae_label": 1.0652,
+   "mae_root": 0.0054,
+   "closer": 28,
+   "root_min_vm": 1.0168
+  },
+  "subnet_case9591_goc_idx_12": {
+   "n": 71,
+   "n_nf": 68,
+   "label_med": 0.4768,
+   "root_med": 1.0065,
+   "pred_med": 1.0197,
+   "mae_label": 0.549,
+   "mae_root": 0.0087,
+   "closer": 71,
+   "root_min_vm": 0.9766
+  }
+ },
+ "not_closer_list": [],
+ "case9591_idx_12": {
+  "n": 71,
+  "root_med_median": 1.006479381213584,
+  "root_med_min": 0.5143980869959766,
+  "root_med_max": 1.0546255565865703,
+  "pred_med_median": 1.0197499990463257,
+  "mae_root_median": 0.008678433525139972,
+  "mae_label_median": 0.5490115284919739,
+  "closer": 71
+ }
+}

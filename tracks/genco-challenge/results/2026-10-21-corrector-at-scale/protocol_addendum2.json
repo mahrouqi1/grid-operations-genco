@@ -1,0 +1,6 @@
+{
+ "written": "2026-10-21 00:05 EDT",
+ "why": "With addendum 1's batches, case6470rte (batch 5, 12.5 GB measured) and case2869pegase (batch 12, about 11 GB) cannot share the 24 GB GPU; the second run hit CUDA out of memory. No run had been scored.",
+ "batch_size": {"case2869pegase": 8, "case6470rte": 5, "case9241pegase": 3},
+ "rule": "case2869pegase lowered to 8 (about 7.5 GB) so it runs next to case6470rte; the other two are unchanged. Applied to every case2869pegase run. 13 optimizer steps per epoch at n = 100. Everything else unchanged."
+}

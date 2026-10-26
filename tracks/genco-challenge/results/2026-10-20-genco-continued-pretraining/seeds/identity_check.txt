@@ -1,0 +1,7 @@
+worst 5 (diff new-vs-stored, drift step0-vs-stored, tensor):
+  5.857e-04  5.516e-04  model.layers.3.convs.<bus___connects___bus>.lin_query.weight
+  5.816e-04  5.576e-04  model.layers.3.convs.<bus___connects___bus>.lin_key.weight
+  5.796e-04  6.488e-04  model.layers.8.convs.<bus___connects___bus>.lin_key.weight
+  5.781e-04  5.331e-04  model.layers.2.convs.<bus___connects___bus>.lin_key.weight
+  5.769e-04  5.510e-04  model.layers.4.convs.<bus___connects___bus>.lin_value.weight
+{"tensors": 416, "max_abs_diff_new_vs_stored": 0.000585729256272316, "max_abs_drift_step0_to_step25": 0.0006589535041712224, "tolerance": 0.0001, "verdict": "FAIL"}

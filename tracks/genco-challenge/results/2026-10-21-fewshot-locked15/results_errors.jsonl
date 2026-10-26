@@ -1,0 +1,1 @@
+{"id": "wu100L_pglib_opf_case240_pserc_n100_s0", "tag": "wu100L", "grid": "pglib_opf_case240_pserc", "n": 100, "split_seed": 0, "error": "RuntimeError: pglib_opf_case240_pserc: 5 scored scenarios have collapsed labels", "wall_seconds": 939.7, "worker": "w5"}

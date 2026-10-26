@@ -1,0 +1,74 @@
+{
+ "finetune_1000": {
+  "model": {
+   "Avg. active res. (MW)": 1.9316961765289307,
+   "Avg. reactive res. (MVar)": 0.39451029896736145,
+   "PBE Mean": 2.0740275382995605,
+   "PBE Max": 149.79505920410156
+  },
+  "reference_and_dc": {
+   "AC Avg. active res. (MW)": 5.947263679393046e-11,
+   "AC Avg. reactive res. (MVar)": 9.350487373379278e-11,
+   "AC PBE Mean": 1.250875700128624e-10,
+   "AC PBE Max": 8.863482199779626e-07,
+   "DC Avg. active res. (MW)": 2.295097937685691,
+   "DC DC NaN scenarios": 0.0,
+   "runtime_ac_mean_ms_with_64_cores": 0.10843085404145152,
+   "runtime_ac_median_ms_with_64_cores": 0.09125098586082458,
+   "runtime_ac_std_ms_with_64_cores": 0.09546796736099676,
+   "runtime_ac_max_ms_with_64_cores": 1.9941553473472595,
+   "runtime_dc_mean_ms_with_64_cores": 0.03555119816566259,
+   "runtime_dc_median_ms_with_64_cores": 0.028703361749649048,
+   "runtime_dc_std_ms_with_64_cores": 0.058784165786709155,
+   "runtime_dc_max_ms_with_64_cores": 2.4573914706707
+  }
+ },
+ "scratch_1000": {
+  "model": {
+   "Avg. active res. (MW)": 3.8104212284088135,
+   "Avg. reactive res. (MVar)": 0.7321568131446838,
+   "PBE Mean": 4.052255630493164,
+   "PBE Max": 216.55450439453125
+  },
+  "reference_and_dc": {
+   "AC Avg. active res. (MW)": 5.947263679393046e-11,
+   "AC Avg. reactive res. (MVar)": 9.350487373379278e-11,
+   "AC PBE Mean": 1.250875700128624e-10,
+   "AC PBE Max": 8.863482199779626e-07,
+   "DC Avg. active res. (MW)": 2.295097937685691,
+   "DC DC NaN scenarios": 0.0,
+   "runtime_ac_mean_ms_with_64_cores": 0.10843085404145152,
+   "runtime_ac_median_ms_with_64_cores": 0.09125098586082458,
+   "runtime_ac_std_ms_with_64_cores": 0.09546796736099676,
+   "runtime_ac_max_ms_with_64_cores": 1.9941553473472595,
+   "runtime_dc_mean_ms_with_64_cores": 0.03555119816566259,
+   "runtime_dc_median_ms_with_64_cores": 0.028703361749649048,
+   "runtime_dc_std_ms_with_64_cores": 0.058784165786709155,
+   "runtime_dc_max_ms_with_64_cores": 2.4573914706707
+  }
+ },
+ "zeroshot": {
+  "model": {
+   "Avg. active res. (MW)": 11.07824420928955,
+   "Avg. reactive res. (MVar)": 1.2550854682922363,
+   "PBE Mean": 11.443985939025879,
+   "PBE Max": 197.30503845214844
+  },
+  "reference_and_dc": {
+   "AC Avg. active res. (MW)": 5.947263679393046e-11,
+   "AC Avg. reactive res. (MVar)": 9.350487373379278e-11,
+   "AC PBE Mean": 1.250875700128624e-10,
+   "AC PBE Max": 8.863482199779626e-07,
+   "DC Avg. active res. (MW)": 2.295097937685691,
+   "DC DC NaN scenarios": 0.0,
+   "runtime_ac_mean_ms_with_64_cores": 0.10843085404145152,
+   "runtime_ac_median_ms_with_64_cores": 0.09125098586082458,
+   "runtime_ac_std_ms_with_64_cores": 0.09546796736099676,
+   "runtime_ac_max_ms_with_64_cores": 1.9941553473472595,
+   "runtime_dc_mean_ms_with_64_cores": 0.03555119816566259,
+   "runtime_dc_median_ms_with_64_cores": 0.028703361749649048,
+   "runtime_dc_std_ms_with_64_cores": 0.058784165786709155,
+   "runtime_dc_max_ms_with_64_cores": 2.4573914706707
+  }
+ }
+}

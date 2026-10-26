@@ -1,0 +1,48 @@
+"""Writes protocol.json (+ sha256) and queue.json for the locked-15 few-shot study (plan candidate 4). Run ONCE, before any
+fine-tune on a new grid:  python scripts/plan.py   UNAUDITED."""
+import json, hashlib, time
+from pathlib import Path
+HERE = Path(__file__).resolve().parent.parent
+HELDOUT15 = ["pglib_opf_case5_pjm", "pglib_opf_case14_ieee", "pglib_opf_case24_ieee_rts", "pglib_opf_case30_ieee",
+    "pglib_opf_case39_epri", "pglib_opf_case57_ieee", "pglib_opf_case73_ieee_rts", "pglib_opf_case89_pegase",
+    "pglib_opf_case118_ieee", "pglib_opf_case162_ieee_dtc", "pglib_opf_case240_pserc", "pglib_opf_case300_ieee",
+    "pglib_opf_case1354_pegase", "pglib_opf_case2736sp_k", "pglib_opf_case3120sp_k"]
+REUSE = ["pglib_opf_case14_ieee", "pglib_opf_case30_ieee", "pglib_opf_case57_ieee", "pglib_opf_case118_ieee"]
+HAVE_DATA = REUSE + ["pglib_opf_case39_epri", "pglib_opf_case73_ieee_rts", "pglib_opf_case89_pegase", "pglib_opf_case162_ieee_dtc", "pglib_opf_case300_ieee"]
+GENERATE = ["pglib_opf_case5_pjm", "pglib_opf_case24_ieee_rts", "pglib_opf_case240_pserc"]
+SKIP = {"pglib_opf_case1354_pegase": "datakit labels collapse (fewshot.py: 69/97 eval, ~76% train); fewshot study excluded it by design",
+        "pglib_opf_case2736sp_k": "training-pool generation (1200 scen) projected well over the 1 h budget (ladder: 2,735 s for 200 scenarios, only 74 survive)",
+        "pglib_opf_case3120sp_k": "same (1,070 s for 200 scenarios, 99 survive)"}
+q = []
+for s in (0, 1, 2):
+    for g in HAVE_DATA + GENERATE:
+        if g in REUSE:
+            continue
+        q.append({"id": f"wu100_{g}_n100_s{s}", "prio": 1 if g in HAVE_DATA else 2, "grid": g, "n": 100, "seed": s, "split_seed": s,
+                  "tag": "wu100", "env": {"FEWSHOT_WARMUP_STEPS": "100"}, "epochs": 200, "note": ""})
+proto = {
+ "written": time.strftime("%Y-%m-%d %H:%M:%S %Z"),
+ "question": "Plan candidate 4 (the study plan): with n = 100 labelled scenarios of a NEW grid, does few-shot full fine-tuning of the RELEASED GENCO with the 100-step LR warm-up beat DC on branch dVa on the 15 locked-benchmark grids (score_retrain.HELDOUT15), and how does it compare with fd2? UNAUDITED.",
+ "recipe": "EXACTLY results/2026-10-10-warmup-adaptation/protocol.json 'recipe_under_test' (fewshot.train mode finetune, case118_1000.yaml recipe, all 20.1M params, AdamW lr 5e-4, ReduceLROnPlateau(0.7,5), batch 64, 200 epochs, early-stopping patience 100, checkpoint = best Validation layer_11_residual, FEWSHOT_FIX_SANITY=1, FEWSHOT_WARMUP_STEPS=100). Pretrained init = the released GENCO checkpoint (fewshot.PRETRAINED). Same scripts (run.py copied, only variant prefix b4_ -> lk15_ and output paths changed).",
+ "n": [100],
+ "n_1000": "NOT run: ~6,000 s per run per the B4 estimate (13 optimizer steps per epoch x 200 epochs), 15 grids x 3 draws is not cheap. case118 n=1000 is already in the B4 report.",
+ "draws": "3 per grid: split_seed s in {0,1,2} = init/shuffle seed (nested subsets of the grid's training pool; fewshot.write_splits).",
+ "grids": HELDOUT15,
+ "grid_data_status": {
+   "reuse_B4_rows": {"grids": REUSE, "why": "identical recipe, splits (fewshot.write_splits), eval2 set and scoring (genco_on_fd2/scripts/common.py); the B4 n=100 wu100 draws 0-2 rows are taken from results/2026-10-10-warmup-adaptation/results.jsonl, not rerun"},
+   "train_pool_and_eval2_exist_run_new": [g for g in HAVE_DATA if g not in REUSE],
+   "generate_then_run": {"grids": GENERATE, "how": "datakit with the SAME configs/seeds as fewshot.gen (train seed 7007, profile idx > max old-eval idx) and fresh_eval_data.gen (eval2: seed 41113, profile window 1600..1799, 200 scenarios); deviation: training pool requested 700 scenarios instead of 1200 (time); scripts/gen_missing.py"},
+   "skipped_no_data": SKIP},
+ "eval": "eval2 set of each grid (fresh, seed 41113, window 1600..1799); graphkit evaluate with the run's own normalizer_stats; scenarios = those graphkit scores. Test split of the n=100 draw (10 scenarios) is NOT the scored set; the eval2 set (up to 200 scenarios) is, as in B4.",
+ "metrics": ["branch dVa MAE in degrees (LEAD; 'ours' common.score genco_raw vs dc vs fd2 on the same scenarios)",
+             "|V| MAE pu", "our AC active residual (p_res_mw); graphkit residual (genco_active_res_mw vs dc_active_res_mw)"],
+ "ratios": "per draw: dVa(genco)/dVa(DC) and /dVa(fd2) on the same scenarios; the grid value is the mean over its 3 draws; also draws below 1.",
+ "success_test": "PRIMARY, FIXED BEFORE ANY NEW FINE-TUNE: the draw-mean branch dVa ratio to DC is < 1 on >= 10 of the 15 grids at n = 100. A grid with no data / failed runs counts as NOT beating DC (denominator stays 15). Because 3 of the 15 grids are skipped for cost/label reasons, the test needs 10 of the remaining 12 (0 to 3 of the generated ones must fail). The fd2 comparison (ratio to fd2 per grid, count of grids with ratio < 1) is reported regardless and is NOT part of the success test. Secondary (reported, not decisive): count with 'at least 2 of 3 draws below DC' (B4 R1 rule).",
+ "crash_policy": "As B4: non-zero exit / missing checkpoint / non-finite metric / <5 validation epochs / checkpoint equal to pretrained is REJECTED, retried up to 3 times, never scored; persistent failures are listed and the grid counts as not beating DC.",
+ "resources": "CUDA_VISIBLE_DEVICES=0 only, at most 2 concurrent training streams, fewshot._wait_gpu before each run. Local if projected < ~6 GPU-hours; else stop and write a costed OSC plan.",
+ "n_specs_to_run": len(q),
+}
+(HERE / "protocol.json").write_text(json.dumps(proto, indent=1))
+(HERE / "protocol.sha256").write_text(hashlib.sha256((HERE / "protocol.json").read_bytes()).hexdigest() + "  protocol.json\n")
+(HERE / "queue.json").write_text(json.dumps(q, indent=1))
+print(len(q), "specs")

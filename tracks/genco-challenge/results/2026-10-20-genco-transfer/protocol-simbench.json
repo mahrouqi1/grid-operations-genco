@@ -1,0 +1,25 @@
+{
+ "status": "FROZEN 2026-10-24 before any arm-H checkpoint was scored on validation or on the 15. OSC array 8059012 finished (3 x COMPLETED, logs end 'final state ok / DONE H seed N'); only the checkpoints were pulled back, no score of any kind has been read.",
+ "spec": an internal note; selection support in commit d192a42; main round = protocol.json in this directory (every rule below is that file's rule, unchanged)",
+ "question": "Is the failure of continued pretraining on unseen-family ladder data to improve zero-shot transfer (main round, arm D and the replay-only arms) caused by the training families being mostly GENCO's own (GOC, EPIGRIDS), or by the recipe itself?",
+ "arm_H": "released checkpoint init; SimBench HV only (6 trees x 2,000 points = 12,000 graphs; the one family GENCO's pretraining lacks) + the same 7 corrected replay subgraph sets (7,929 graphs); pretraining mask (as D); LR 3e-5 after 100-update warm-up; 26 epochs = 16,198 updates; seeds 0, 1, 2; checkpoints every 1,000 updates and final. Differs from D only in dropping the 15 GOC/EPIGRIDS grids.",
+ "contrast": "H vs D vs released, and vs the replay-only arms C00 and C01, (i) at the matched 12,000-update checkpoint and (ii) at the validation-selected checkpoint. H and D are matched on updates, not on batches or epochs: at 12,000 updates H has seen its HV points about 19 times, D about 4, and H batches hold 32 graphs against about 16 for D.",
+ "selection": "unchanged: per seed, lowest mean branch-angle ratio to DC over the RTE validation grids case1888rte and case2848rte among steps 2k..16k every 2,000, final, and step 0 (released, from val-released/). Then ONE scoring of the selected checkpoint on the locked 15 (score_ckpts, same pipeline). The 12,000-update checkpoint is scored once on the 15 for every seed.",
+ "primary_metric": "branch-angle error ratio to DC, per grid; headline = median over the locked 15 of the seed-mean ratio. Released = 3.692.",
+ "criteria": "the main round's go_no_go 1-4, reported as is for arm H (1: median seed-mean ratio <= 2.77; 2: seed-mean angle error below released on >= 11 of 15; 3: each seed alone drops the median >= 15 percent; 4: beats DC on |V| on >= 12 of 15). Criterion 5 only if 1-4 pass. They answer 'would H have been a GO'; the family-vs-recipe reading below is the primary use.",
+ "reference_numbers_from_main_round_known_before_scoring_H": {
+  "released_median": 3.692,
+  "selected_checkpoint_D": 3.899,
+  "selected_checkpoint_C00": 3.985,
+  "selected_checkpoint_C01": 3.692,
+  "at_12k_D": 5.703,
+  "at_12k_C00": 4.477,
+  "at_12k_C01": 4.451
+ },
+ "readings_declared_in_advance": {
+  "family_familiarity_limits_transfer": "H clearly beats D, on both comparisons (12k and selected): H's median ratio at 12k is at least 15 percent below D's (<= 4.85) with the gap present in each seed's median, and H is better than released on more grids than D is. Stronger version: H below released (3.692) at 12k.",
+  "recipe_limits_it": "H is about as bad as D or worse: H's median ratio at 12k is within 15 percent of D's (>= 4.85, i.e. not clearly better), with no seed rescuing it, and H better than released on at most as many grids as D (D: 0 at 12k). The selected-checkpoint comparison, which can collapse to released, is read as a secondary check.",
+  "in_between": "H between the two (a 5 to 15 percent gap or seeds disagreeing) is reported as partial/unresolved, not forced into either reading.",
+  "caveat_declared_now": "Three seeds, one control arm, one validation family (RTE). H also differs from D in dataset size and in grid scale (64 to about 100 buses), so a win for H would show that data FAMILY or SCALE matters, not family alone. A failure of H shows only that this recipe does not transfer from this unseen family either; it does not exclude a better recipe."
+ }
+}

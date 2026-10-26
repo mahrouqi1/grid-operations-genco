@@ -1,0 +1,55 @@
+{
+ "status": "FROZEN 2026-10-20 05:20 after the local smoke tests passed (ladder arms D, a, b, c on 2 grids incl. the 9,591-bus one; arm a again on the generator-corrected trees, converter 239d914; C01 plumbing) and before any transfer checkpoint was scored on validation or on the 15. Data staged to OSC scratch. Only the pre-registered time rule may still change EPOCHS (equally for every arm), from the OSC smoke's measured rate.",
+ "question": "Starting from the released GENCO pretraining checkpoint, does continued pretraining on verified operating points from grid families GENCO never saw (plus replay of the corrected pretraining subgrids), under task-aligned masking, improve zero-shot power-flow accuracy on a locked benchmark of 15 PGLib grids from families absent from training?",
+ "source_of_truth": "the study plan sections 1 to 9 (section 9 overrides where they differ)",
+ "init": "data/external/genco-pf-transfer/pretraining/best_model_state_dict.pt (released pretraining checkpoint), graphkit finetune with the PreTraining task and losses, config HGNS_PreTrain_subnets_100.yaml",
+ "identical_in_every_arm": "LR 3e-5 constant after a 100-update linear warm-up; lr_patience and early-stopping patience 1000 (inactive); <= 32 graphs and <= NODE_BUDGET buses per training batch (50,000 (amended 05:30; fits the 40 GB A100s Ascend allocates); replay graphs never reach it, so replay-only arms batch exactly 32); config seed = run seed; validation subgrid subnet_case19402_goc_idx_47 for graphkit's own val loss (not used for selection); checkpoints every 1,000 updates (save_at_steps) and at the end",
+ "data": {
+  "ladder_train_family_strict": "21 grids: SimBench HV 6 x 2,000 points, GOC 13 x 1,000 (pglib case500, 793, 2000, 2312, 2742, 3022, 3970, 4020, 4601, 4619, 4837, 4917, 9591), EPIGRIDS 2 x 6,000 (pglib case5658, 7336); converted by ladder_to_datakit (results/2026-10-20-ladder-to-datakit, verify_tree.json; case3022_goc converted at label tolerance 1e-5 pu / 1e-3 deg, measured deviation 1.35e-6 / 1.6e-4)",
+  "replay": "the 7 corrected GENCO pretraining subgrids of B (fixed arm data)",
+  "validation_family": "RTE: case1888rte, case2848rte (500 verified points each, ladder conversion), used ONLY for checkpoint and arm selection",
+  "locked_benchmark": "the 15 PGLib grids of score_retrain.HELDOUT15 (they shaped earlier work: a locked benchmark, not a pristine blind test), scored ONCE per arm and seed on the selected checkpoint",
+  "leakage_check": "results/2026-10-20-genco-transfer/leakage.md: all training, validation and replay grids pass (max branch-impedance Jaccard 0.16 vs the 15; no name or bus-count match)"
+ },
+ "arms": {
+  "C00": "replay only, pretraining (random) mask; local; 52 epochs (~12,900 updates)",
+  "C01": "replay only, constant 50/50 random + PF mask; local; 52 epochs",
+  "D (= C10)": "ladder + replay, pretraining mask; OSC",
+  "a (= P)": "ladder + replay, graphkit AddPFHeteroMask on every sample; OSC",
+  "b": "ladder + replay, pretraining mask for epochs < E/2, then 50/50; OSC",
+  "c": "ladder + replay, PF-mask fraction e/(E-1) at epoch e; OSC",
+  "m (= C11)": "ladder + replay, constant 50/50; OSC (the owner 2026-10-19 22:05)",
+  "seeds": "0, 1, 2 for every arm",
+  "epochs_ladder_arms": "10 (about 12,800 to 15,000 updates under the node budget); cut equally for every arm if the OSC smoke predicts > 6.0 h per run (plan section 9)"
+ },
+ "scoring": "genco_challenge.score_ckpts (ladder_eval pipeline, the post's metrics; reproduces the released tally: median branch-angle ratio 3.692, beats DC 1 / 13 / 0 of 15 on angle / |V| / residual)",
+ "selection": "per arm and seed: the saved checkpoint (every 1,000 updates and final) with the lowest mean branch-angle ratio to DC over the RTE validation grids; the arm chosen for the go/no-go = lowest seed-mean of that validation metric. Data and mask contrasts additionally compare all arms at the 12,000-update checkpoint.",
+ "primary_metric": "branch-angle error ratio to DC (genco branch_dva_mae_deg / dc branch_dva_mae_deg), per grid",
+ "go_no_go (Wed 2026-10-21 22:00; ALL must hold for the validation-selected arm on the 15)": {
+  "1_median_gain": "median over the 15 of the seed-mean branch-angle ratio <= 2.77 (>= 25 percent drop from 3.69)",
+  "2_breadth": "seed-mean branch-angle error below released on >= 11 of 15 grids",
+  "3_robustness": "each of the 3 seeds alone: median branch-angle ratio drop >= 15 percent",
+  "4_V_no_regression": "beats DC on |V| on >= 12 of 15 (released 13)",
+  "5_preservation": "on GENCO's own test subgrids, normal scenarios: hidden |V| MAE <= 1.5x released; active power residual mean <= 1.05x released and 95th percentile <= 1.10x released; healthy low-voltage bias within +-0.05 pu of released",
+  "stretch_reported_not_required": "beats DC on branch angle on >= 5 of 15"
+ },
+ "attribution_reported_either_way": "data effect: D vs released, D vs C00, m vs C01; mask effect: C01 vs C00, {a, b, c, m} vs D",
+ "post_lead": {
+  "GO": "Teaching GENCO to transfer: task-aligned continuation across unseen grid families",
+  "NO_GO": "Why GENCO transfer stalls: a controlled study of task masks and grid diversity"
+ },
+ "known_limitations_declared_before_results": [
+  "graphkit losses average over nodes in a batch, so large grids weigh more (per-graph averaging not adopted)",
+  "graphkit fits the normaliser per network on that network's own tables, including label columns (Qg, slack p_mw); identical convention for released and every arm, also at evaluation",
+  "graphkit hides the REF |V| setpoint under the PF mask, as in every released-GENCO number in the post",
+  "B (continued pretraining on 7 corrected subgrids) already eroded held-out accuracy (preliminary, unaudited), so continued pretraining itself is a risk the D control measures",
+  "ladder PGLib trees keep pandapower's branch modelling: ~30 tapped branches per case differ slightly in r/x/b/tap from the .m file (labels are exact roots of the WRITTEN tables, max residual < 1e-9 pu); generators, limits, costs, rate_a and Pd equal the .m file (converter 239d914)",
+  "case500_goc: the .m reference-bus unit has status 0; the ladder re-enabled it as slack (1 status difference in 15 cases, recorded)",
+  "non-PGLib ladder grids (SimBench HV) fold static generators into negative load; RTE (validation only) likewise"
+ ],
+ "amendments_before_any_result": [
+  "2026-10-20 05:30: NODE_BUDGET 100,000 -> 50,000 buses per training batch for EVERY arm. Reason: OSC smoke 7939717 ran on a 40 GB A100 (Ascend exposes no 80 GB feature) and ran out of memory at 100k; 50k fits 40 GB at the measured ~0.6 MB/bus. Replay-only arms are unaffected (32 graphs of <= ~900 buses never reach 50k). No checkpoint of any transfer arm existed.",
+  "2026-10-20 06:55: at NODE_BUDGET 50k a ladder epoch is 2,800 updates, so 10 epochs = ~28,000 updates; SAVE_AT_STEPS (set for 100k) covers 0..16,000 every 1,000, plus the final state. Checkpoint selection on RTE validation therefore chooses among steps 0-16,000 and final, identically for every ladder arm. The data/mask contrasts at 12,000 updates are unaffected. Measured OSC rate: ~91 updates/min on A100 40GB -> ~5.3 h per run inside the 6.5 h cap (array 7939787).",
+  "2026-10-20 07:55: validation selection scores checkpoints every 2,000 updates (0, 2k, ..., 16k) plus the final state, not every 1,000: 21 runs x 9 checkpoints x 2 RTE grids = 378 graphkit evaluations (~2 h on the two local GPUs) instead of ~756, so selection and the single 15-grid scoring finish before the Wed 22:00 go/no-go. Identical for every arm; no checkpoint had been scored."
+ ]
+}

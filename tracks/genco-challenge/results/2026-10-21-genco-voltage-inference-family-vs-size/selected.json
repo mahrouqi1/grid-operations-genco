@@ -1,0 +1,55 @@
+{
+ "selected": [
+  "carved_case2848_rte_c1",
+  "carved_case2848_rte_c4",
+  "carved_case2848_rte_c20",
+  "carved_case2848_rte_c21",
+  "carved_case2848_rte_c22",
+  "carved_case2869_pegase_c1",
+  "carved_case8387_pegase_c0",
+  "carved_case9241_pegase_c1",
+  "carved_case2869_pegase_c2",
+  "carved_case8387_pegase_c1",
+  "carved_case9241_pegase_c2",
+  "carved_case8387_pegase_c2",
+  "carved_case2383wp_k_c2",
+  "carved_case3375wp_k_c53",
+  "carved_case2383wp_k_c4",
+  "carved_case2383wp_k_c40",
+  "carved_case2383wp_k_c41",
+  "carved_case2383wp_k_c42",
+  "carved_case8387_pegase_c3",
+  "carved_case8387_pegase_c4"
+ ],
+ "screen_feasible": [
+  "carved_case8387_pegase_c0",
+  "carved_case9241_pegase_c1",
+  "carved_case2869_pegase_c1",
+  "carved_case8387_pegase_c1",
+  "carved_case2848_rte_c1",
+  "carved_case2383wp_k_c2",
+  "carved_case8387_pegase_c2",
+  "carved_case2869_pegase_c2",
+  "carved_case9241_pegase_c2",
+  "carved_case8387_pegase_c3",
+  "carved_case2383wp_k_c4",
+  "carved_case2848_rte_c4",
+  "carved_case8387_pegase_c4",
+  "carved_case2848_rte_c20",
+  "carved_case2848_rte_c21",
+  "carved_case2848_rte_c22",
+  "carved_case2848_rte_c23",
+  "carved_case2383wp_k_c40",
+  "carved_case2383wp_k_c41",
+  "carved_case2383wp_k_c42",
+  "carved_case3375wp_k_c53"
+ ],
+ "rule": "per parent cap 5, per family cap 7, round-robin over parents by candidate index",
+ "replacements": {
+  "reason": "selected 8387_pegase_c0 and c1 produced <20 valid datakit scenarios; replaced by the next feasible candidates of the same parent in index order",
+  "added": [
+   "carved_case8387_pegase_c3",
+   "carved_case8387_pegase_c4"
+  ]
+ }
+}

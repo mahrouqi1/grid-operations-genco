@@ -1,0 +1,20 @@
+{
+ "Rlr": {
+  "median_angle_ratio": 5.468954875046148,
+  "change_vs_released": 0.48145212272160576,
+  "angle_better": 2,
+  "V_worse": 10
+ },
+ "Rfrz": {
+  "median_angle_ratio": 4.849073509323899,
+  "change_vs_released": 0.31353620714604635,
+  "angle_better": 2,
+  "V_worse": 14
+ },
+ "Rrep": {
+  "median_angle_ratio": 5.447418602770239,
+  "change_vs_released": 0.4756182921255201,
+  "angle_better": 2,
+  "V_worse": 12
+ }
+}

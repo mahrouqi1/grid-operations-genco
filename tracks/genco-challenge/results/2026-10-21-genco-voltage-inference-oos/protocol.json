@@ -1,0 +1,163 @@
+{
+ "written": "2026-10-21, committed BEFORE any GENCO-vs-interpolator comparison on these grids. Before this file: only staging/data-prep (stage.py, make_ids.py) and mechanics checks ran: (a) GENCO on SimBench 1-HV-mixed--0 at f20_s0 and n20_s0 (twice) to check noise injection scale (visible-|V| deviation 0.016 pu = about 3 sigma max over 1300 draws, as expected), determinism and that noise does not compound; this printed a GENCO median |V| MAE for that one grid at two configs (0.0029 clean, 0.0049 noisy), no interpolator numbers were looked at for it; (b) I5 scalable implementation vs candidate 8's on 3 scenarios (max diff 1e-13), timing only.",
+ "question": "Does candidate 8's finding (zero-shot GENCO beats the best learning-free graph interpolator for |V| at unmeasured buses once enough buses are measured) hold on grid families that did not generate the hypothesis and that GENCO's pretraining never saw?",
+ "prior_hypothesis_source": "candidate 8 (results/2026-10-21-genco-voltage-inference), pglib locked-15: GENCO beat best-of-I1..I5 on 12/15 at 40% (CI rule), 8/15 at 20%, 6/15 at 10%, losing consistently on case240/300/3120. The primary condition here (40%) was chosen because that was the passing secondary there. No OOS numbers had been computed before this commit.",
+ "sets": {
+  "primary": [
+   "case1888rte",
+   "case2848rte",
+   "case6470rte",
+   "case6495rte",
+   "case6515rte",
+   "case2869pegase",
+   "pglib_opf_case8387_pegase",
+   "case9241pegase",
+   "pglib_opf_case2383wp_k",
+   "pglib_opf_case3012wp_k",
+   "pglib_opf_case3375wp_k",
+   "1-HV-mixed--0-no_sw",
+   "1-HV-mixed--1-no_sw",
+   "1-HV-mixed--2-no_sw",
+   "1-HV-urban--0-no_sw",
+   "1-HV-urban--1-no_sw",
+   "1-HV-urban--2-no_sw"
+  ],
+  "seen": [
+   "pglib_opf_case500_goc",
+   "pglib_opf_case793_goc",
+   "pglib_opf_case2000_goc",
+   "pglib_opf_case2312_goc",
+   "pglib_opf_case2742_goc",
+   "pglib_opf_case3022_goc",
+   "pglib_opf_case3970_goc",
+   "pglib_opf_case4020_goc",
+   "pglib_opf_case4601_goc",
+   "pglib_opf_case4619_goc",
+   "pglib_opf_case4837_goc",
+   "pglib_opf_case4917_goc",
+   "pglib_opf_case9591_goc",
+   "pglib_opf_case5658_epigrids",
+   "pglib_opf_case7336_epigrids"
+  ]
+ },
+ "families": {
+  "RTE": [
+   "case1888rte",
+   "case2848rte",
+   "case6470rte",
+   "case6495rte",
+   "case6515rte"
+  ],
+  "PEGASE": [
+   "case2869pegase",
+   "pglib_opf_case8387_pegase",
+   "case9241pegase"
+  ],
+  "Polish": [
+   "pglib_opf_case2383wp_k",
+   "pglib_opf_case3012wp_k",
+   "pglib_opf_case3375wp_k"
+  ],
+  "SimBench-HV": [
+   "1-HV-mixed--0-no_sw",
+   "1-HV-mixed--1-no_sw",
+   "1-HV-mixed--2-no_sw",
+   "1-HV-urban--0-no_sw",
+   "1-HV-urban--1-no_sw",
+   "1-HV-urban--2-no_sw"
+  ],
+  "GOC": [
+   "pglib_opf_case500_goc",
+   "pglib_opf_case793_goc",
+   "pglib_opf_case2000_goc",
+   "pglib_opf_case2312_goc",
+   "pglib_opf_case2742_goc",
+   "pglib_opf_case3022_goc",
+   "pglib_opf_case3970_goc",
+   "pglib_opf_case4020_goc",
+   "pglib_opf_case4601_goc",
+   "pglib_opf_case4619_goc",
+   "pglib_opf_case4837_goc",
+   "pglib_opf_case4917_goc",
+   "pglib_opf_case9591_goc"
+  ],
+  "EPIGRIDS": [
+   "pglib_opf_case5658_epigrids",
+   "pglib_opf_case7336_epigrids"
+  ]
+ },
+ "primary_note": "Primary = the grids in families RTE, PEGASE, Polish, SimBench-HV (unseen to pretraining and to the hypothesis). Seen family (GOC, EPIGRIDS: GENCO pretrained on GOC/EPIGRIDS SUBGRIDS) is reported separately and is in no verdict. Grids within a family are not independent (RTE 5, SimBench-HV 6 are siblings), so counts over grids overstate independent evidence; the per-family breakdown is reported for that reason.",
+ "data": "verified ladder-label trees: RTE data/external/genco-transfer-val/*, PEGASE+Polish data/external/genco-robust-start/*, SimBench-HV + GOC + EPIGRIDS data/external/genco-ladder-datakit/*. Staged by stage.py into data/external/genco-voltage-oos/<grid>/raw: the first K scenarios (ids 0..K-1; K=102 if the grid has <=3500 buses, K=52 if more, 100 if the source has only 100), values unchanged, single-file parquet + runtime_data. graphkit's datamodule with the candidate-7 cfg (test_ratio 0.99, seed 0) gives the test scenarios (~100 for <=3500 buses, 51 for larger, 99 for the 100-scenario sources); ids in test_ids.json. The scenario cap is for time; large grids have half as many scenarios.",
+ "test_scenarios": {
+  "1-HV-mixed--0-no_sw": 100,
+  "1-HV-mixed--1-no_sw": 100,
+  "1-HV-mixed--2-no_sw": 100,
+  "1-HV-urban--0-no_sw": 100,
+  "1-HV-urban--1-no_sw": 100,
+  "1-HV-urban--2-no_sw": 100,
+  "case1888rte": 100,
+  "case2848rte": 100,
+  "case2869pegase": 99,
+  "pglib_opf_case2383wp_k": 99,
+  "pglib_opf_case3012wp_k": 99,
+  "pglib_opf_case3375wp_k": 99,
+  "case6470rte": 51,
+  "case6495rte": 51,
+  "case6515rte": 51,
+  "pglib_opf_case8387_pegase": 51,
+  "case9241pegase": 51,
+  "pglib_opf_case2000_goc": 100,
+  "pglib_opf_case2312_goc": 100,
+  "pglib_opf_case2742_goc": 100,
+  "pglib_opf_case3022_goc": 100,
+  "pglib_opf_case3970_goc": 51,
+  "pglib_opf_case4020_goc": 51,
+  "pglib_opf_case4601_goc": 51,
+  "pglib_opf_case4619_goc": 51,
+  "pglib_opf_case4837_goc": 51,
+  "pglib_opf_case4917_goc": 51,
+  "pglib_opf_case500_goc": 100,
+  "pglib_opf_case5658_epigrids": 51,
+  "pglib_opf_case7336_epigrids": 51,
+  "pglib_opf_case793_goc": 100,
+  "pglib_opf_case9591_goc": 51
+ },
+ "configs": {
+  "f10/f20/f40_s{0,1,2}": "10/20/40% of buses measured, k=max(1,round(frac*n)), rng=default_rng([20261021+seed, n, scenario]).permutation(n)[:k] (seed 0 == candidates 7 and 8)",
+  "n20/n40_s{0,1,2}": "same measured sets as f20/f40 of the same seed; every measured |V| is replaced by |V|_true*(1+0.005*z), z=default_rng([20261021+5000+seed, n, scenario]).standard_normal(n); the SAME z for GENCO (added to its visible Vm input) and for all interpolators (the interpolators' y). The metric stays the error vs the TRUE |V| at unmeasured buses."
+ },
+ "methods": "G = released GENCO pretraining checkpoint zero-shot with candidate 7's mask (run_genco_o.py reuses candidate 7's run_variant/DetMask, adding only the noise). I1-I4 = candidate 8's vcommon.py UNCHANGED (harmonic unit weights; harmonic |Y|; nearest measured by 1/|Y| path; I2 + per-scenario 2-coefficient load-drop correction fitted on out-of-fold measured residuals; <10 measured -> I2). I5 = the same graph-kriging GP with the same (eps,lam) grids and marginal-likelihood selection per scenario, but implemented scalably in ocommon.py: the posterior mean is computed by the exact sparse identity (L+eps I+P_m/lam) f = eps*ybar*1+P_m y/lam (verified equal to candidate 8's dense version to 1e-13), and if more than 300 buses are measured the marginal likelihood is evaluated on a seeded random subset of 300 of them (posterior still uses all). Candidate 8 evaluated it on all measured buses; this changes I5 only on grids/fractions with >300 measured buses. Predictions clipped to [0.5,1.5] pu.",
+ "interpolators": [
+  "I1",
+  "I2",
+  "I3",
+  "I4",
+  "I5"
+ ],
+ "metric": "per scenario: mean over buses NOT measured of ||V|_pred - |V|_true| (pu); per grid and condition: median over scenario x seed values (3 seeds pooled)",
+ "statistic": "ratio = median_G / min over I1..I5 of median_I (best interpolator re-selected inside every bootstrap resample); bootstrap = 2000 resamples of SCENARIOS (the 3 seeds of a scenario move together), rng seed 7; win = ratio<1 and 95% percentile-CI upper bound <1",
+ "bootstrap": {
+  "n": 2000,
+  "seed": 7
+ },
+ "threshold_fraction": 0.6667,
+ "primary_test": "condition 40% measured, noise-free, 3 seeds pooled; PRIMARY set; among primary grids that ran, GENCO wins (CI rule) on >= 2/3 of them (needed = ceil(2/3 * grids_ran)) => PASS else FAIL",
+ "grids_that_ran_rule": "a grid is in the test iff GENCO and all five interpolators produced finite output for every test scenario in every one of the 15 configs. Any other grid is listed in verdict.json 'skipped' with the reason and is reported as not run. No grid is dropped for its results. Order of dropping if time is short: bottom of the primary list, then the SEEN set.",
+ "secondary_tests": [
+  "(i) same rule at 40% with 0.5% noise",
+  "(ii) same rule at 20% noise-free",
+  "(iii) per-family wins/total at each of the above (descriptive)"
+ ],
+ "descriptive_only": "10% noise-free and 20% with noise on the primary set; all five conditions on the SEEN set; point-estimate wins; per-interpolator medians",
+ "claim_wording_if_PASS": "Out of sample, on grid families the pretraining never saw and that did not generate the hypothesis (RTE, PEGASE, Polish, SimBench-HV), zero-shot GENCO estimates unmeasured-bus voltage magnitudes from 40% measured buses more accurately than the best of five learning-free graph interpolators on X of N grids (needed 2/3), each with a scenario-bootstrap CI of the error ratio below 1; the candidate-8 result replicates. Scope: |V| only (candidate 7: GENCO is worse than classical at angles and dispatch), 3 mask seeds, capped scenarios, unaudited.",
+ "claim_wording_if_FAIL": "The candidate-8 result does not replicate out of sample: on grid families never seen in pretraining, zero-shot GENCO beats the best of five learning-free interpolators for unmeasured-bus |V| at 40% measured on only X of N grids (needed 2/3). The advantage seen on the pglib locked-15 should be treated as specific to those grids (or as selection after the fact), and GENCO should not be presented as a better voltage estimator than a well-chosen interpolator. Unaudited.",
+ "code_sha256_16": {
+  "grids.py": "3a6078198979c8d7",
+  "stage.py": "e465d8ebf0588537",
+  "make_ids.py": "c3b1112ebed0b09f",
+  "ocommon.py": "6b41114c49b6f0d8",
+  "run_interp.py": "4a4127912d671e3c",
+  "run_genco_o.py": "a3320b243218c0d2",
+  "verdict.py": "fd46f2ea3e1742ab"
+ }
+}

@@ -1,0 +1,1032 @@
+{
+ "name": "pglib_opf_case1354_pegase",
+ "n_bus": 1354,
+ "scenarios_requested": 100,
+ "returncode": 0,
+ "seconds": 1023.8,
+ "config": "data/external/genco-ladder/configs/pglib_opf_case1354_pegase.yaml",
+ "scenarios_written": 28,
+ "status": "ok",
+ "scenarios_generated": 97,
+ "scenarios_dropped_invalid": 69,
+ "validation": {
+  "rule": "drop if min Vm < 0.5 pu or any Vm < 0",
+  "when": "2026-10-07 07:53:38",
+  "generated": 97,
+  "checked": 97,
+  "dropped": 69,
+  "kept": 28,
+  "reasons": {
+   "negative_vm": 60,
+   "min_vm_below_0.5": 9
+  },
+  "dropped_scenarios": [
+   {
+    "orig_scenario": 1,
+    "reason": "negative_vm",
+    "min_vm": -4.478538643277466e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 2,
+    "reason": "negative_vm",
+    "min_vm": -1.0805934812579561e-16,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 4,
+    "reason": "negative_vm",
+    "min_vm": -1.1496692206003582e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 7,
+    "reason": "negative_vm",
+    "min_vm": -5.7663271897213464e-15,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 9,
+    "reason": "negative_vm",
+    "min_vm": -1.7266619805220184e-21,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 10,
+    "reason": "negative_vm",
+    "min_vm": -2.812412097446824e-16,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 12,
+    "reason": "negative_vm",
+    "min_vm": -1.0385887043691744e-12,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 13,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 0.02059919880103313,
+    "argmin_bus": 719,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 14,
+    "reason": "negative_vm",
+    "min_vm": -1.4187010244340103e-12,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 15,
+    "reason": "negative_vm",
+    "min_vm": -7.415018513921335e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 16,
+    "reason": "negative_vm",
+    "min_vm": -3.740310026395563e-29,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 17,
+    "reason": "negative_vm",
+    "min_vm": -7.81139815953226e-41,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 18,
+    "reason": "negative_vm",
+    "min_vm": -1.426173196093707e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 19,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 9.161830553236831e-27,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 20,
+    "reason": "negative_vm",
+    "min_vm": -3.028138733249122e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 22,
+    "reason": "negative_vm",
+    "min_vm": -1.269257563499748e-12,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 27,
+    "reason": "negative_vm",
+    "min_vm": -3.751584759307855e-15,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 28,
+    "reason": "negative_vm",
+    "min_vm": -2.0475547438171747e-24,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 32,
+    "reason": "negative_vm",
+    "min_vm": -5.141879178311809e-18,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 33,
+    "reason": "negative_vm",
+    "min_vm": -2.556247413910891e-18,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 34,
+    "reason": "negative_vm",
+    "min_vm": -2.670635132459314e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 35,
+    "reason": "negative_vm",
+    "min_vm": -3.114107309450466e-25,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 37,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 2.465190328815662e-32,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 38,
+    "reason": "negative_vm",
+    "min_vm": -6.832395088255296e-15,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 39,
+    "reason": "negative_vm",
+    "min_vm": -2.0319645451720601e-13,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 40,
+    "reason": "negative_vm",
+    "min_vm": -2.1163527484480236e-11,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 41,
+    "reason": "negative_vm",
+    "min_vm": -9.704637085292697e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 42,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 2.5860875718090325e-36,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 44,
+    "reason": "negative_vm",
+    "min_vm": -1.5751624301018653e-36,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 45,
+    "reason": "negative_vm",
+    "min_vm": -2.4578717950269904e-30,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 46,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 4.647337364838025e-26,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 47,
+    "reason": "negative_vm",
+    "min_vm": -7.967990594386206e-16,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 48,
+    "reason": "negative_vm",
+    "min_vm": -1.1358422169175942e-13,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 50,
+    "reason": "negative_vm",
+    "min_vm": -2.445852443239702e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 51,
+    "reason": "negative_vm",
+    "min_vm": -1.6751221584126173e-11,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 52,
+    "reason": "negative_vm",
+    "min_vm": -1.8367099231598242e-40,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 55,
+    "reason": "negative_vm",
+    "min_vm": -1.2313776013771771e-15,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 56,
+    "reason": "negative_vm",
+    "min_vm": -1.970634395436624e-12,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 58,
+    "reason": "negative_vm",
+    "min_vm": -3.923635700109488e-44,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 59,
+    "reason": "negative_vm",
+    "min_vm": -1.8304461190242923e-44,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 60,
+    "reason": "negative_vm",
+    "min_vm": -2.1152749640747728e-11,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 61,
+    "reason": "negative_vm",
+    "min_vm": -6.179995603354381e-19,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 63,
+    "reason": "negative_vm",
+    "min_vm": -1.0309707736222443e-22,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 64,
+    "reason": "negative_vm",
+    "min_vm": -2.7052249250563114e-25,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 67,
+    "reason": "negative_vm",
+    "min_vm": -9.440581311794734e-20,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 68,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 2.465190328815662e-32,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 69,
+    "reason": "negative_vm",
+    "min_vm": -7.346839692639297e-40,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 73,
+    "reason": "negative_vm",
+    "min_vm": -4.647514850655615e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 74,
+    "reason": "negative_vm",
+    "min_vm": -9.568193823246577e-16,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 75,
+    "reason": "negative_vm",
+    "min_vm": -3.9348278635626856e-19,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 76,
+    "reason": "negative_vm",
+    "min_vm": -1.0684532740079542e-18,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 77,
+    "reason": "negative_vm",
+    "min_vm": -3.2500067811534605e-34,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 78,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 0.0,
+    "argmin_bus": 1342,
+    "n_low": 2,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 79,
+    "reason": "negative_vm",
+    "min_vm": -2.3874526279205904e-20,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 80,
+    "reason": "negative_vm",
+    "min_vm": -1.3452465257518244e-43,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 81,
+    "reason": "negative_vm",
+    "min_vm": -4.338734978715565e-30,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 82,
+    "reason": "negative_vm",
+    "min_vm": -8.022232913423534e-18,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 83,
+    "reason": "negative_vm",
+    "min_vm": -4.254117929935853e-40,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 84,
+    "reason": "negative_vm",
+    "min_vm": -8.743771361622167e-12,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 86,
+    "reason": "negative_vm",
+    "min_vm": -2.960575696150587e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 87,
+    "reason": "negative_vm",
+    "min_vm": -1.7121239871690535e-27,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 88,
+    "reason": "negative_vm",
+    "min_vm": -4.5281792672316554e-14,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 89,
+    "reason": "negative_vm",
+    "min_vm": -2.1556172080357354e-17,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 90,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 1.3684555315672042e-48,
+    "argmin_bus": 1342,
+    "n_low": 2,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 92,
+    "reason": "negative_vm",
+    "min_vm": -9.4039548065783e-38,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 93,
+    "reason": "negative_vm",
+    "min_vm": -1.3300469713787413e-19,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 94,
+    "reason": "min_vm_below_0.5",
+    "min_vm": 1.282927060844254e-49,
+    "argmin_bus": 1342,
+    "n_low": 2,
+    "n_neg": 0
+   },
+   {
+    "orig_scenario": 95,
+    "reason": "negative_vm",
+    "min_vm": -8.874685183736383e-31,
+    "argmin_bus": 1342,
+    "n_low": 1,
+    "n_neg": 1
+   },
+   {
+    "orig_scenario": 96,
+    "reason": "negative_vm",
+    "min_vm": -1.0452720974532386e-61,
+    "argmin_bus": 1342,
+    "n_low": 2,
+    "n_neg": 1
+   }
+  ],
+  "kept_min_vm": {
+   "median": 0.9794215212105829,
+   "p95": 0.9916157238750875,
+   "max": 0.9957791133661673,
+   "min": 0.8999999900793745
+  },
+  "q_limit_diagnostic": {
+   "tol_mvar": 1.0,
+   "kept_scenarios_with_pv_violation": 18,
+   "kept_pv_violation_mvar": {
+    "median": 3.0017861868642486,
+    "p95": 75.09360819921464,
+    "max": 158.07820821657074
+   },
+   "kept_scenarios_with_ref_violation": 0,
+   "dropped_pv_violation_mvar": {
+    "median": 1895.9929725392194,
+    "p95": 2635.8127317093254,
+    "max": 3045.5523594547153
+   },
+   "note": "diagnostic only: datakit PF mode does not enforce Q limits"
+  },
+  "oracle": {
+   "method": "core/grid_ops/reference_pf.newton_raphson_pf, flat and DC starts, tol 1e-8, max_it 30",
+   "kept_sampled": 10,
+   "kept_agree_flat": 10,
+   "kept_agree_dc": 10,
+   "dropped_sampled": 10,
+   "dropped_physical_root_flat": 10,
+   "dropped_physical_root_dc": 10,
+   "rows": [
+    {
+     "scenario": 0,
+     "label_min_vm": 0.9957791133661673,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.116319727924511e-13,
+      "agree": true,
+      "root_min_vm": 0.9957791133661689,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.3744157484523664e-13,
+      "agree": true,
+      "root_min_vm": 0.9957791133661681,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 1,
+     "label_min_vm": -4.478538643277466e-17,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0987625909130245,
+      "agree": false,
+      "root_min_vm": 0.9726351536949196,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0987625909130243,
+      "agree": false,
+      "root_min_vm": 0.9726351536949198,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 6,
+     "label_min_vm": 0.9686858506730553,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.06129191594736e-13,
+      "agree": true,
+      "root_min_vm": 0.9686858506730553,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 7.484863115352617e-14,
+      "agree": true,
+      "root_min_vm": 0.9686858506730557,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 14,
+     "label_min_vm": -1.4187010244340103e-12,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0958660564080343,
+      "agree": false,
+      "root_min_vm": 0.9729446461682425,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0958660564080343,
+      "agree": false,
+      "root_min_vm": 0.9729446461682425,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 21,
+     "label_min_vm": 0.9844561052431052,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0504506730067329e-13,
+      "agree": true,
+      "root_min_vm": 0.9844561052431079,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.1240953298367631e-13,
+      "agree": true,
+      "root_min_vm": 0.9844561052431061,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 22,
+     "label_min_vm": -1.269257563499748e-12,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0855044987432771,
+      "agree": false,
+      "root_min_vm": 0.9680587638682808,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.085504498743278,
+      "agree": false,
+      "root_min_vm": 0.9680587638682808,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 25,
+     "label_min_vm": 0.9851880401959835,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 3.200837585465212e-11,
+      "agree": true,
+      "root_min_vm": 0.9851880401959836,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 3.2003683030655966e-11,
+      "agree": true,
+      "root_min_vm": 0.9851880401959835,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 30,
+     "label_min_vm": 0.9731072437888335,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 9.829932465715201e-14,
+      "agree": true,
+      "root_min_vm": 0.9731072437888336,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 5,
+      "max_dv_vs_label_pu": 1.6278367272684451e-10,
+      "agree": true,
+      "root_min_vm": 0.9731072437888335,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 38,
+     "label_min_vm": -6.832395088255296e-15,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0999999836229135,
+      "agree": false,
+      "root_min_vm": 0.9997674424387977,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.099999983622914,
+      "agree": false,
+      "root_min_vm": 0.9997674424388003,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 43,
+     "label_min_vm": 0.9893962938427837,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 4.169525306454434e-13,
+      "agree": true,
+      "root_min_vm": 0.9893962938427838,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 4.079061529294872e-13,
+      "agree": true,
+      "root_min_vm": 0.9893962938427836,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 46,
+     "label_min_vm": 4.647337364838025e-26,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0985361063880839,
+      "agree": false,
+      "root_min_vm": 0.9879791463849245,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0985361063880843,
+      "agree": false,
+      "root_min_vm": 0.9879791463849246,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 54,
+     "label_min_vm": 0.9789232827074289,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 2.3400817815154727e-13,
+      "agree": true,
+      "root_min_vm": 0.9789232827074288,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 2.4222924213268796e-13,
+      "agree": true,
+      "root_min_vm": 0.9789232827074289,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 58,
+     "label_min_vm": -3.923635700109488e-44,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0981535013057684,
+      "agree": false,
+      "root_min_vm": 0.9662263898500313,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.098153501305769,
+      "agree": false,
+      "root_min_vm": 0.9662263898500311,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 65,
+     "label_min_vm": 0.9837511207734511,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 8.717690063995945e-14,
+      "agree": true,
+      "root_min_vm": 0.9837511207734501,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.7726406439616809e-13,
+      "agree": true,
+      "root_min_vm": 0.9837511207734503,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 68,
+     "label_min_vm": 2.465190328815662e-32,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0999997655391176,
+      "agree": false,
+      "root_min_vm": 0.9987566391379205,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0999997655391172,
+      "agree": false,
+      "root_min_vm": 0.9987566391379209,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 71,
+     "label_min_vm": 0.9765068143043132,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.630436414646226e-10,
+      "agree": true,
+      "root_min_vm": 0.9765068143043132,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 5,
+      "max_dv_vs_label_pu": 1.5932484354703815e-10,
+      "agree": true,
+      "root_min_vm": 0.9765068143043131,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 79,
+     "label_min_vm": -2.3874526279205904e-20,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0925067912155995,
+      "agree": false,
+      "root_min_vm": 1.0025283503885525,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0925067912155992,
+      "agree": false,
+      "root_min_vm": 1.0025283503885525,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 87,
+     "label_min_vm": -1.7121239871690535e-27,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0999997311888976,
+      "agree": false,
+      "root_min_vm": 0.9965496586734313,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0999997311888978,
+      "agree": false,
+      "root_min_vm": 0.99654965867343,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 91,
+     "label_min_vm": 0.8999999900793745,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.8834206374832077e-13,
+      "agree": true,
+      "root_min_vm": 0.8999999900793744,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 5,
+      "max_dv_vs_label_pu": 1.4110434744203435e-10,
+      "agree": true,
+      "root_min_vm": 0.8999999900793746,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 96,
+     "label_min_vm": -1.0452720974532386e-61,
+     "hybrid_ref_kind": "repaired",
+     "flat": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0995103052169244,
+      "agree": false,
+      "root_min_vm": 0.9970724512200816,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 6,
+      "max_dv_vs_label_pu": 1.0995103052169248,
+      "agree": false,
+      "root_min_vm": 0.9970724512200967,
+      "physical": true
+     }
+    }
+   ]
+  },
+  "original_raw": "raw.unvalidated-20261007-075345"
+ }
+}

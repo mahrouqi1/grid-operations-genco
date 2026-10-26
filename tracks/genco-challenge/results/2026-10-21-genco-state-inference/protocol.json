@@ -1,0 +1,87 @@
+{
+ "written": "2026-10-21, before the full GENCO run on the 15 grids. Disclosure: a mechanics smoke test of run_genco.py on pglib_opf_case14_ieee alone ran before this file (to fix the gen-alignment assertion); its medians were seen (GENCO dVa ~1.95 deg, Pg MAE ~60 MW vs B3 ~0.23 deg / ~16 MW) and nothing in the protocol or code was changed in response. Baseline code was run on 3 case14 scenarios before freezing (oracle reproduces labels to 1e-9).",
+ "question": "Zero-shot, does the released GENCO pretraining checkpoint infer the state of an unseen grid better than the best classical alternative when loads are known, generator dispatch Pg is UNKNOWN, and |V| is measured at only 20% of buses?",
+ "plan": "the study plan candidate 7",
+ "grids": [
+  "pglib_opf_case5_pjm",
+  "pglib_opf_case14_ieee",
+  "pglib_opf_case24_ieee_rts",
+  "pglib_opf_case30_ieee",
+  "pglib_opf_case39_epri",
+  "pglib_opf_case57_ieee",
+  "pglib_opf_case73_ieee_rts",
+  "pglib_opf_case89_pegase",
+  "pglib_opf_case118_ieee",
+  "pglib_opf_case162_ieee_dtc",
+  "pglib_opf_case240_pserc",
+  "pglib_opf_case300_ieee",
+  "pglib_opf_case1354_pegase",
+  "pglib_opf_case2736sp_k",
+  "pglib_opf_case3120sp_k"
+ ],
+ "scenarios": "graphkit test split of each grid, identical to the 15-grid zero-shot scoring (counts equal results/2026-10-07-genco-heldout-zeroshot n_test_scenarios); ids in test_ids.json",
+ "checkpoint": "data/external/genco-pf-transfer/pretraining/best_model_state_dict.pt (released), no normalizer file (graphkit default path), no training, no tuning",
+ "decoder": "OptimalPowerFlow (pretraining decoder), single deterministic pass",
+ "task_mask": {
+  "Pg": "masked at every generator",
+  "Qg": "masked",
+  "Vm": "visible at exactly k=max(1,round(0.2 n)) buses, seeded: numpy default_rng([20261021, n, scenario_id]).permutation(n)[:k]; masked elsewhere",
+  "Va": "masked everywhere except REF; REF Va VISIBLE at its label value (the case's reference angle; decided before the run)",
+  "Pd/Qd/PQ/PV/REF flags/GS/BS": "visible (never masked in pretraining)",
+  "limits and costs (Vm min/max, Qg min/max, Pg min/max, c0-c2, gen on/off)": "visible (p_low=0)",
+  "branch P/Q": "masked"
+ },
+ "baselines": {
+  "info": "scenario's own Ybus/branch/gen tables, Pd,Qd, type flags, REF angle (label), the CASE FILE (pglib .m: base Pg and Vg per gen, base-case loss fraction from a pandapower AC run), and for B2 the measured |V|. No other label content.",
+  "B1_ac": "dispatch = case-file Pg of in-service gens scaled so total = total Pd x (1 + base loss fraction); |V| setpoint at PV/REF = case-file Vg; AC Newton from DC start (tol 1e-8, 30 it); measured |V| ignored; no Q-limit enforcement (as the labels)",
+  "B2_ac_meas": "B1, but at measured buses that are PV or REF the |V| setpoint is the measurement",
+  "B3_dc": "MATPOWER-style DC power flow (taps, shifters, branch status) with B1's dispatch; |V| = setpoints at PV/REF, 1.0 at PQ",
+  "oracle (control, not a competitor)": "label bus Pg and label |V| at PV/REF -> must reproduce labels",
+  "flat (null, reported, not eligible)": "|V| = 1.0 pu, Va = REF angle everywhere",
+  "non-convergence": "B1/B2 that do not converge fall back to the B3 DC state and are flagged converged=false (counted in the report)"
+ },
+ "controls": [
+  "oracle-dispatch AC solve reproduces labels (max |dVa|, |dVm| over all scenarios reported)",
+  "genco_det100: same checkpoint, Vm visible at 100% of buses (upper-ish reference for the angle and Pg metrics; its Vm metric is empty)",
+  "visible entries pass through GENCO unchanged (diag vm_visible_dev, va_ref_dev logged per grid)"
+ ],
+ "primary_metrics": [
+  "dva_mae",
+  "vm_mae_unmeas"
+ ],
+ "metric_defs": {
+  "dva_mae": "per scenario: mean over in-service branches of |wrap((va_f - va_t)_pred - (va_f - va_t)_label)| (deg)",
+  "vm_mae_unmeas": "per scenario: mean over buses NOT in the measured set of ||V|_pred - |V|_label| (pu)",
+  "pg_mae": "per scenario: mean over in-service generators of |Pg_pred - Pg_label| (MW)"
+ },
+ "secondary_metrics": [
+  "pg_mae"
+ ],
+ "eligible_baselines": [
+  "B1_ac",
+  "B2_ac_meas",
+  "B3_dc"
+ ],
+ "statistic": "per grid: median over test scenarios of the per-scenario MAE; ratio = GENCO median / min over eligible baselines of their medians (best baseline re-selected inside every bootstrap resample, which is conservative for GENCO)",
+ "bootstrap": {
+  "n": 2000,
+  "seed": 7,
+  "unit": "scenario, resampled with replacement, same scenarios for all methods"
+ },
+ "win_rule": "GENCO wins a metric on a grid iff ratio < 1 AND the bootstrap 95% CI upper bound < 1; wins the grid iff it wins BOTH primary metrics",
+ "threshold_grids": 10,
+ "verdict_rule": "PASS iff GENCO wins the grid on >= 10 of 15 grids; else FAIL. Pg MAE is secondary and reported only; it does not change the verdict.",
+ "also_reported_not_in_verdict": [
+  "wins at the point estimate without the CI rule",
+  "flat null vs GENCO",
+  "per-grid B1/B2/B3 medians",
+  "B1/B2 non-convergence counts"
+ ],
+ "code_sha256_16": {
+  "common.py": "78eab13ea2c7f949",
+  "run_genco.py": "091e54059fb900a9",
+  "run_baselines.py": "e0f39ed06b9f7508",
+  "make_ids.py": "c737649552462930",
+  "verdict.py": "b614ecdf8b0c6d39"
+ }
+}

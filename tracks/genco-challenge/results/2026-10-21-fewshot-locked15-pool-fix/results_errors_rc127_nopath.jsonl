@@ -1,0 +1,2 @@
+{"id": "wu100Lpf_pglib_opf_case240_pserc_n100_s2", "error": "RuntimeError: evaluate eval__lk15_wu100Lpf_s2__finetune__pglib_opf_case240_pserc__n100 failed rc=127", "wall_seconds": 337.5}
+{"id": "wu100Lpf_pglib_opf_case240_pserc_n100_s0", "error": "RuntimeError: evaluate eval__lk15_wu100Lpf_s0__finetune__pglib_opf_case240_pserc__n100 failed rc=127", "wall_seconds": 338.4}

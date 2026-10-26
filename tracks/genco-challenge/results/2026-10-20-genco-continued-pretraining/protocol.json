@@ -1,0 +1,12 @@
+{"written": "2026-10-19 20:25 (before any run of this design; an earlier launch with FILTER90 on the corrected arm only was aborted after a few minutes, unscored, to match the arms exactly)",
+ "question": "Does continued pretraining of the RELEASED GENCO checkpoint on corrected labels remove its reproduction of collapsed labels, compared with the same continuation on the original labels, while preserving held-out power-flow accuracy?",
+ "arms": {"corrected": "ARM=fixed (corrected tables for the 9 affected subgrids)", "original": "ARM=published (original tables)"},
+ "identical_in_both": "init = released pretraining checkpoint; graphkit finetune (same pretraining task/config HGNS_PreTrain_subnets_100.yaml); subgrids = the 9 affected minus subnet_case9591_goc_idx_12 (DROP_SUBS, both arms), validation subnet_case19402_goc_idx_47; NO FILTER90; LR 3e-5 constant (LR_PATIENCE 1000), early stopping off (ES_PATIENCE 1000), warm-up 1 step (none), 20 epochs, seed 200 from the config, batch 32, one RTX 3090 each; renumbering identical (same scenario sets, only label values differ)",
+ "checkpoints": "state at steps 0, 25, 50, 100, 250, 500, 1000 and the final state (save_at_steps plugin); the best-validation checkpoint is NOT used (validation labels differ between arms)",
+ "primary_metric": "collapse reproduction: share of hidden collapsed PQ buses predicted < 0.5 pu under the pretraining mask on the 7 affected TRAINING subgrids (scored against the original labels; mask seeds 1000-1002), per saved step",
+ "preservation_tests_and_margins (pass = all hold for the corrected arm's final state)": {
+   "held_out_zero_shot": "on the 15 held-out grids (score_retrain path), median over grids of the ratio corrected_final / released for branch-angle error <= 1.10 AND for |V| error <= 1.10 (no more than 10 percent worse than the released checkpoint)",
+   "normal_in_distribution": "normal-scenario hidden-PQ |V| MAE under the pretraining mask on the 7 training subgrids <= 1.5 x the released checkpoint's",
+   "healthy_low_voltage": "on the repair-v3 F4 rows below 0.7 pu whose labels pass the 90-degree check: mean signed bias of the corrected final state within +-0.05 pu of the released checkpoint's"},
+ "publish_rule": "a 'GENCO-corrected' checkpoint is published only if all preservation tests pass; otherwise the result is reported as unlearning-with-cost",
+ "compared_against": "the original-label arm (same steps): it isolates the effect of the labels"}

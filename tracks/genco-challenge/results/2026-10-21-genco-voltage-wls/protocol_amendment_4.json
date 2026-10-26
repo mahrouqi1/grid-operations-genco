@@ -1,0 +1,41 @@
+{
+ "written": "2026-10-24 about 14:25 EDT. Written and committed BEFORE any per_case_v3 scenario is run. Smoke tests (one small grid, 2 scenarios, output to the scratchpad only) are exempt: they are plumbing checks and their numbers are not reported.",
+ "status": "UNAUDITED. Pre-registration for overnight option B (the overnight plan), go line given by the owner on 2026-10-24.",
+ "go_line_verbatim": "Go: run WLS uncapped (informed and limit-blind, 40/60 iterations) locally, no OSC, 6 single-thread workers at nice 15, f40_s0 only: locked 15 and the 36 carved pieces at up to 100 scenarios per grid first, then the 32 whole grids at 30 scenarios, about 25 core-hours at $0, hard stop Sunday 12:00 EDT, output to per_case_v3 after the protocol amendment is committed.",
+ "arms": {
+  "uncapped": "informed prior: true in-service generator P and Q limits, WLS iteration limits MAXIT = (40, 60).",
+  "flatuncapped": "limit-blind prior: every in-service generator Pmax := median Pmax of the scenario's in-service generators, Pmin := 0, Q limits untouched; MAXIT = (40, 60)."
+ },
+ "identical_to_published_except": "The arms are identical to the published ones (informed capped = the published WLS; flatprior = the limit-blind capped arm) in code (run_wls_v2.py and wlslib.py, hashes below), scenario construction, measurement masks (DetMask, seeds), tolerances, prior weights, and clipping. The ONLY differences are (1) the iteration cap, MAXIT (40, 60) instead of (8, 12), and (2) the scenario count per grid (up to 100 instead of 10 to 30). No retuning of any WLS parameter. The comparators (GENCO released checkpoint and the five interpolators I1-I5) and the published capped WLS exist only for the first 30 scenarios per grid (10 on whole grids), so every GENCO-versus-WLS win/loss statement is computed on that prefix (the first 30, or 10 for whole grids, scenarios of the same test-id list; the larger 100- and 30-scenario WLS runs add scenarios beyond the comparator prefix for the WLS-only convergence and error statistics). Note for whole grids: tier 2 runs 30 scenarios, the comparators cover the first 10 of them.",
+ "config": "f40_s0 ONLY (40 percent of buses measured, mask seed 0, no noise). Not f20, not other seeds, not noise.",
+ "sets_and_counts": {
+  "tier_1": "study locked15 (15 grids), study control (19 seen carved pieces), study fvs (17 unseen carved pieces): --limit 100 (fewer if the test split holds fewer). Both arms. 102 jobs.",
+  "tier_2": "study oos (32 whole grids = 15 seen + 17 unseen): --limit 30. Both arms. 64 jobs.",
+  "job_list": "jobs_v3.txt (166 lines, ordered tier 1 then tier 2)."
+ },
+ "iteration_limits": "40 for the first stage and 60 for the second (wlslib.estimate maxit tuple), exactly the (40, 60) of the existing uncapped and flatuncapped arms.",
+ "execution": {
+  "workers": "6 single-thread workers, nice 15, OMP_NUM_THREADS=MKL_NUM_THREADS=OPENBLAS_NUM_THREADS=NUMEXPR_NUM_THREADS=1, CUDA_VISIBLE_DEVICES empty; local workstation, no OSC, no GPU, $0.",
+  "hard_stop": "Sunday 2026-10-25 12:00 EDT, passed to every call as --deadline '2026-10-25 12:00' (the script default 2026-10-22 07:15 is in the past and would exit at once). A config is written only when ALL its scenarios finished, so partial cells are discarded; cells not finished by the stop are reported as not run.",
+  "output": "per_case_v3/<arm>/<study>/<grid>.csv (NEW directory; per_case_v2 is never written, because the script skips configs already present in its output file).",
+  "markers": "TIER1_DONE and TIER2_DONE in this directory, written only when every job of the tier finished before the deadline."
+ },
+ "metric": "Per scenario: unmeasured-bus |V| MAE of the clipped WLS estimate (wls_mae), status converged/not, iterations. Per cell (grid x f40_s0): median over scenarios; GENCO win = ratio of GENCO median to best-of-methods median below 1 with the upper end of a 2000-resample paired bootstrap 95% interval below 1 (rng seed crc32 of study|grid|cond, as in verdict_v2.py). Comparator sets: I1-I5 only (win5), I1-I5 plus informed WLS (uncapped, 'win6unc'), I1-I5 plus limit-blind WLS (flatuncapped, 'win6flatunc'), each also with the published capped WLS on the same cells and the same single config f40_s0 for a like-for-like comparison.",
+ "reporting_rule": "ALL cells are reported whatever they show, including cells where WLS still does not converge at 40/60. 'Uncapped' means 40/60 iterations, not 'converged': the converged fraction is reported next to every count (the informed uncapped solver is known not to converge on 93% of scenarios of case2312 and case3022 even at 40/60). Nothing is dropped, re-run, retuned or re-selected after a result is seen.",
+ "success_reading": {
+  "post_sentences_affected": {
+   "P72": "'WLS ran on 10 to 30 scenarios per grid. 61% of its solves with the true generator limits hit the iteration cap.' -> replaced by the new scenario counts and by the measured converged fraction at 40/60. If the informed uncapped converged fraction is below 100%, say so with the number.",
+   "P69": "'GENCO's wins against the five interpolators plus this WLS fall from 31 to 6 of 36 carved pieces, and from 11 to 2 of the 15 locked-benchmark grids.' (published capped informed WLS). Reading: if informed-uncapped WLS gives GENCO wins within about 2 cells of 6 of 36 and 2 of 15 on the same f40_s0 cells, the sentence stands and gains 'with the cap removed'. If GENCO wins rise by 3 or more cells, the sentence is softened to the new counts and the capped counts are labelled as an artefact of the cap. If wins fall further (fewer than 6 of 36 or 2 of 15) the sentence is hardened to the new counts.",
+   "P74": "'With the cap removed on the 29 pieces we tested, GENCO wins 5 of those 29. The capped limit-blind WLS gives 8 on the same 29.' -> replaced by the flatuncapped counts on all 36 pieces and all 15 locked grids (and the 32 whole grids) at f40_s0. Same reading rule: counts within about 2 cells of the previous 5 of 29 (scaled) leave the claim; a rise of 3 or more cells, or a fall, is reported as such and the sentence follows the data.",
+   "P143": "'The state-estimator comparison covers only 10 to 30 scenarios per grid and used an iteration-capped solver.' -> the limitation is replaced by what remains: comparator prefix of 30 (10 on whole grids) scenarios for win/loss statements, WLS-only statistics on up to 100 (30), and the converged fraction at 40/60; plus the fact that tuning used two scored grids stays."
+  },
+  "either_direction_is_reported": "More GENCO wins makes the post less harsh on GENCO; fewer wins makes the 6 of 36 and 2 of 15 firmer. Both are published. The result of this run does not change the post's claims about the released model's held-out accuracy or the label work."
+ },
+ "pins_sha256": {
+  "run_wls_v2.py": "b22110e076bc6fa85622b212a688ae9f7432bcf3a63ea9d28ea466a653b956b2",
+  "wlslib.py": "e929686b64608394b5815fd71a00416bbfb9ebdd7cfe69ba8219761bfeb24c20",
+  "verdict_v2.py": "8e9b482c8b3b26dec3d5a09ab8b68ff5d150f417de2f042d7b350076552a8e21",
+  "jobs_v3.txt": "4c0d3ce2130b657c68231bacb5956128c7cf01f59f05e52342656105e6471f25"
+ },
+ "files_to_be_added_after_this_amendment_and_before_the_launch": "launch_v3.sh (launcher), verdict_v3.py (copy of verdict_v2.py reading per_case_v3, f40_s0 only, plus WLS-only full-N table). Neither changes an arm definition; they are committed before the launch."
+}

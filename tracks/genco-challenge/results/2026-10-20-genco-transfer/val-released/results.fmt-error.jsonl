@@ -1,0 +1,2 @@
+{"grid": "case1888rte", "model": "zeroshot", "error": "RuntimeError('graphkit evaluate failed (1), see <REPO>/data/external/genco-ladder/logs/eval_zeroshot__case1888rte_genco-transfer-val.log')"}
+{"grid": "case2848rte", "model": "zeroshot", "error": "RuntimeError('graphkit evaluate failed (1), see <REPO>/data/external/genco-ladder/logs/eval_zeroshot__case2848rte_genco-transfer-val.log')"}

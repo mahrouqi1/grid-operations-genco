@@ -1,0 +1,38 @@
+[w1p2] seen_whole: cap=3100
+Seed set to 0
+Fitting normalizer on train set (2 scenarios)
+Total memory usage of bus_data: 11.75870132446289 MB
+Total memory usage of gen_data: 0.9915504455566406 MB
+[w1p2] seen_whole pglib_opf_case3022_goc buses=3022 n_scen=100 setup 5s
+[w1p2] pglib_opf_case3022_goc A1 f40_s0 100 scen 283s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A1 f40_s1 100 scen 343s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A1 f40_s2 100 scen 381s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A2 f40_s0 100 scen 365s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A2 f40_s1 100 scen 384s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A2 f40_s2 100 scen 388s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A3 f40_s0 100 scen 404s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A3 f40_s1 100 scen 397s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc A3 f40_s2 100 scen 384s  vm_visible_dev=0.00e+00
+[w1p2] pglib_opf_case3022_goc finished in 3333s
+[w1p2] unseen_whole: cap=3100
+Seed set to 0
+Fitting normalizer on train set (1 scenarios)
+Total memory usage of bus_data: 10.94449234008789 MB
+Total memory usage of gen_data: 0.7783241271972656 MB
+[w1p2] unseen_whole case2869pegase buses=2869 n_scen=99 setup 8s
+[w1p2] case2869pegase A1 f40_s0 99 scen 487s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A1 f40_s1 99 scen 461s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A1 f40_s2 99 scen 407s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A2 f40_s0 99 scen 386s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A2 f40_s1 99 scen 416s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A2 f40_s2 99 scen 322s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A3 f40_s0 99 scen 268s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A3 f40_s1 99 scen 261s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase A3 f40_s2 99 scen 271s  vm_visible_dev=0.00e+00
+[w1p2] case2869pegase finished in 3287s
+[w1p2] unseen_whole pglib_opf_case3012wp_k: projected 1.13 h passes the deadline; not started (remaining larger grids are skipped too)
+[w1p2] seen_whole: cap=None
+[w1p2] seen_whole pglib_opf_case3970_goc: projected 0.77 h passes the deadline; not started (remaining larger grids are skipped too)
+[w1p2] unseen_whole: cap=None
+[w1p2] unseen_whole pglib_opf_case3012wp_k: projected 1.13 h passes the deadline; not started (remaining larger grids are skipped too)
+PASS2 w1 END Thu 22 Oct 2026 07:13:23 AM EDT

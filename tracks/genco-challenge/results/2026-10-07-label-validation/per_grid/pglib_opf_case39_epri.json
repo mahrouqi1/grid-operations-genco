@@ -1,0 +1,261 @@
+{
+ "name": "pglib_opf_case39_epri",
+ "n_bus": 39,
+ "scenarios_requested": 200,
+ "returncode": 0,
+ "seconds": 401.6,
+ "config": "data/external/genco-ladder/configs/pglib_opf_case39_epri.yaml",
+ "scenarios_written": 200,
+ "status": "ok",
+ "scenarios_generated": 200,
+ "scenarios_dropped_invalid": 0,
+ "validation": {
+  "rule": "drop if min Vm < 0.5 pu or any Vm < 0",
+  "when": "2026-10-07 07:56:10",
+  "generated": 200,
+  "checked": 200,
+  "dropped": 0,
+  "kept": 200,
+  "reasons": {},
+  "dropped_scenarios": [],
+  "kept_min_vm": {
+   "median": 0.9862823263574451,
+   "p95": 0.9979324477642539,
+   "max": 1.0005935369702665,
+   "min": 0.8067894077015562
+  },
+  "q_limit_diagnostic": {
+   "tol_mvar": 1.0,
+   "kept_scenarios_with_pv_violation": 75,
+   "kept_pv_violation_mvar": {
+    "median": 0.0,
+    "p95": 40.82306002503306,
+    "max": 351.1836593448594
+   },
+   "kept_scenarios_with_ref_violation": 95,
+   "dropped_pv_violation_mvar": {},
+   "note": "diagnostic only: datakit PF mode does not enforce Q limits"
+  },
+  "oracle": {
+   "method": "core/grid_ops/reference_pf.newton_raphson_pf, flat and DC starts, tol 1e-8, max_it 30",
+   "kept_sampled": 10,
+   "kept_agree_flat": 10,
+   "kept_agree_dc": 10,
+   "dropped_sampled": 0,
+   "dropped_physical_root_flat": 0,
+   "dropped_physical_root_dc": 0,
+   "rows": [
+    {
+     "scenario": 0,
+     "label_min_vm": 0.9930327594803166,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 3.1893559842506805e-15,
+      "agree": true,
+      "root_min_vm": 0.9930327594803166,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.331875994401428e-10,
+      "agree": true,
+      "root_min_vm": 0.9930327594754049,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 22,
+     "label_min_vm": 0.9787448521134181,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 5.3671705175249236e-15,
+      "agree": true,
+      "root_min_vm": 0.9787448521134181,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 1.0692218111156587e-12,
+      "agree": true,
+      "root_min_vm": 0.9787448521134181,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 44,
+     "label_min_vm": 0.9314128336149562,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 5,
+      "max_dv_vs_label_pu": 5.0206146149789415e-15,
+      "agree": true,
+      "root_min_vm": 0.9314128336149594,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 5.23838236936073e-15,
+      "agree": true,
+      "root_min_vm": 0.93141283361496,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 66,
+     "label_min_vm": 0.9970970497779573,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 1.831026719408895e-15,
+      "agree": true,
+      "root_min_vm": 0.9970970497779577,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 3.707320034278747e-12,
+      "agree": true,
+      "root_min_vm": 0.9970970497776278,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 88,
+     "label_min_vm": 0.9659686029914861,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 3.231588236524781e-15,
+      "agree": true,
+      "root_min_vm": 0.9659686029914862,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.7059375859614932e-12,
+      "agree": true,
+      "root_min_vm": 0.9659686029914861,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 111,
+     "label_min_vm": 0.9956295099699701,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 6.085247753930999e-15,
+      "agree": true,
+      "root_min_vm": 0.99562950996997,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 1.7237580113785048e-12,
+      "agree": true,
+      "root_min_vm": 0.9956295099699699,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 133,
+     "label_min_vm": 0.9893806173384703,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.6697343572326224e-15,
+      "agree": true,
+      "root_min_vm": 0.9893806173384704,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 1.944250995290181e-12,
+      "agree": true,
+      "root_min_vm": 0.9893806173384702,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 155,
+     "label_min_vm": 0.9618398637432625,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.401779625492033e-15,
+      "agree": true,
+      "root_min_vm": 0.9618398637432624,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 5.482644725697312e-11,
+      "agree": true,
+      "root_min_vm": 0.9618398637312302,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 177,
+     "label_min_vm": 0.9441802504188191,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 3.2215603803613454e-15,
+      "agree": true,
+      "root_min_vm": 0.9441802504188186,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.3978710310060283e-12,
+      "agree": true,
+      "root_min_vm": 0.9441802504184491,
+      "physical": true
+     }
+    },
+    {
+     "scenario": 199,
+     "label_min_vm": 0.9984515232708184,
+     "hybrid_ref_kind": "label",
+     "flat": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 3.778430030019572e-15,
+      "agree": true,
+      "root_min_vm": 0.9984515232708182,
+      "physical": true
+     },
+     "dc": {
+      "converged": true,
+      "iterations": 4,
+      "max_dv_vs_label_pu": 2.2495297804421286e-10,
+      "agree": true,
+      "root_min_vm": 0.9984515232644414,
+      "physical": true
+     }
+    }
+   ]
+  }
+ }
+}

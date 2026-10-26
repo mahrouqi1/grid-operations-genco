@@ -1,0 +1,6 @@
+{
+ "written": "2026-10-21 01:50 EDT, AFTER the first test scoring of case2869pegase and case6470rte (disclosed): the first scoring used corr3.classical's convention for fd_k, i.e. k-2 further steps from the GUARDED fd2 state of lp2.priors_for.",
+ "why": "On case6470rte the guarded fd2 state IS the DC state in every scored scenario (the guard of lp2.priors_for falls back to DC when the raw iterate is non-finite, leaves the 0.5-1.5 pu bounds, or has a larger mismatch than DC), so 'fd3' of the first scoring was DC plus ONE step and 'fd_k' was DC plus k-2 steps. That is inconsistent with protocol.json, which defines every fd_k as k XB iterations from the DC start, and with the timing path (assembly + DC + k raw iterations).",
+ "change": "fd_k (k >= 2) = k-th RAW XB iterate from the DC start (a non-finite step is skipped), for every grid; the guarded state the corrector receives is reported separately as fd2_input, with the fraction of scenarios where it equals DC (fd2_input_is_dc). The corrector, its training and its inputs are untouched. Both grids were rescored; results_superseded_v1.jsonl keeps the first scoring.",
+ "effect_known_when_written": "case6470rte: the first scoring's fd rows were wrong (DC + k-2 steps). case2869pegase: not known to change; rescored anyway."
+}

@@ -1,0 +1,12 @@
+{
+ "ok": true,
+ "n_failures": 0,
+ "failures": [],
+ "recovered_logged": 9,
+ "unresolved_logged": 0,
+ "scenarios_compared": 1060,
+ "max_residual_recovered": 6.09799699255181e-12,
+ "min_vm_recovered": 0.899999992599812,
+ "max_angle_recovered": 30.000152487896504,
+ "max_diff_unchanged": 0.0
+}

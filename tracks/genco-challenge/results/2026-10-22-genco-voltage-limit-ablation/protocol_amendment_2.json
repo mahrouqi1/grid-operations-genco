@@ -1,0 +1,7 @@
+{
+ "written": "2026-10-22 01:37:28 EDT. Written before any whole grid has been run (pieces still in progress; no whole-grid inference has started).",
+ "amends": "protocol_amendment_1.json (pass 1 cap 3,100 buses), superseding its cap numbers only.",
+ "reason": "Measured cost has risen to ~1.9 ms per bus-scenario-pass (box load ~65, larger pieces); pieces are projected to finish ~04:35 EDT, leaving ~3 h = ~6 worker-hours, which is about half of what the 3,100-bus-cap pass 1 needs (~2.5M bus-scenarios x 9 passes). At that cap the unseen set would be left almost entirely unrun.",
+ "amendment": "Pass 1 cap lowered to 2,500 buses: seen_whole 500, 793, 2000, 2312 (4 of 15); unseen_whole 6 SimBench-HV, 1888, 2383 (8 of 17). Pass 2a (cap 3,100, seen_whole first then unseen_whole, ascending): seen 2742, 3022; unseen 2848, 2869, 3012. Pass 2b (no cap, ascending, seen_whole then unseen_whole, each grid only if it projects to finish before 07:30 EDT). Same skip-listing and inconclusive rules; a set with fewer than half of its grids run is INCONCLUSIVE.",
+ "effect_on_reading": "Whole-grid results refer to the grids that ran, mostly <= ~3,000 buses; the report states which."
+}
