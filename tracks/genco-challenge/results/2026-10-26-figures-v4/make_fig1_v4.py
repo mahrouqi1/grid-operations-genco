@@ -1,9 +1,10 @@
-"""GENCO post figure (a), v3.5 PREVIEW. Copy of 2026-10-24-figure-redesign/make_figs_v3.py (original untouched), figure (a) only.
+"""GENCO post figure 1, v4: ONLY the GENCO / best-interpolator panel (swarm + win counts + 0.5%-noise row) of make_fig_a_v35.py. Copy; originals untouched.
+    python make_fig1_v4.py; python check_numbers_v4.py
+(older docstring follows) GENCO post figure (a), v3.5 PREVIEW. Copy of 2026-10-24-figure-redesign/make_figs_v3.py (original untouched), figure (a) only.
 Top two panels unchanged. Bottom (WLS) panel now shows MASK SEED 0 ratios at the original iteration limit (hollow) and with the limit raised to 40/60 (filled),
 read from q_g_ratios_per_grid_v35.csv (q_g_wls_ratios_v35.py; cross-checked to cells_v3.csv). Win counts from cells_v3.csv.
     python q_g_wls_ratios_v35.py; python make_fig_a_v35.py; python check_numbers_v35.py"""
 import json
-import textwrap
 from pathlib import Path
 
 import numpy as np
@@ -49,7 +50,7 @@ def clean(ax, left=False):
 
 
 # ------------------------------------------------------------------ (a) voltage inference + WLS layer
-def fig_a():
+def fig_a():  # v4: single panel
     J = lambda d: json.loads((R / d / "verdict.json").read_text())
     P = lambda d: json.loads((R / d / "protocol.json").read_text())
     c8, oos, ctl, fvs, gen = (J(d) for d in ("2026-10-21-genco-voltage-inference", "2026-10-21-genco-voltage-inference-oos",
@@ -70,15 +71,10 @@ def fig_a():
     ]
     xs = [0, 1, 2.35, 3.35, 5.1, 6.1, 7.1]
 
-    cells = pd.read_csv(R / "2026-10-21-genco-voltage-wls/cells_v2.csv"); c40 = cells[cells.cond == "f40"]
-    sets = [("carved pieces", c40[c40.study.isin(["control", "fvs"])], True),
-            ("locked 15", c40[c40.study == "locked15"], True),
-            ("seen whole grids", c40[c40.group == "oos_seen"], False),
-            ("unseen whole grids", c40[c40.group == "oos_unseen"], False)]
 
-    fig = plt.figure(figsize=(7.5, 13.4))
-    ax = fig.add_axes([0.13, 0.6807, 0.84, 0.2777]); axn = fig.add_axes([0.13, 0.6160, 0.84, 0.0371], sharex=ax)
-    axw = fig.add_axes([0.13, 0.2273, 0.84, 0.3099])
+    H = 5.55   # inches; single panel (heights in inches from the v3.5 layout: swarm 3.72, noise strip 0.5, label gap 0.87, top margin 0.56)
+    fig = plt.figure(figsize=(7.5, H))
+    ax = fig.add_axes([0.13, 1.27 / H, 0.84, 3.72 / H]); axn = fig.add_axes([0.13, 0.25 / H, 0.84, 0.5 / H], sharex=ax)
 
     # panel 1: swarm
     ax.axhspan(0.06, 1, color="#eef3f7", zorder=0)
@@ -110,7 +106,7 @@ def fig_a():
     # direct annotations replacing a legend
     lock = [e for n, c, e, _ in cols if n == "locked 15"][0]
     rmax = max(lock, key=lambda e: e["ratio"])["ratio"]
-    ax.annotate("hollow = not a win\n(95% CI reaches 1)", xy=(5.1 + 0.05, rmax * 0.93), xytext=(3.75, 2.9), fontsize=10.5, color=INK2, ha="center",
+    ax.annotate("hollow = not a win (95% CI reaches 1).\nEvery point above 1 is hollow: a win needs\nthe ratio and its CI upper bound below 1", xy=(5.1 + 0.05, rmax * 0.93), xytext=(4.5, 3.4), fontsize=10.5, color=INK2, ha="right", va="center",
                 arrowprops=dict(arrowstyle="-", color=INK2, lw=1.0, shrinkA=0, shrinkB=3))
     ax.annotate("filled = win", xy=(1.0, 0.43), xytext=(1.0, 0.1325), fontsize=10.5, color=INK2, ha="center", va="center",
                 arrowprops=dict(arrowstyle="-", color=INK2, lw=1.0, shrinkA=0, shrinkB=2))
@@ -133,79 +129,11 @@ def fig_a():
         axn.text(o["x"], 0.28, t, ha="center", va="center", fontsize=12.5 if o["noise"] else 10.5, fontweight="bold" if o["noise"] else "normal",
                  color=INK if o["noise"] else GREY)
 
-    # panel 3 (v3.5): GENCO / WLS error ratio per grid, MASK SEED 0, informed vs limit-blind WLS, each at the original iteration
-    # limit (hollow) and with the limit raised to 40/60 (filled). Source: q_g_ratios_per_grid_v35.csv (cross-checked to cells_v3.csv).
-    QG = pd.read_csv(HERE / "q_g_ratios_per_grid_v35.csv")
-    qsets = [("carved\npieces", QG[QG.study.isin(["control", "fvs"])]), ("locked 15", QG[QG.study == "locked15"]),
-             ("seen\nwhole grids", QG[QG.group == "oos_seen"]), ("unseen\nwhole grids", QG[QG.group == "oos_unseen"])]
-    YTOP = 120.0
-    axw.set_yscale("log"); axw.set_ylim(0.06, YTOP); axw.set_xlim(-2.3, 21.2); axw.minorticks_off()
-    axw.axhspan(0.06, 1, color="#eef3f7", zorder=0); axw.axhline(1, color=INK, lw=1.4, zorder=1)
-    axw.set_yticks([0.1, 0.2, 0.5, 1, 2, 5, 10, 30, 100]); axw.set_yticklabels(["0.1", "0.2", "0.5", "1", "2", "5", "10", "30", "100"], fontsize=11)
-    axw.tick_params(axis="y", length=0); axw.tick_params(axis="x", length=0, labelbottom=False)
-    axw.grid(axis="y", color=GRID, lw=0.7, zorder=0); axw.set_axisbelow(True); clean(axw)
-    axw.set_ylabel("GENCO error / WLS error (mask seed 0)", fontsize=11.5)
-    # (column key, marker, face colour, edge colour, label); hollow = original iteration limit, filled = limit raised to 40/60
-    variants = [("ratio_inf", "s", SURF, INK, "informed WLS, original limit"), ("ratio_infunc", "s", INK, INK, "informed WLS, limit 40/60"),
-                ("ratio_flat", "^", SURF, GREY, "limit-blind WLS, original limit"), ("ratio_flatunc", "^", GREY, GREY, "limit-blind WLS, limit 40/60")]
-    DX = 1.08
-    offs = [-1.5 * DX, -0.5 * DX, 0.5 * DX, 1.5 * DX]
-    qx0 = [0.0, 5.6, 11.2, 16.8]
-    lab_fmt = lambda m: f"{m:.2f}" if m < 2 else f"{m:.1f}"
-    qout = []
-    for (lab, d), xc in zip(qsets, qx0):
-        rec = {"set": lab.replace("\n", " "), "n": int(len(d))}
-        for (col, mk, fc, ec, vname), off in zip(variants, offs):
-            x = xc + off
-            r = d[col].to_numpy(dtype=float)
-            order = np.argsort(r); jit = np.zeros(len(r)); placed = []
-            step = 0.1
-            for i in order:
-                k = 0
-                while k < 9 and any(abs(np.log(r[i]) - np.log(r[j])) < 0.16 and abs(jit[j] - (step * ((k + 1) // 2) * (1 if k % 2 else -1))) < 0.095 for j in placed): k += 1
-                jit[i] = float(np.clip(step * ((k + 1) // 2) * (1 if k % 2 else -1), -0.4, 0.4)); placed.append(i)
-            yv = np.minimum(r, YTOP)
-            axw.plot(x + jit, yv, mk, ms=6.3, mfc=fc, mec=ec, mew=1.3, ls="none", zorder=3, clip_on=False)
-            med = float(np.median(r))
-            axw.plot([x - 0.5, x + 0.5], [med, med], color=INK, lw=2.2, solid_capstyle="butt", zorder=4)
-            axw.text(x, 0.0565 if off in (offs[0], offs[2]) else 0.0385, lab_fmt(med), ha="center", va="top", fontsize=9, fontweight="bold", color=INK, clip_on=False)
-            big = r > YTOP
-            if big.any():
-                axw.text(x, YTOP * 1.1, f"+{int(big.sum())}", ha="center", va="bottom", fontsize=8.5, color=INK2, linespacing=0.95, clip_on=False)
-            rec[vname] = {"median": med, "n": int(len(r)), "ratios": [float(v) for v in r], "n_off_scale": int(big.sum()), "max": float(r.max())}
-        qout.append(rec)
-        axw.text(xc, 0.0185, lab, ha="center", va="top", fontsize=11.5, color=INK, linespacing=0.95, clip_on=False)
-    axw.text(21.1, 0.55, "GENCO\nbetter", fontsize=11, color=INK2, fontweight="bold", va="top", ha="right", linespacing=0.95)
-    axw.text(21.1, 1.1, "WLS\nbetter", fontsize=11, color=INK2, fontweight="bold", va="bottom", ha="right", linespacing=0.95)
-    # direct key (replaces a legend): square = informed, triangle = limit-blind; hollow = original limit, filled = limit raised to 40/60
-    for xk, (mk, c_h, c_f, ttl) in zip((-2.0, 7.4), (("s", INK, INK, "informed WLS (true limits)"), ("^", GREY, GREY, "active-limit-blind WLS"))):
-        yk = 400
-        axw.plot(xk, yk, mk, ms=7, mfc=SURF, mec=c_h, mew=1.3, clip_on=False)
-        axw.plot(xk + 0.7, yk, mk, ms=7, mfc=c_f, mec=c_h, mew=1.3, clip_on=False)
-        axw.text(xk + 1.2, yk, ttl, fontsize=9.5, color=INK, va="center", ha="left", clip_on=False)
-    axw.text(-2.0, 210, "hollow = original iteration limit, filled = limit 40/60; bar and number = median", fontsize=9.5, color=INK2, va="center", ha="left", style="italic", clip_on=False)
-    PLOTTED["a_qg"] = qout
-    # win counts (GENCO beats the best interpolator and WLS), seed 0, from cells_v3.csv; stated in the text and caption
-    cells = pd.read_csv(R / "2026-10-21-genco-voltage-wls/cells_v3.csv"); c3 = cells[cells.cond == "f40"]
-    sets3 = [("carved pieces", c3[c3.study.isin(["control", "fvs"])]), ("locked 15", c3[c3.study == "locked15"]),
-             ("seen whole grids", c3[c3.group == "oos_seen"]), ("unseen whole grids", c3[c3.group == "oos_unseen"])]
-    PLOTTED["a_wls"] = [{"set": lab, "n": int(len(d)), "i1_i5": int(d.win5.sum()), "informed": int(d.win6.sum()), "informed_unc": int(d.win6unc.sum()),
-                         "informed_unc_fb": int(d.win6unc_fb.sum()), "limit_blind": int(d.win6flat.sum()), "limit_blind_unc": int(d.win6flatunc.sum()),
-                         "limit_blind_unc_fb": int(d.win6flatunc_fb.sum()), "limit_blind_fb": int(d.win6flat_fb.sum()),
-                         "nc_inf_unc": float(d.frac_nc_Wunc.mean()), "nc_flat_unc": float(d.frac_nc_Wflatunc.mean())} for lab, d in sets3]
-    wo = pd.read_csv(R / "2026-10-21-genco-voltage-wls/wls_only_v3.csv")
-    PLOTTED["wls_only_v3"] = wo.to_dict(orient="records")
-    foot = ("Bottom panel: GENCO error / WLS error on the unmeasured buses at 40% measured, mask seed 0, one marker per grid (above 1 = GENCO worse). "
-            "WLS = weighted-least-squares state estimator; active-limit-blind = every generator's Pmax set to the median and Pmin to 0, reactive "
-            "limits unchanged. Hollow markers: the original iteration limit, where most WLS runs were stopped by the limit. Filled markers: 40/60 "
-            "iterations, which still fails to converge on part of the scenarios (rates in the text). Values above 120 are clipped; the numbers "
-            "above the top give how many grids are clipped (largest ratio: informed 6,146, active-limit-blind 1,606).")
-    fig.text(0.02, 0.008, textwrap.fill(foot, 100), fontsize=8.5, color=INK2, va="bottom", ha="left", linespacing=1.15)
-    draw_key(fig, 0.9880, [("seen family", BLUE, BLUE), ("unseen family", VERM, VERM), ("locked benchmark (15 grids)", GREEN, GREEN)])
-    fig.savefig(OUT / "fig_a_voltage_inference_v35.png", dpi=DPI, facecolor=SURF); plt.close(fig)
+    draw_key(fig, 1 - 0.16 / H, [("seen family", BLUE, BLUE), ("unseen family", VERM, VERM), ("locked benchmark (15 grids)", GREEN, GREEN)])
+    fig.savefig(OUT / "fig1_voltage_inference_v4.png", dpi=DPI, facecolor=SURF); plt.close(fig)
 
 
 if __name__ == "__main__":
     fig_a()
-    (HERE / "plotted_numbers_v35.json").write_text(json.dumps(PLOTTED, indent=1))
+    (HERE / "plotted_numbers_fig1_v4.json").write_text(json.dumps(PLOTTED, indent=1))
     print("done")

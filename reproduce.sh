@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One command: verify checksums and the pinned env, rebuild the three post figures (figures-v3) from the committed result
+# One command: verify checksums and the pinned env, rebuild the two post figures (figures-v4) from the committed result
 # files, run the unit tests, print a PASS or FAIL summary. Exit 0 only if every step passed.
 #   bash reproduce.sh              # all four steps, in this order
 #   bash reproduce.sh checksums    # or: env | figures | tests (one step)
@@ -20,7 +20,7 @@ step() {      # step <name> <command...>: run, keep the log, record PASS or FAIL
   names+=("$name")
 }
 run_figures() {
-  PY="$PY" bash tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/make_all.sh
+  PY="$PY" bash tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v4/make_all.sh
 }
 want() { [ "$what" = all ] || [ "$what" = "$1" ]; }
 

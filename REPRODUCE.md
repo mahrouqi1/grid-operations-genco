@@ -4,7 +4,7 @@ Three levels, from cheapest to most expensive. The entry's figures and tables ne
 
 | level | needs | command | what it proves |
 |---|---|---|---|
-| 1 | the pinned env, no GPU, no external data | `bash reproduce.sh` | every file matches `CHECKSUMS.sha256`; the env matches the lock; the three post figures (figures-v3) regenerate from the committed result files; the unit tests pass; prints PASS or FAIL per step |
+| 1 | the pinned env, no GPU, no external data | `bash reproduce.sh` | every file matches `CHECKSUMS.sha256`; the env matches the lock; the two post figures (figures-v4) regenerate from the committed result files; the unit tests pass; prints PASS or FAIL per step |
 | 2 | level 1 plus Julia/PowerModels, PGLib-OPF v23.07, the authors' datakit and graphkit branches | commands in `EXTERNAL-DATA.md` | the big data sets regenerate from public inputs; compare with `tools/check_external.py` |
 | 3 | level 2 plus the released GENCO checkpoints and a GPU | module command lines in `OMITTED.md` | the scored numbers themselves (the result files are the committed record) |
 
