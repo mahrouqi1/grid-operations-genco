@@ -104,9 +104,9 @@ def fig_a():
     ax.set_yticks([0.1, 0.2, 0.5, 1, 2, 5, 10]); ax.set_yticklabels(["0.1", "0.2", "0.5", "1", "2", "5", "10"], fontsize=11.5)
     ax.tick_params(axis="y", length=0); ax.tick_params(axis="x", length=0, labelbottom=False)
     ax.grid(axis="y", color=GRID, lw=0.7, zorder=0); ax.set_axisbelow(True); clean(ax)
-    ax.set_ylabel("GENCO error / best classical error", fontsize=11.5)
+    ax.set_ylabel("GENCO error / best interpolator error", fontsize=11.5)
     ax.text(4.45, 0.12, "GENCO\nbetter", fontsize=12, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
-    ax.text(4.45, 1.12, "classical\nbetter", fontsize=12, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
+    ax.text(4.45, 1.12, "interpolator\nbetter", fontsize=12, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
     # direct annotations replacing a legend
     lock = [e for n, c, e, _ in cols if n == "locked 15"][0]
     rmax = max(lock, key=lambda e: e["ratio"])["ratio"]
@@ -178,7 +178,7 @@ def fig_a():
     axw.text(21.1, 0.55, "GENCO\nbetter", fontsize=11, color=INK2, fontweight="bold", va="top", ha="right", linespacing=0.95)
     axw.text(21.1, 1.1, "WLS\nbetter", fontsize=11, color=INK2, fontweight="bold", va="bottom", ha="right", linespacing=0.95)
     # direct key (replaces a legend): square = informed, triangle = limit-blind; hollow = original limit, filled = limit raised to 40/60
-    for xk, (mk, c_h, c_f, ttl) in zip((-2.0, 7.4), (("s", INK, INK, "informed WLS (true limits)"), ("^", GREY, GREY, "limit-blind WLS"))):
+    for xk, (mk, c_h, c_f, ttl) in zip((-2.0, 7.4), (("s", INK, INK, "informed WLS (true limits)"), ("^", GREY, GREY, "active-limit-blind WLS"))):
         yk = 400
         axw.plot(xk, yk, mk, ms=7, mfc=SURF, mec=c_h, mew=1.3, clip_on=False)
         axw.plot(xk + 0.7, yk, mk, ms=7, mfc=c_f, mec=c_h, mew=1.3, clip_on=False)
@@ -196,13 +196,10 @@ def fig_a():
     wo = pd.read_csv(R / "2026-10-21-genco-voltage-wls/wls_only_v3.csv")
     PLOTTED["wls_only_v3"] = wo.to_dict(orient="records")
     foot = ("Bottom panel: GENCO error / WLS error on the unmeasured buses at 40% measured, mask seed 0, one marker per grid (above 1 = GENCO worse). "
-            "WLS = weighted-least-squares state estimator. Hollow markers: the original iteration limit, where most WLS runs were stopped by the limit "
-            "(at mask seed 0: 60% of informed solves; limit-blind 88% on carved pieces and 99% on seen-family whole grids). Filled markers: limit raised to 40/60 iterations, "
-            "which still fails to converge on part of the scenarios. Informed WLS at 40/60, all scenarios run: not converged on 17% of locked-benchmark scenarios, "
-            "11% and 30% of seen and unseen pieces, 49% of whole-grid scenarios. Limit-blind WLS at 40/60, on the scored scenarios: not converged on 35% of piece, "
-            "25% of locked, 81% of seen whole-grid and 44% of unseen whole-grid scenarios. 10 to 30 scenarios per grid. "
-            "The SimBench high-voltage grids, where WLS converges, sit at the top; values above 120 are clipped, and the numbers above the top "
-            "give how many grids are clipped (largest ratio: informed 6,146, limit-blind 1,606). WLS counts checked in two audit rounds.")
+            "WLS = weighted-least-squares state estimator; active-limit-blind = every generator's Pmax set to the median and Pmin to 0, reactive "
+            "limits unchanged. Hollow markers: the original iteration limit, where most WLS runs were stopped by the limit. Filled markers: 40/60 "
+            "iterations, which still fails to converge on part of the scenarios (rates in the text). Values above 120 are clipped; the numbers "
+            "above the top give how many grids are clipped (largest ratio: informed 6,146, active-limit-blind 1,606).")
     fig.text(0.02, 0.008, textwrap.fill(foot, 100), fontsize=8.5, color=INK2, va="bottom", ha="left", linespacing=1.15)
     draw_key(fig, 0.9880, [("seen family", BLUE, BLUE), ("unseen family", VERM, VERM), ("locked benchmark (15 grids)", GREEN, GREEN)])
     fig.savefig(OUT / "fig_a_voltage_inference_v35.png", dpi=DPI, facecolor=SURF); plt.close(fig)

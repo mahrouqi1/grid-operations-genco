@@ -1,7 +1,7 @@
 45db79221251d4caf4359f88074d47da578ebfae54bb328b2a5ef3b1cd43e30c  .gitignore
 7345991a56ece64918e8e5530e21523cdcfb08acf6275f2ab5a0487d2285b030  AUTHORS.md
 04871f8a2b87958bbe79c9012d555beb51be9c49bb6766e38646e05c9c751ae9  CITATION.cff
-8d1a2f938fd7b99fc2272d105a497829d7788536e697a183c82db46165e82b5d  ENTRY.md
+40d2174317171f931265158f97a3207f0fe3d140f934fb6d64b2a64f4a4d4f4b  ENTRY.md
 b210f164b75d3b083af0a9ebd521803820766ed1dadc8f7aff2ff66fe6dea3ed  EXTERNAL-DATA.json
 aad8603b29cc74b8ac82cf3b6d0ae2080f10ae91867f915ac68f1bfa9936ab26  EXTERNAL-DATA.md
 f3519c915c0aec8a66968ec322152f6b6a0a7f072e51e50eda305c7309ed7865  FIGURES.md
@@ -10,7 +10,7 @@ c94d7a23042476ce94888d2cf2d10fa79aaf0e42fa746764101f4bfd8d0486dc  LICENSE-CHOICE
 183c307e67a2b4bdf285bb93c1e7dd9224d58fc70b65d9a7a2b409938d2ad323  LICENSE-DATA.md
 4651ab84d9a3764e5c11d51c41b04099b739cf51abb2d98dc63e4305f9212ab2  NOTICE
 bebe24e1d4783260318078c6b903ce1e2e5ca0822afb8b3768a58b51b8ec3a10  OMITTED.md
-1276ed75732733ff6fac6b378081a4013d933f36ad3052f55368bf6be4b8f2c6  README.md
+d8e89d33d1e3c51e43dd76602895091810cb9c2030657749ef8793404ff9bf91  README.md
 fb3a4f74eb9562c2e5ccb38ad83bc0ee56c21c5e3de008b82833dafd5e24d83f  REPINNED.md
 5c76f064d6b15d76f568d355b9671a11c1aa2a7d380af2e65563405d5553ddbe  REPRODUCE.md
 3f16ba00288884588652fabb2c746d08470b5b6805e1792f05245c76a5412002  core/grid_ops/__init__.py
@@ -148,9 +148,9 @@ bc1232c3d952f163fad5a0ecf928f5a4c3b30af672ad475212ff167d7c9afd08  tracks/genco-c
 2c4e623975f12375566ca92f252db177f3a3d9e2a2802a58ee731d307fc6647e  tracks/genco-challenge/results/2026-10-18-angle90-filter/scan_all31.csv
 5b4ad716d8101a0ca4d6cecc7f2bd2928650bf34be8eb661a1e733cd20b831e2  tracks/genco-challenge/results/2026-10-18-angle90-filter/scan_all31.out
 d1ee6ef2114bf57ecca873753e87f263aa40b8100e6422b602a5e978f199b488  tracks/genco-challenge/results/2026-10-18-angle90-filter/scan_all31.py
-d9af4d01275507801a10cfa4af2a3b67e7ecf8937d94de7a705eaa705316ee4a  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_a_voltage_inference_v35.png
-fd79d3cb33202288cb5585ece92f7101c946521fb420263d0c27f7d2e97e2766  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_b_transfer_12k.png
-21bc54bd9f3a22cecf1eb38b076b8a1c42b6e63e7560c1192b2a4d74c1bbe345  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_c_unlearning.png
+4a4666acd1b6466c9101d0bdf31523234697a00e7866d4af083bdffae0c418ce  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_a_voltage_inference_v35.png
+dcbb766a19fa791468c29f425f75b9a52cbc8c2e1cb38c2b2bcf086050c02e59  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_b_transfer_12k.png
+d5ff955f1257e8e4553d51644b78d228664a26259cc01656a415bcc780368306  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/fig_c_unlearning.png
 107c750fad5877a15887b4dabf005091e931f98bd9ad0f10c35f7b12db212660  tracks/genco-challenge/results/2026-10-18-genco-challenge-post/figures-v3/make_all.sh
 c6e65a8ca9b10e515e024a32377d9fd43d381ebd49b10f037b49b42d4ecf5a0c  tracks/genco-challenge/results/2026-10-18-published-collapse-newton/build_mpc.py
 6d09aa7a07748c9aeee20ecbe2e01ac008c721b0effad378ba3ded617dc5c181  tracks/genco-challenge/results/2026-10-18-published-collapse-newton/cases.csv
@@ -632,7 +632,7 @@ f3be2981aa7ce68017b3f91e5ecb1d5cf6cac761eaf18ea38f0454a2eef868f4  tracks/genco-c
 1f18b7b7debbb4de7e7040e68ac1904e12d4463b2229c27d6fe02649f23177d9  tracks/genco-challenge/results/2026-10-22-genco-voltage-limit-ablation/report_tables.md
 dff33daef38ee93aaa33027b6a0dfa8ec88ec573461cf290c35bc371f8b87b17  tracks/genco-challenge/results/2026-10-22-genco-voltage-limit-ablation/run_ablate.py
 6b830d52287efb361a117e90ed2e4a64897aefb88b2b04219eb4b6a192f7252b  tracks/genco-challenge/results/2026-10-22-genco-voltage-limit-ablation/verdict.json
-5ecaf7a02a8dc764f80700547c50d57ead56289e638057ae6ea8995778f0e96f  tracks/genco-challenge/results/2026-10-24-figure-redesign/make_figs_v3.py
+840e0aa9227fcaf07f37180e50eeb70ebcc303c40d68c052541eb01f4e13bace  tracks/genco-challenge/results/2026-10-24-figure-redesign/make_figs_v3.py
 f4b563c65511cd5e7041380bc041c4f765537287dad6aeb378d95584f9cafd19  tracks/genco-challenge/results/2026-10-24-fromscratch-label-pair/basemva_check.json
 aa62b3f341073ec45cc0ed92304a6d0f702a9b9dbf5948b8874be054c40c2ca7  tracks/genco-challenge/results/2026-10-24-fromscratch-label-pair/basemva_check.py
 bd4fea575112d6594876fc394aa70eb7d0fc8d71874caa0dc422910fd9784405  tracks/genco-challenge/results/2026-10-24-fromscratch-label-pair/compare_smoke.py
@@ -693,7 +693,7 @@ bcf274a1ee1829fcb366c5c41e13d32481d6b6e9a8f01ebc501f28297b395082  tracks/genco-c
 4fe6a22a57648fe36a4a5fcbd83dc81fa223c0cef541379a618207ed635ea197  tracks/genco-challenge/results/2026-10-24-voltage-limit-counts/run_genco_pb.py
 31785a6d4da7e02cf54ecc5c674d065963a5c2cdee8def21176905e3817a56d9  tracks/genco-challenge/results/2026-10-24-voltage-limit-counts/run_interp_pb.py
 ec4968f4301805fc86cba1fb2714bf06ab9b4143dc0ee6b334ff07ea2e34bcda  tracks/genco-challenge/results/2026-10-24-voltage-limit-counts/vcommon.py
-f2114a04a3613aff455fd9707d8fc59b5fce5f62c5bc4249ffea6324a892249c  tracks/genco-challenge/results/2026-10-25-figure-a-v35/make_fig_a_v35.py
+42f26f1c67d35ff4a7b679a89760285418c889051aa6490f0b2fb7be17240a98  tracks/genco-challenge/results/2026-10-25-figure-a-v35/make_fig_a_v35.py
 70355533516d8dc987ff3c7cb3155dba9d4517b3ccac236086920f891399cb34  tracks/genco-challenge/results/2026-10-25-figure-a-v35/q_g_ratios_per_grid_v35.csv
 70fea62baae3d701fe472aa9fea65cfedbab86175788b7fe8c0e4b35aa10d7af  tracks/genco-challenge/results/2026-10-25-figure-a-v35/q_g_results_v35.json
 3281f3ef93a53855998fe3be139d64196239d9d2d072e759b9f810e47d93eee1  tracks/genco-challenge/results/2026-10-25-figure-a-v35/q_g_wls_ratios_v35.py

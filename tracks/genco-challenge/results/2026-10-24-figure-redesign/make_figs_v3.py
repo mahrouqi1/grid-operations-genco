@@ -201,9 +201,9 @@ def fig_b():
     c = json.load(open(R / "2026-10-20-genco-transfer/contrast_12k.json"))
     RND, PFM = None, PURP    # random mask = hollow bar; arms that use the power-flow-task mask = purple
     groups = [("GENCO's original data only", [("C00", "random mask", RND), ("C01", "50/50 mix of both masks", PFM)], None),
-              ("our data + original data", [("D", "random mask", RND), ("b", "half-then-mix (random so far)", RND)], "batches 2.34x larger"),
+              ("our data + original data", [("D", "random mask", RND), ("b", "half-then-mix (random so far)", RND)], "2.34x nodes/update"),
               ("our data + original, power-flow mask", [("a", "power-flow-task mask only", PFM), ("c", "power-flow curriculum", PFM),
-                                                       ("m", "50/50 mix of both masks", PFM)], "batches 2.34x larger")]
+                                                       ("m", "50/50 mix of both masks", PFM)], "2.34x nodes/update")]
     fig = plt.figure(figsize=(7.5, 5.7))
     ax = fig.add_axes([0.335, 0.12, 0.33, 0.74])
     from matplotlib.transforms import blended_transform_factory
@@ -285,7 +285,7 @@ def fig_c():
     ax.set_xticks([10, 25, 50, 100, 250, 500, 1000, 5000]); ax.set_xticklabels(["0", "25", "50", "100", "250", "500", "1k", "final"], fontsize=11)
     ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0]); ax.set_yticklabels(["0", "0.2", "0.4", "0.6", "0.8", "1.0"], fontsize=11)
     ax.tick_params(length=0); ax.grid(color=GRID, lw=0.7); ax.set_axisbelow(True); clean(ax)
-    ax.set_xlabel("continued-pretraining updates (log scale; final is about 5k)", fontsize=10.5)
+    ax.set_xlabel("continued-pretraining updates (log scale; 0 is drawn at the left edge; final is about 5k)", fontsize=10.5)
     ax.set_ylabel("fraction of hidden collapsed buses\nstill predicted below 0.5 pu (axis from 0)", fontsize=11, linespacing=1.0)
     # preservation
     items = [("branch angle", "final/retrain_fixed", "final/retrain_published", "median_angle_ratio_to_released"),

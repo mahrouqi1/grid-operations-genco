@@ -35,7 +35,7 @@ bash reproduce.sh
 
 One step alone: `bash reproduce.sh checksums` (or `env`, `figures`, `tests`). Run the checksum step before the figures step, because the figures are rebuilt in place. [`FIGURES.md`](FIGURES.md) lists each figure with its script, the result files it reads and the files it writes. [`REPRODUCE.md`](REPRODUCE.md) has the environment notes and the two further levels (regenerating the large data sets, and re-scoring with the released checkpoints on a GPU).
 
-The three PNGs in the repo are rendered in the pinned environment (matplotlib 3.11.2), so `reproduce.sh` rebuilds them byte for byte. The copies uploaded with the Hugging Face post were rendered with matplotlib 3.10.9: same data and layout, with small differences in text placement and antialiasing.
+The three PNGs in the repo are rendered in the pinned environment (matplotlib 3.11.2), so `reproduce.sh` rebuilds them byte for byte. They are the same files as the ones uploaded with the Hugging Face post.
 
 The step-by-step scoring runs themselves are not rerun by `reproduce.sh`; the committed result files are the record of those numbers.
 
