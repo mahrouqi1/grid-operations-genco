@@ -13,6 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+from matplotlib.lines import Line2D
 from PIL import Image
 
 HERE = Path(__file__).resolve().parent
@@ -72,7 +73,7 @@ def fig_a():  # v4: single panel
     xs = [0, 1, 2.35, 3.35, 5.1, 6.1, 7.1]
 
 
-    H = 5.55   # inches; single panel (heights in inches from the v3.5 layout: swarm 3.72, noise strip 0.5, label gap 0.87, top margin 0.56)
+    H = 6.05   # inches; single panel (heights in inches from the v3.5 layout: swarm 3.72, noise strip 0.5, label gap 0.87, top margin 0.56)
     fig = plt.figure(figsize=(7.5, H))
     ax = fig.add_axes([0.13, 1.27 / H, 0.84, 3.72 / H]); axn = fig.add_axes([0.13, 0.25 / H, 0.84, 0.5 / H], sharex=ax)
 
@@ -101,17 +102,14 @@ def fig_a():  # v4: single panel
     ax.tick_params(axis="y", length=0); ax.tick_params(axis="x", length=0, labelbottom=False)
     ax.grid(axis="y", color=GRID, lw=0.7, zorder=0); ax.set_axisbelow(True); clean(ax)
     ax.set_ylabel("GENCO error / best interpolator error", fontsize=11.5)
-    ax.text(4.45, 0.12, "GENCO\nbetter", fontsize=12, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
-    ax.text(4.45, 1.12, "interpolator\nbetter", fontsize=12, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
-    # direct annotations replacing a legend
-    lock = [e for n, c, e, _ in cols if n == "locked 15"][0]
-    rmax = max(lock, key=lambda e: e["ratio"])["ratio"]
-    ax.annotate("hollow = not a win (95% CI reaches 1).\nEvery point above 1 is hollow: a win needs\nthe ratio and its CI upper bound below 1", xy=(5.1 + 0.05, rmax * 0.93), xytext=(4.5, 3.4), fontsize=10.5, color=INK2, ha="right", va="center",
-                arrowprops=dict(arrowstyle="-", color=INK2, lw=1.0, shrinkA=0, shrinkB=3))
-    ax.annotate("filled = win", xy=(1.0, 0.43), xytext=(1.0, 0.1325), fontsize=10.5, color=INK2, ha="center", va="center",
-                arrowprops=dict(arrowstyle="-", color=INK2, lw=1.0, shrinkA=0, shrinkB=2))
-    ax.annotate("bar = median", xy=(0.46, float(np.median([e['ratio'] for e in cols[0][2]]))), xytext=(-0.55, 0.175), fontsize=10.5, color=INK2, ha="left", va="center",
-                arrowprops=dict(arrowstyle="-", color=INK2, lw=1.0, shrinkA=0, shrinkB=1))
+    ax.text(4.2, 0.12, "GENCO\nbetter", fontsize=10.5, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
+    ax.text(4.2, 1.12, "interpolator\nbetter", fontsize=10.5, color=INK2, fontweight="bold", va="bottom", ha="center", linespacing=0.95)
+    # legend-like key in the band under the colour key (touches no data)
+    for yk, kind in ((1 - 0.52 / H, "fill"), (1 - 0.78 / H, "hollow")):
+        fig.add_artist(Line2D([0.035], [yk], transform=fig.transFigure, marker="o", ms=9.5, ls="none", mfc=INK2 if kind == "fill" else SURF, mec=SURF if kind == "fill" else INK2, mew=1.4 if kind == "fill" else 2.2))
+        fig.text(0.06, yk, "significant GENCO win (95% CI upper end below 1)" if kind == "fill" else "not a significant win; above 1, GENCO's error is higher", fontsize=10.5, color=INK2, va="center", ha="left")
+    fig.add_artist(Line2D([0.62, 0.66], [1 - 0.52 / H] * 2, transform=fig.transFigure, color=INK, lw=2.4, solid_capstyle="butt"))
+    fig.text(0.67, 1 - 0.52 / H, "bar = group median", fontsize=10.5, color=INK2, va="center", ha="left")
     # headers over the groups
     for (x0, x1, t) in ((-0.4, 3.75, ""), (4.7, 7.5, "")):
         ax.plot([x0, x1], [19, 19], color=GREY, lw=1.2, clip_on=False)
@@ -130,10 +128,10 @@ def fig_a():  # v4: single panel
                  color=INK if o["noise"] else GREY)
 
     draw_key(fig, 1 - 0.16 / H, [("seen family", BLUE, BLUE), ("unseen family", VERM, VERM), ("locked benchmark (15 grids)", GREEN, GREEN)])
-    fig.savefig(OUT / "fig1_voltage_inference_v4.png", dpi=DPI, facecolor=SURF); plt.close(fig)
+    fig.savefig(OUT / "fig_voltage_v5.png", dpi=DPI, facecolor=SURF); plt.close(fig)
 
 
 if __name__ == "__main__":
     fig_a()
-    (HERE / "plotted_numbers_fig1_v4.json").write_text(json.dumps(PLOTTED, indent=1))
+    (HERE / "plotted_numbers_voltage_v5.json").write_text(json.dumps(PLOTTED, indent=1))
     print("done")

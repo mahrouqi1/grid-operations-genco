@@ -1,0 +1,61 @@
+{
+ "written": "2026-10-26 ~00:45 EDT, committed BEFORE any new run (no sweep run of any kind exists yet; only reading of the existing 2026-10-21 study files and a hash listing).",
+ "status": "DESCRIPTIVE ONLY. UNAUDITED. No new pass/fail verdict is defined or reported by this sweep.",
+ "question": "How does the number of grids on which zero-shot GENCO beats the best learning-free interpolator change with the measured fraction of |V|?",
+ "fractions": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+ "mask_seed_index": 0,
+ "config_names": "f{pct}_s0 for pct in 10,20,...,90 (mask rule unchanged: k = max(1, round(frac*n)) buses, rng = default_rng([20261021+0, n, scenario_id]).permutation(n)[:k])",
+ "sets": {
+  "locked15": "the 15 locked grids and test scenarios of results/2026-10-21-genco-voltage-inference (grid list in that protocol.json; scenarios from ../2026-10-21-genco-state-inference/test_ids.json), 2,398 scenarios. Always run.",
+  "pieces36": "the 36 carved subgrids = 19 of results/2026-10-21-genco-voltage-inference-control (seen families) + 17 of results/2026-10-21-genco-voltage-inference-family-vs-size (unseen families), their own test_ids.json and datakit data (data/external/genco-carved-unseen/work/data). Run only if time allows after locked15; the 24 ladder-regenerated pieces of the generator-control study are NOT used. If pieces36 does not finish, the report says so and gives whatever grids completed."
+ },
+ "identical_to_2026-10-21_study": {
+  "methods": "G = released GENCO pretraining checkpoint, zero-shot, candidate 7's DetMask, one pass; I1..I5 as defined in the 2026-10-21 protocol.json. For pieces36, I5 is the scalable variant ocommon.i5_gp (ML on at most 300 measured buses) exactly as those two studies used it.",
+  "scenarios": "same test ids, same scenario count per grid",
+  "metric": "per scenario mean over buses NOT in the measured set of ||V|_pred - |V|_label| (pu); per grid median over scenarios",
+  "win_rule": "ratio = median_G / min_over_I1..I5(median_I), best interpolator re-selected inside each bootstrap resample; 2000 scenario resamples with replacement, percentile 95% interval; win iff ratio < 1 and upper end < 1. No threshold is applied.",
+  "bootstrap_seeding": "numpy default_rng(7), ONE generator consumed sequentially exactly as verdict.py does (one test() call after another). Order: locked15 grids in protocol order for fraction 10%, then 20%, ... 90%; then pieces36 (control pieces in protocol order, then family-vs-size pieces) for each fraction in the same order. Because the stream position differs from the original run, intervals at 10/20/40% can differ slightly from the recorded ones; only the point ratios are reproduced exactly.",
+  "verdict_logic": "the test() function body of verdict.py is copied verbatim into sweep_verdict.py (one config per cell, so no pooling); nothing is re-implemented.",
+  "files_and_sha256": {
+   "2026-10-21-genco-voltage-inference/protocol.json": "3e5f13b8b1fb0f8baa6cf38f4ea5b5d9cac855b24672fd92b777a90affbbe377",
+   "2026-10-21-genco-voltage-inference/vcommon.py": "ec4968f4301805fc86cba1fb2714bf06ab9b4143dc0ee6b334ff07ea2e34bcda",
+   "2026-10-21-genco-voltage-inference/run_genco_v.py": "681725a24341a9b75c03a12462e018e03f15565c52554e32b217061472f1c101",
+   "2026-10-21-genco-voltage-inference/run_interp.py": "4d75717af26f41a33930028c43a9ea3885475dd0465eb0eaf6c94c2eb49898a2",
+   "2026-10-21-genco-voltage-inference/verdict.py": "cae2e5e68ee9f35a4ea7b872fcbbac420acb5b98f4424ceee1b90d7700706af3",
+   "2026-10-21-genco-voltage-inference/verdict.json": "d10a2859fb1ea8b80fbe26a5605d0da64bbd179687bf7609c6e986a10dc404bb",
+   "2026-10-21-genco-state-inference/common.py": "fda30cc129b787bcc7da06f3ccf59890a4030e0752c4211ed0dc3e8aa58a05b0",
+   "2026-10-21-genco-state-inference/run_genco.py": "091e54059fb900a96c2b0e71693d3c39cae1d7fa6c13607d7e7b1f14376531cf",
+   "2026-10-21-genco-state-inference/test_ids.json": "cfe5ed26cfc79c4c9f32b5aa25c391800741082338aaec480fc4a6bb1464ca2b",
+   "pieces: control/ocommon.py (== family-vs-size/ocommon.py)": "b290159d56f46db876f8a75122017ef3f9c10018b3c27f7005aaa82d0f365690",
+   "pieces: control/run_genco_o.py (== family-vs-size)": "d871f20169b94d2b7f326eddd62826158cac04dfc23dc4091593987cfd783ef2",
+   "pieces: control/run_interp.py (== family-vs-size)": "4a4127912d671e3cd6cd3efa13bbe102f92b943863f0195444ff22f032cf5b9d",
+   "pieces: control/test_ids.json": "dea3cc7b47e09eb77172166c5b3565c6a980b653d5d2968dcfb0fc1c3c895c1f",
+   "pieces: family-vs-size/test_ids.json": "8be7072501a47addf3ae673c899d76a810fcaeacb9a2124f428b760a8a0d62b1",
+   "pieces: control/verdict.py": "876953fe4d16409138d07f4a5a83c7297e210718d3b2e6f367959db70ce8c1b0",
+   "pieces: family-vs-size/verdict.py": "d125e90251c128bd481ce86ad050aba8ba8f7717a198387c600459268d445591"
+  },
+  "note_on_recorded_hashes": "the 2026-10-21 protocol.json's own code_sha256_16 entries match the first 16 hex chars of the vcommon.py / run_interp.py / run_genco_v.py hashes above; verdict.py was edited after that protocol was written (recorded hash f02de4a4..., current cae2e5e6...; the audit R1-F4 completeness check, see its header). The current file is the one copied."
+ },
+ "existing_primary_verdict": "The recorded 20% primary verdict (pooled over mask seeds 0,1,2: 8 of 15 grids, FAIL against the pre-set bar of 10) stands exactly as recorded. This sweep uses mask seed 0 only at every fraction, so its 20% cell is the recorded 'f20_seed0' analysis, not the pooled primary; the sweep does not replace, re-grade, or supplement the primary verdict. The bar of 10/15 is drawn in the figure only as a reference line.",
+ "control_reproduction": {
+  "what": "The new runner re-produces f10_s0, f20_s0, f40_s0 on locked15 (and on pieces36 if run). Compare every per-scenario vm_mae_unmeas to the stored value in 2026-10-21-genco-voltage-inference/{genco_v,interp}_per_scenario.jsonl (pieces: the control / family-vs-size per_grid files).",
+  "tolerance_genco": "max abs diff of per-scenario MAE <= 5e-5 pu (known float32 GPU noise)",
+  "tolerance_interpolators": "max abs diff <= 1e-9 pu (I1..I5 separately)",
+  "report": "max abs diff per method and fraction, and the number of cells over tolerance. Also report whether the per-grid win flag at those three fractions matches the recorded f10 / f20_seed0 / f40 flags. A control failure is reported as such; the sweep numbers are then flagged, not silently kept."
+ },
+ "runtime": {
+  "interpolators": "CPU, nice -n 15, at most 6 worker processes, OMP/MKL/OPENBLAS_NUM_THREADS=1, parallel over (grid, fraction) tasks",
+  "genco": "GPU 1 only (CUDA_VISIBLE_DEVICES=1) after nvidia-smi check; GPU 0 only if 1 is busy and 0 free; else CPU",
+  "env": "<CONDA_ENVS>/grid-operations-genco/bin/python with PYTHONNOUSERSITE=1",
+  "hard_stop": "all runs finished or stopped by 03:30 EDT 2026-10-26; whatever is complete is reported, nothing partial is reported as complete"
+ },
+ "outputs": {
+  "folder": "tracks/genco-challenge/results/2026-10-26-mask-sweep/",
+  "protocol": "protocol.json (this file; sha256 in protocol.sha256 and in the commit message)",
+  "wrappers": "sweep_common.py, run_sweep_interp.py, run_sweep_genco.py (thin; import and run the unchanged 2026-10-21 modules with CONFIGS overridden)",
+  "raw": "raw/locked15/{interp_<grid>_<cfg>.jsonl, genco_<grid>.jsonl}, raw/pieces36/... (committed if total under ~20 MB, else gitignored with sha256 in raw_sha256.txt); logs/*.log with timings",
+  "analysis": "sweep_verdict.py -> sweep.csv (set, grid, fraction, ratio, ci_hi, win; plus ci_lo and medians), sweep_summary.json (wins per fraction for locked15 and pieces36), control.json",
+  "report": "report.md (marked UNAUDITED)",
+  "figure": "fig_sweep.png (+ make_fig_sweep.py), check_sweep.py asserting the plotted values against sweep_summary.json"
+ }
+}

@@ -1,5 +1,5 @@
-"""GENCO post figure 2, v4: collapse-reproduction curve only (fig_c top panel of make_fig_v3.py, copy; originals untouched). Linear update axis, all scored steps.
-    python make_fig2_v4.py; python check_numbers_fig2_v4.py"""
+"""GENCO post figure 2, v5.1: collapse-reproduction curve only (fig_c top panel of make_fig_v3.py, copy; originals untouched). Linear update axis, all scored steps.
+    python make_fig_corrected_v51.py; python check_numbers_corrected_v51.py"""
 import json
 import textwrap
 from pathlib import Path
@@ -62,18 +62,20 @@ def fig_c():
         pts = sorted((steps[p["state"]], [p[s]["frac_lt_0.5"] for s in ("1000", "1001", "1002")]) for p in Pj if p["arm"] == arm and p["state"] in steps)
         x = [u for u, _ in pts]
         seeds = np.array([v for _, v in pts]); mean = seeds.mean(axis=1)
+        ax.fill_between(x, seeds.min(axis=1), seeds.max(axis=1), color=col, alpha=0.22, lw=0, zorder=1)
         for j in range(3):
-            ax.plot(x[:-1], seeds[:-1, j], color=col, lw=1.0, alpha=0.35, zorder=2); ax.plot(x[-2:], seeds[-2:, j], color=col, lw=1.0, alpha=0.35, ls=(0, (3, 3)), zorder=2)
-        ax.plot(x[:-1], mean[:-1], color=col, lw=3.0, zorder=4); ax.plot(x[-2:], mean[-2:], color=col, lw=2.0, ls=(0, (3, 3)), zorder=4)
-        ax.plot(x, mean, color=col, lw=0, marker="o", ms=8, mec=SURF, mew=1.6, zorder=5)
+            ax.plot(x[:-1], seeds[:-1, j], color=col, lw=0.9, alpha=0.75, zorder=2); ax.plot(x[-2:], seeds[-2:, j], color=col, lw=0.9, alpha=0.75, ls=(0, (3, 3)), zorder=2)
+            ax.plot(x, seeds[:, j], color=col, lw=0, marker="o", ms=3.2, alpha=0.9, mew=0, zorder=3 if arm == "fixed" else 3.1)
+        ax.plot(x[:-1], mean[:-1], color=col, lw=1.6, zorder=4); ax.plot(x[-2:], mean[-2:], color=col, lw=1.3, ls=(0, (3, 3)), zorder=4)
+        ax.plot(x, mean, color=col, lw=0, marker="o", ms=6.5, mec=SURF, mew=1.2, zorder=5)
         out[arm] = {"updates": x, "mean": [float(m) for m in mean], "seeds": seeds.tolist()}
     m_fix, m_pub = out["fixed"]["mean"], out["published"]["mean"]
     ax.text(FINAL + 200, m_fix[-1], "corrected  " + f"{m_fix[-1]:.2f}", color=INK, fontsize=11.5, fontweight="bold", va="center", ha="left", clip_on=False)
     ax.text(FINAL + 200, m_pub[-1], "original  " + f"{m_pub[-1]:.2f}", color=INK, fontsize=11.5, fontweight="bold", va="center", ha="left", clip_on=False)
-    ax.annotate(f"released checkpoint {m_fix[0]:.2f}", xy=(0, m_fix[0]), xytext=(1250, 0.78), fontsize=11, color=INK, va="center", ha="left",
-                arrowprops=dict(arrowstyle="-", color=INK2, lw=1), linespacing=0.95)
-    ax.text(2900, 0.58, "thin lines: the 3 mask seeds\ndashed: no scored step between 1k and final", fontsize=10, color=INK2, ha="center", va="center")
-    ax.set_xlim(-120, FINAL + 120); ax.set_ylim(0.0, 1.04)
+    ax.annotate(f"released checkpoint {m_fix[0]:.2f}", xy=(0, m_fix[0]), xytext=(260, 1.065), fontsize=11, color=INK, va="center", ha="left",
+                arrowprops=dict(arrowstyle="-", color=INK2, lw=1, shrinkA=2, shrinkB=4))
+    ax.text(2900, 0.58, "dashed: no scored checkpoint between 1,000 and 4,960", fontsize=10, color=INK2, ha="center", va="center")
+    ax.set_xlim(-120, FINAL + 120); ax.set_ylim(0.0, 1.10)
     ax.set_xticks([0, 1000, 2000, 3000, 4000, FINAL]); ax.set_xticklabels(["0", "1k", "2k", "3k", "4k", f"{FINAL:,}\n(final)"], fontsize=11)
     ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0]); ax.set_yticklabels(["0", "0.2", "0.4", "0.6", "0.8", "1.0"], fontsize=11)
     ax.tick_params(length=0); ax.grid(color=GRID, lw=0.7); ax.set_axisbelow(True); clean(ax)
@@ -81,10 +83,10 @@ def fig_c():
     ax.set_ylabel("fraction of hidden collapsed buses\nstill predicted below 0.5 pu (axis from 0)", fontsize=11, linespacing=1.0)
     draw_key(fig, 0.955, [("trained on corrected labels", SKY, SKY), ("trained on original labels", CHAR, CHAR)])
     PLOTTED["c_curves"] = out; PLOTTED["c_ylim"] = list(ax.get_ylim()); PLOTTED["final_step"] = FINAL
-    fig.savefig(OUT / "fig2_corrected_labels_v4.png", dpi=DPI, facecolor=SURF); plt.close(fig)
+    fig.savefig(OUT / "fig_corrected_v51.png", dpi=DPI, facecolor=SURF); plt.close(fig)
 
 
 if __name__ == "__main__":
     fig_c()
-    (HERE / "plotted_numbers_fig2_v4.json").write_text(json.dumps(PLOTTED, indent=1))
+    (HERE / "plotted_numbers_corrected_v51.json").write_text(json.dumps(PLOTTED, indent=1))
     print("done")

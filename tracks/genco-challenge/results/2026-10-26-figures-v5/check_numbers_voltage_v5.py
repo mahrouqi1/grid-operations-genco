@@ -1,5 +1,5 @@
-"""v4 checker for fig1_voltage_inference_v4.png (single GENCO / best-interpolator panel). Copy of check_numbers_v35.py with the WLS-panel checks dropped.
-    python make_fig1_v4.py; python check_numbers_v4.py"""
+"""v4 checker for fig_voltage_v5.png (single GENCO / best-interpolator panel). Copy of check_numbers_v35.py with the WLS-panel checks dropped.
+    python make_fig_voltage_v5.py; python check_numbers_v4.py"""
 import json
 import re
 from pathlib import Path
@@ -10,7 +10,7 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 R = HERE.parent
-PL = json.loads((HERE / "plotted_numbers_fig1_v4.json").read_text())
+PL = json.loads((HERE / "plotted_numbers_voltage_v5.json").read_text())
 n_ok = 0
 
 
@@ -38,7 +38,7 @@ check(sorted(round(e["ratio"], 9) for e in ctl.values()) == sorted(round(r, 9) f
 check(abs(cols[0]["median_ratio"] - float(np.median([e["ratio"] for e in ctl.values()]))) < 1e-12, "median of column 1")
 # the pieces-versus-whole claim on the unseen noise: 11/17 for unseen pieces (V4)
 check(cols[1]["noise"] == {"wins": 11, "total": 17}, "V4 unseen pieces noise 11/17")
-src = (HERE / "make_fig1_v4.py").read_text()
+src = (HERE / "make_fig_voltage_v5.py").read_text()
 # win counts shown == sum of the win flags in the source verdict files, and every point above 1 is a non-win (hollow)
 P = lambda d: json.loads((R / d / "protocol.json").read_text())
 oos, fvs, gen, c8 = (J(d) for d in ("2026-10-21-genco-voltage-inference-oos", "2026-10-21-genco-voltage-inference-family-vs-size",
@@ -53,11 +53,12 @@ for c, ent in zip(cols, src_cols):
     check(c["wins"] == sum(bool(e["win"]) for e in ent) and c["total"] == len(ent), f"win count shown {c['wins']}/{c['total']} equals verdict file")
     check(all(not e["win"] for e in ent if e["ratio"] >= 1), f"{c['column']}: every point with ratio >= 1 is hollow (not a win)")
     check(sorted(round(e["ratio"], 9) for e in ent) == sorted(round(r, 9) for r in c["ratios"]), f"{c['column']}: plotted ratios equal the verdict file")
-check("Every point above 1 is hollow" in src and "hollow = not a win" in src, "annotation text present")
+check("significant GENCO win (95% CI upper end below 1)" in src and "not a significant win; above 1, GENCO's error is higher" in src and "bar = group median" in src, "key text present (filled = significant GENCO win; hollow above 1 = GENCO's error higher)")
+check('"filled"' not in src.replace('"fill"', ''), "separate 'filled' arrow annotation removed")
 check("GENCO error / best interpolator error" in src, "y label")
 check("axw" not in src and "QG" not in src, "no WLS panel code left")
 check('BLUE, VERM, GREEN = "#0072B2", "#D55E00", "#009E73"' in src, "v3.1 palette kept")
-check("\u2014" not in src and "\u2013" not in src, "no em or en dashes in make_fig1_v4.py")
-im = Image.open(HERE / "new" / "fig1_voltage_inference_v4.png")
+check("\u2014" not in src and "\u2013" not in src, "no em or en dashes in make_fig_voltage_v5.py")
+im = Image.open(HERE / "new" / "fig_voltage_v5.png")
 check(im.width == 1500, f"fig width {im.width} (750 px at 2x)")
 print(f"check_numbers_v4: ALL {n_ok} CHECKS PASSED")

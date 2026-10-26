@@ -1,5 +1,5 @@
-"""Asserts the values plotted in fig2_corrected_labels_v4.png against the source json (pooled.json, seeds/pooled_seeds.json).
-    python make_fig2_v4.py; python check_numbers_fig2_v4.py"""
+"""Asserts the values plotted in fig_corrected_v51.png against the source json (pooled.json, seeds/pooled_seeds.json).
+    python make_fig_corrected_v51.py; python check_numbers_corrected_v51.py"""
 import json
 from pathlib import Path
 
@@ -8,7 +8,7 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 CP = HERE.parent / "2026-10-20-genco-continued-pretraining"
-PL = json.loads((HERE / "plotted_numbers_fig2_v4.json").read_text())
+PL = json.loads((HERE / "plotted_numbers_corrected_v51.json").read_text())
 P = json.loads((CP / "pooled.json").read_text())
 S = json.loads((CP / "seeds" / "pooled_seeds.json").read_text())["per_seed"]
 n = 0
@@ -42,8 +42,9 @@ f = [S[f"fixed_s{k}"]["collapse"]["1000"] for k in (200, 201, 202)]
 p = [S[f"published_s{k}"]["collapse"]["1000"] for k in (200, 201, 202)]
 check(round(float(np.median(f)), 2) == 0.80 and round(min(f), 2) == 0.70 and round(max(f), 2) == 0.83, f"corrected seeds median 0.80, range 0.70-0.83: {f}")
 check(round(float(np.median(p)), 2) == 0.94 and round(min(p), 2) == 0.92 and round(max(p), 2) == 0.97, f"original seeds median 0.94, range 0.92-0.97: {p}")
-src = (HERE / "make_fig2_v4.py").read_text()
+src = (HERE / "make_fig_corrected_v51.py").read_text()
+check("dashed: no scored checkpoint between 1,000 and 4,960" in src and "thin lines:" not in src, "single in-figure note")
 check("set_xscale" not in src, "linear x axis")
-check("\u2014" not in src and "\u2013" not in src, "no em or en dashes in make_fig2_v4.py")
-check(Image.open(HERE / "new" / "fig2_corrected_labels_v4.png").width == 1500, "png width")
-print(f"check_numbers_fig2_v4: ALL {n} CHECKS PASSED")
+check("\u2014" not in src and "\u2013" not in src, "no em or en dashes in make_fig_corrected_v51.py")
+check(Image.open(HERE / "new" / "fig_corrected_v51.png").width == 1500, "png width")
+print(f"check_numbers_corrected_v51: ALL {n} CHECKS PASSED")
