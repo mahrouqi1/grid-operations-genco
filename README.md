@@ -1,21 +1,19 @@
 # grid-operations-genco
 
-Code, small result files and figure scripts behind the post "What GENCO does without fine-tuning: infer missing voltages, not solve power flow", written for the GridFM GENCO Challenge.
+Code, small result files and figure scripts behind the post "GENCO infers missing bus voltages zero-shot, and 3% of its pretraining labels are collapsed power-flow roots", written for the GridFM GENCO Challenge.
 
 - Post on Hugging Face: HF_POST_URL_PLACEHOLDER
-- The same text is in this repo as [`ENTRY.md`](ENTRY.md).
+- The same text is in this repo as [`ENTRY.md`](ENTRY.md); where this summary and ENTRY.md differ, ENTRY.md is the reference.
 - Author: Mazin Al-Mahrouqi, The Ohio State University (mahrouqi.1@osu.edu).
 
 ## What the study found
 
-We ran controlled tests on the released GENCO power-grid foundation-model checkpoint.
+1. About 3% of the sampled pretraining labels are collapsed power-flow roots, produced by the data generator's fast power-flow call. Under its masked pretraining task GENCO reproduces them; on the power-flow task its voltage magnitudes at those buses are closer to a recovered power-flow solution than to the stored label.
+2. Without fine-tuning, GENCO infers missing bus voltage magnitudes better than the best of five learning-free graph interpolators on most test grids. A weighted-least-squares state estimator that knows the grid model and generator limits remains more accurate.
+3. Continued pretraining of the released checkpoint did not improve it on a 15-grid benchmark in our runs.
+4. Zero-shot power flow with every input known matches the limitation the GENCO paper states: the released checkpoint is less accurate than DC power flow without grid-specific fine-tuning.
 
-1. On the power-flow task, GENCO tolerates the collapsed power-flow labels in its own pretraining data. It reproduces them under its masked pretraining task, but returns a physical solution when asked to solve the power flow.
-2. Without fine-tuning, GENCO infers missing bus voltage magnitudes from a measured fraction of buses, and beats the best of five graph interpolators on most carved subgrids and on whole grids from its pretraining families. A weighted-least-squares state estimator that knows the generator limits is a much harder comparator.
-3. Continued pretraining did not improve the released model on a locked 15-grid benchmark, in a pre-registered study.
-4. When every power-flow input is known, two fast-decoupled iterations from a DC start beat every GENCO variant we tried.
-
-Also here: the RepairKit (`tracks/genco-challenge/src/genco_challenge/repairkit/`), which checks, repairs and verifies any gridfm-datakit-format dataset.
+Also here: the RepairKit (`tracks/genco-challenge/src/genco_challenge/repairkit/`), which checks gridfm-datakit-format datasets, attempts label repair and verifies the repaired tables.
 
 ## Reproduce
 
